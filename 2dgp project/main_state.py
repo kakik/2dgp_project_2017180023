@@ -10,6 +10,7 @@ import title_state
 
 def enter():
     pass
+
 def exit():
     pass
 
