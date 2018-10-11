@@ -23,7 +23,7 @@ def update():
 
     if (logo_time > 1.5):
         logo_time = 0
-        game_framework.push_state(title_state)
+        game_framework.change_state(title_state)
 
     delay(0.01)
     logo_time += 0.01
@@ -37,6 +37,11 @@ def draw():
 
 def handle_events():
     events = get_events()
+    for event in events:
+        if event.type == SDL_QUIT:
+            game_framework.quit()
+            if event.key == SDLK_ESCAPE:
+                game_framework.quit()
 
 
 def pause(): pass

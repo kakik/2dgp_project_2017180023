@@ -1,5 +1,5 @@
 import game_framework
-import main_state
+import difficulty_selection_state
 import IMG_class
 from pico2d import *
 
@@ -32,13 +32,6 @@ class TitleStartImg(IMG_class.IMG):
         self.mouse_on_img_max_frame = Title_start_mouse_on_img_max_frame
         self.mouse_on_img_on = False
 
-    def draw(self):
-        super(TitleStartImg, self).draw()
-
-        if self.mouse_on_img_on == True:
-            Title_start_mouse_on_img[self.mouse_on_img_frame].draw(self.x, self.y-60)
-        Title_start_main_img[self.frame].draw(self.x, self.y)
-
     def handle_events(self, event_x, event_y):
         super(TitleStartImg, self).handle_events(event_x, event_y)
 
@@ -56,6 +49,13 @@ class TitleStartImg(IMG_class.IMG):
         if self.mouse_on_img_on == True:
             self.mouse_on_img_frame = (self.mouse_on_img_frame + 1) % self.mouse_on_img_max_frame
 
+    def draw(self):
+        super(TitleStartImg, self).draw()
+
+        if self.mouse_on_img_on == True:
+            Title_start_mouse_on_img[self.mouse_on_img_frame].draw(self.x, self.y-60)
+        Title_start_main_img[self.frame].draw(self.x, self.y)
+
 
 class TitleExitImg(IMG_class.IMG):
     def __init__(self, x1, y1, x2, y2):
@@ -63,13 +63,6 @@ class TitleExitImg(IMG_class.IMG):
         self.mouse_on_img_frame = 0
         self.mouse_on_img_max_frame = Title_exit_mouse_on_img_max_frame
         self.mouse_on_img_on = False
-
-    def draw(self):
-        super(TitleExitImg, self).draw()
-        Title_exit_main_img[self.frame].draw(self.x, self.y)
-
-        if self.mouse_on_img_on == True:
-            Title_exit_mouse_on_img[self.mouse_on_img_frame].draw(self.x+20, self.y)
 
     def handle_events(self, event_x, event_y):
         super(TitleExitImg, self).handle_events(event_x, event_y)
@@ -86,6 +79,13 @@ class TitleExitImg(IMG_class.IMG):
         super(TitleExitImg, self).update()
         if self.mouse_on_img_on == True:
             self.mouse_on_img_frame = (self.mouse_on_img_frame + 1) % self.mouse_on_img_max_frame
+
+    def draw(self):
+        super(TitleExitImg, self).draw()
+        Title_exit_main_img[self.frame].draw(self.x, self.y)
+
+        if self.mouse_on_img_on == True:
+            Title_exit_mouse_on_img[self.mouse_on_img_frame].draw(self.x+20, self.y)
 
 
 def enter():
@@ -139,8 +139,7 @@ def handle_events():
 
         elif event.type == SDL_MOUSEBUTTONDOWN:
             if Title_start_img.mouse_on_img_on == True:
-                pass
-                # 여기서 게임 시작
+                game_framework.change_state(difficulty_selection_state)
             elif Title_exit_img.mouse_on_img_on == True:
                 game_framework.quit()
 
