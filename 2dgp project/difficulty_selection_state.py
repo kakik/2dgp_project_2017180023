@@ -1,7 +1,8 @@
 from pico2d import *
-
+import cursor_class
 import game_framework
-import title_state
+import IMG_class
+import Unit_class
 
 Difficulty_BG_img = None
 mx, my = 0, 0
@@ -31,6 +32,9 @@ def handle_events():
             game_framework.quit()
             if event.key == SDLK_ESCAPE:
                 game_framework.quit()
+        elif event.type == SDL_MOUSEMOTION:
+            # 마우스 좌표 업데이트
+            cursor_class.update_mouse_point(event.x, event.y)
 
 
 def update():

@@ -11,6 +11,7 @@ logo_time = 0.0
 def enter():
     global image
     image = load_image('resources\\Start\\start.png')
+    hide_cursor()
 
 
 def exit():
