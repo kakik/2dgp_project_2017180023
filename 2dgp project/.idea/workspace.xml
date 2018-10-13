@@ -5,10 +5,342 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef55620e-127a-47a2-a9dd-e0eb96cb6266" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IMG_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/IMG_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/difficulty_selection_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/difficulty_selection_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon00.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/English/singleon59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr00.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/French/singleonfr59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde00.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/German/singleonde59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit00.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Italian/singleonit59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones00.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/Spanish/singleones59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single00.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Title/Single Player/single34.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/title_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/title_state.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,12 +404,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="6532" />
+          <entry key="py" value="6753" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="6532" />
+          <entry key="Python" value="6753" />
         </counts>
       </usages-collector>
     </session>
@@ -87,8 +419,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_code.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+            <state relative-caret-position="570">
+              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,19 +432,19 @@
         <entry file="file://$PROJECT_DIR$/game_framework.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="395">
-              <caret line="93" column="19" lean-forward="true" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
+              <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/title_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="74" column="37" lean-forward="true" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
+            <state relative-caret-position="551">
+              <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1539369536053" expanded="true" signature="428:532" ph="..." />
+                <marker date="1539372183048" expanded="true" signature="483:587" ph="..." />
               </folding>
             </state>
           </provider>
@@ -119,20 +454,20 @@
         <entry file="file://$PROJECT_DIR$/cursor_class.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="551">
-              <caret line="29" column="10" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+              <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IMG_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="722">
+              <caret line="83" column="52" selection-start-line="83" selection-start-column="52" selection-end-line="83" selection-end-column="52" />
               <folding>
                 <element signature="e#1#19#0" expanded="true" />
-                <marker date="1539369536053" expanded="true" signature="582:587" ph="..." />
-                <marker date="1539369536053" expanded="true" signature="2562:3009" ph="..." />
+                <marker date="1539370347934" expanded="true" signature="582:587" ph="..." />
+                <marker date="1539370347934" expanded="true" signature="2759:3206" ph="..." />
               </folding>
             </state>
           </provider>
@@ -154,7 +489,7 @@
         <entry file="file://$PROJECT_DIR$/start_state.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
-              <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+              <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -166,7 +501,7 @@
         <entry file="file://$PROJECT_DIR$/difficulty_selection_state.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="113">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -178,7 +513,7 @@
         <entry file="file://$PROJECT_DIR$/main_state.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -189,7 +524,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Unit_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="399">
+              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
               <folding>
                 <marker date="1539298623539" expanded="true" signature="19:24" ph="..." />
                 <marker date="1539298623539" expanded="true" signature="192:197" ph="..." />
@@ -229,12 +565,12 @@
         <option value="$PROJECT_DIR$/start_state.py" />
         <option value="$PROJECT_DIR$/difficulty_selection_state.py" />
         <option value="$PROJECT_DIR$/cursor_class.py" />
-        <option value="$PROJECT_DIR$/title_state.py" />
         <option value="$PROJECT_DIR$/IMG_class.py" />
+        <option value="$PROJECT_DIR$/title_state.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="826" />
     <option name="y" value="-12" />
     <option name="width" value="1082" />
@@ -445,15 +781,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="826" y="-12" width="1082" height="1090" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1032666" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18773946" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298647" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20083247" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20209424" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39854318" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -594,41 +930,14 @@
     <entry file="file://$PROJECT_DIR$/game_framework.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
-          <caret line="93" column="19" lean-forward="true" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Unit_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1539298623539" expanded="true" signature="19:24" ph="..." />
-            <marker date="1539298623539" expanded="true" signature="192:197" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_state.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_code.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/difficulty_selection_state.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -638,39 +947,70 @@
     <entry file="file://$PROJECT_DIR$/cursor_class.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
-          <caret line="29" column="10" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/start_state.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
-          <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/title_state.py">
+    <entry file="file://$PROJECT_DIR$/Unit_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="74" column="37" lean-forward="true" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
+        <state relative-caret-position="399">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1539369536053" expanded="true" signature="428:532" ph="..." />
+            <marker date="1539298623539" expanded="true" signature="19:24" ph="..." />
+            <marker date="1539298623539" expanded="true" signature="192:197" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IMG_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        <state relative-caret-position="722">
+          <caret line="83" column="52" selection-start-line="83" selection-start-column="52" selection-end-line="83" selection-end-column="52" />
           <folding>
             <element signature="e#1#19#0" expanded="true" />
-            <marker date="1539369536053" expanded="true" signature="582:587" ph="..." />
-            <marker date="1539369536053" expanded="true" signature="2562:3009" ph="..." />
+            <marker date="1539370347934" expanded="true" signature="582:587" ph="..." />
+            <marker date="1539370347934" expanded="true" signature="2759:3206" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/title_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1539372183048" expanded="true" signature="483:587" ph="..." />
           </folding>
         </state>
       </provider>

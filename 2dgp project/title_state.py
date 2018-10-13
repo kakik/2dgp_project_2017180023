@@ -10,6 +10,7 @@ name = "TitleState"
 Title_BG_img = None
 Title_start_img, Title_start_mouse_on_img = None, None
 Title_exit_img, Title_exit_mouse_on_img = None, None
+Title_start_text_img, Title_exit_text_img = None, None
 
 # 이미지별 최대 프레임
 Title_start_img_max_frame = 35
@@ -28,6 +29,7 @@ def enter():
     global Title_BG_img
     global Title_start_img, Title_start_mouse_on_img
     global Title_exit_img, Title_exit_mouse_on_img
+    global Title_start_text_img, Title_exit_text_img
     global Title_start, Title_start_mouse_on
     global Title_exit, Title_exit_mouse_on
 
@@ -41,15 +43,17 @@ def enter():
     Title_exit = IMG_class.MenuIMG(592, 122, 184, 128, Title_exit_img_max_frame, 4, 2)
     Title_exit_mouse_on = IMG_class.MenuMouseOnIMG(592, 122, 184, 128, Title_exit_mouse_on_img_max_frame, 4, 2)
 
-    # 이미지 로드
+    # 메뉴 이미지 로드
     Title_BG_img = load_image('resources\\Title\\Background\\Title_BG.png')
-    Title_start_img = [load_image('resources\\Title\\Single Player\\single%d%d.png'%(i//10, i%10)) for i in range(0, Title_start_img_max_frame)]
-    Title_start_mouse_on_img = [load_image('resources\\Title\\Single Player\\English\\singleon%d%d.png'%(i//10, i%10)) for i in range(0, Title_start_mouse_on_img_max_frame)]
+    Title_start_img = [load_image('resources\\Title\\Start\\single%d%d.png'%(i//10, i%10)) for i in range(0, Title_start_img_max_frame)]
+    Title_start_mouse_on_img = [load_image('resources\\Title\\Start\\English\\singleon%d%d.png'%(i//10, i%10)) for i in range(0, Title_start_mouse_on_img_max_frame)]
     Title_exit_img = [load_image('resources\\Title\\Exit\\exit%d%d.png'%(i//10, i%10)) for i in range(0, Title_exit_img_max_frame)]
     Title_exit_mouse_on_img = [load_image('resources\\Title\\Exit\\English\\exiton%d%d.png'%(i//10, i%10)) for i in range(0, Title_exit_mouse_on_img_max_frame)]
+    Title_start_text_img = load_image('resources\\Title\\Start\\start.png')
+    Title_exit_text_img = load_image('resources\\Title\\Exit\\exit.png')
+
     # 커서 이미지 로드
     cursor_class.Cursor_img = load_image('resources\\Cursor\\cursor.png')
-
 
 def exit():
     global Title_BG_img
@@ -103,6 +107,8 @@ def draw():
     Title_start.draw()
     Title_exit.draw()
     Title_exit_mouse_on.draw()
+    Title_start_text_img.draw(200, 480)
+    Title_exit_text_img.draw(550, 180)
     cursor_class.cursor.draw()
 
     update_canvas()

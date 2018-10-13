@@ -65,7 +65,13 @@ class MenuMouseOnIMG(MenuIMG):
         super(MenuMouseOnIMG, self).__init__(x, y, width, height, max_frame, frame_update_period, menu_type)
 
     def handle_events(self):
-        super(MenuMouseOnIMG, self).handle_events()
+        if self.mouse_on == False:
+            super(MenuMouseOnIMG, self).handle_events()
+            if self.mouse_on == True:
+                self.frame.current_frame = 0
+        else:
+            super(MenuMouseOnIMG, self).handle_events()
+
 
     def update(self):
         super(MenuMouseOnIMG, self).update()
@@ -77,7 +83,7 @@ class MenuMouseOnIMG(MenuIMG):
             elif self.menu_type == 2:
                 title_state.Title_exit_mouse_on_img[self.frame.current_frame].draw(self.x + 20, self.y)
 
-        self.update_frame()
+            self.update_frame()
 
 
 class Frame:
