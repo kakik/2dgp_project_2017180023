@@ -42,15 +42,13 @@ def update():
 
 
 def draw():
-    global mx, my
     clear_canvas()
 
     Difficulty_BG_img.draw(400, 300)
+    cursor_class.cursor.draw()
 
     update_canvas()
-    delay(0.05)
-
-
+    delay(0.01)
 
 
 
