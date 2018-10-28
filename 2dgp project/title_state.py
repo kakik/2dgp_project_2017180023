@@ -8,8 +8,6 @@ name = "TitleState"
 
 # 이미지 파일
 Title_BG_img = None
-Title_start_img, Title_start_mouse_on_img = None, None
-Title_exit_img, Title_exit_mouse_on_img = None, None
 Title_start_text_img, Title_exit_text_img = None, None
 
 # 이미지별 최대 프레임
@@ -27,8 +25,6 @@ Title_exit_mouse_on = None
 
 def enter():
     global Title_BG_img
-    global Title_start_img, Title_start_mouse_on_img
-    global Title_exit_img, Title_exit_mouse_on_img
     global Title_start_text_img, Title_exit_text_img
     global Title_start, Title_start_mouse_on
     global Title_exit, Title_exit_mouse_on
@@ -45,10 +41,6 @@ def enter():
 
     # 메뉴 이미지 로드
     Title_BG_img = load_image('resources\\Title\\Background\\Title_BG.png')
-    Title_start_img = [load_image('resources\\Title\\Start\\single%d%d.png'%(i//10, i%10)) for i in range(0, Title_start_img_max_frame)]
-    Title_start_mouse_on_img = [load_image('resources\\Title\\Start\\English\\singleon%d%d.png'%(i//10, i%10)) for i in range(0, Title_start_mouse_on_img_max_frame)]
-    Title_exit_img = [load_image('resources\\Title\\Exit\\exit%d%d.png'%(i//10, i%10)) for i in range(0, Title_exit_img_max_frame)]
-    Title_exit_mouse_on_img = [load_image('resources\\Title\\Exit\\English\\exiton%d%d.png'%(i//10, i%10)) for i in range(0, Title_exit_mouse_on_img_max_frame)]
     Title_start_text_img = load_image('resources\\Title\\Start\\start.png')
     Title_exit_text_img = load_image('resources\\Title\\Exit\\exit.png')
 
@@ -57,13 +49,7 @@ def enter():
 
 def exit():
     global Title_BG_img
-    global Title_start_img, Title_start_mouse_on_img
-    global Title_exit_img, Title_exit_mouse_on_img
-
     del Title_BG_img
-    del Title_start_img, Title_start_mouse_on_img
-    del Title_exit_img, Title_exit_mouse_on_img
-
 
 def handle_events():
     events = get_events()

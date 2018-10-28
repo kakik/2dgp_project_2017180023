@@ -1,5 +1,6 @@
 import title_state
 import cursor_class
+from pico2d import *
 
 class IMG(object):
     def __init__(self, x, y, width, height, max_frame, frame_update_period): # 두 점의 좌표로 초기화
@@ -39,11 +40,20 @@ class IMG(object):
         self.frame.update()
 
 
+
 class MenuIMG(IMG):
+    Title_start_img = None
+    Title_exit_img = None
+
     def __init__(self, x, y, width, height, max_frame, frame_update_period, menu_type):
         super(MenuIMG, self).__init__(x, y, width, height, max_frame, frame_update_period)
         # 메뉴 타입 1 = title_start 2 = title_exit
         self.menu_type = menu_type
+
+        if MenuIMG.Title_start_img == None:
+            MenuIMG.Title_start_img = [load_image('resources\\Title\\Start\\single%d%d.png'%(i//10, i%10)) for i in range(0, max_frame)]
+        if MenuIMG.Title_exit_img == None:
+            MenuIMG.Title_exit_img = [load_image('resources\\Title\\Exit\\English\\exiton%d%d.png'%(i//10, i%10)) for i in range(0, max_frame)]
 
     def handle_events(self):
         super(MenuIMG, self).handle_events()
@@ -53,16 +63,24 @@ class MenuIMG(IMG):
 
     def draw(self):
         if self.menu_type == 1:
-            title_state.Title_start_img[self.frame.current_frame].draw(self.x, self.y)
+            MenuIMG.Title_start_img[self.frame.current_frame].draw(self.x, self.y)
         elif self.menu_type == 2:
-            title_state.Title_exit_img[self.frame.current_frame].draw(self.x, self.y)
+            MenuIMG.Title_exit_img[self.frame.current_frame].draw(self.x, self.y)
 
         self.update_frame()
 
 
 class MenuMouseOnIMG(MenuIMG):
+    Title_start_mouse_on_img = None
+    Title_exit_mouse_on_img = None
+
     def __init__(self, x, y, width, height, max_frame, frame_update_period, menu_type):
         super(MenuMouseOnIMG, self).__init__(x, y, width, height, max_frame, frame_update_period, menu_type)
+
+        if MenuMouseOnIMG.Title_start_mouse_on_img == None:
+            MenuMouseOnIMG.Title_start_mouse_on_img = [load_image('resources\\Title\\Start\\English\\singleon%d%d.png' % (i // 10, i % 10)) for i in range(0, max_frame)]
+        if MenuMouseOnIMG.Title_exit_mouse_on_img == None:
+            MenuMouseOnIMG.Title_exit_mouse_on_img = [load_image('resources\\Title\\Exit\\English\\exiton%d%d.png'%(i//10, i%10)) for i in range(0, max_frame)]
 
     def handle_events(self):
         if self.mouse_on == False:
@@ -79,9 +97,9 @@ class MenuMouseOnIMG(MenuIMG):
     def draw(self):
         if self.mouse_on == True:
             if self.menu_type == 1:
-                title_state.Title_start_mouse_on_img[self.frame.current_frame].draw(self.x, self.y - 60)
+                MenuMouseOnIMG.Title_start_mouse_on_img[self.frame.current_frame].draw(self.x, self.y - 60)
             elif self.menu_type == 2:
-                title_state.Title_exit_mouse_on_img[self.frame.current_frame].draw(self.x + 20, self.y)
+                MenuMouseOnIMG.Title_exit_mouse_on_img[self.frame.current_frame].draw(self.x + 20, self.y)
 
             self.update_frame()
 
