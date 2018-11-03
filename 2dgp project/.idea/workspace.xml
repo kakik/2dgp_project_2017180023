@@ -4,26 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/test_code.py" line="52" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef55620e-127a-47a2-a9dd-e0eb96cb6266" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unit_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/difficulty_selection_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/difficulty_selection_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_framework.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_framework.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_world.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_world.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Observer/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Wraith/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Wraith/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Wraith/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Wraith/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Wraith/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Wraith/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Wraith/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Wraith/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Wraith/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Wraith/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/title_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/title_state.py" afterDir="false" />
-    </list>
+    <list default="true" id="ef55620e-127a-47a2-a9dd-e0eb96cb6266" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/title_state.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="379">
-              <caret line="101" column="42" lean-forward="true" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
+              <caret line="101" column="42" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
                 <marker date="1541234513329" expanded="true" signature="237:341" ph="..." />
@@ -142,7 +123,7 @@
         <entry file="file://$PROJECT_DIR$/game_world.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="551">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -150,11 +131,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Unit_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="127" column="3" selection-start-line="127" selection-start-column="3" selection-end-line="127" selection-end-column="3" />
+            <state relative-caret-position="61">
+              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
-                <marker date="1541238772936" expanded="true" signature="960:965" ph="..." />
+                <marker date="1541238783498" expanded="true" signature="960:965" ph="..." />
               </folding>
             </state>
           </provider>
@@ -182,7 +163,7 @@
         <entry file="file://$PROJECT_DIR$/game_framework.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="100" column="17" lean-forward="true" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="17" />
+              <caret line="100" column="17" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -191,7 +172,7 @@
         <entry file="file://$PROJECT_DIR$/cursor_class.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="379">
-              <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
                 <marker date="1541218832930" expanded="true" signature="421:440" ph="..." />
@@ -204,7 +185,7 @@
         <entry file="file://$PROJECT_DIR$/main_state.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="456">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <marker date="1541224858040" expanded="true" signature="149:160" ph="..." />
@@ -494,12 +475,12 @@
     <frame x="27" y="23" width="1400" height="1059" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1328928" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1328928" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18614718" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.18614718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3982684" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -692,7 +673,7 @@
     <entry file="file://$PROJECT_DIR$/main_state.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <marker date="1541224858040" expanded="true" signature="149:160" ph="..." />
@@ -715,14 +696,14 @@
     <entry file="file://$PROJECT_DIR$/game_world.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game_framework.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="100" column="17" lean-forward="true" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="17" />
+          <caret line="100" column="17" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -739,7 +720,7 @@
     <entry file="file://$PROJECT_DIR$/title_state.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
-          <caret line="101" column="42" lean-forward="true" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
+          <caret line="101" column="42" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
             <marker date="1541234513329" expanded="true" signature="237:341" ph="..." />
@@ -750,7 +731,7 @@
     <entry file="file://$PROJECT_DIR$/cursor_class.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
-          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
             <marker date="1541218832930" expanded="true" signature="421:440" ph="..." />
@@ -774,11 +755,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Unit_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="127" column="3" selection-start-line="127" selection-start-column="3" selection-end-line="127" selection-end-column="3" />
+        <state relative-caret-position="61">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1541238772936" expanded="true" signature="960:965" ph="..." />
+            <marker date="1541238783498" expanded="true" signature="960:965" ph="..." />
           </folding>
         </state>
       </provider>
