@@ -2,6 +2,7 @@ import IMG_class
 from pico2d import*
 
 class Cursor:
+    global mx, my
     image = None
     width = 41
     height = 41
@@ -16,9 +17,9 @@ class Cursor:
     def handle_events(self):
         pass
 
-    def update(self, x, y):
-        self.x = x
-        self.y = y
+    def update(self):
+        self.x = mx
+        self.y = my
         self.frame.update()
 
 

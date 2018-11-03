@@ -11,7 +11,7 @@ class IMG(object):
         self.height = height
 
         # 출력을 위한 프레임
-        self.frame = Frame(max_frame, frame_update_period)
+        self.frame = Frame(max_frame)
         self.mouse_on = False
 
         # 충돌체크를 위한 두 점 좌표값
@@ -39,15 +39,6 @@ class IMG(object):
     def update_frame(self):
         self.frame.update()
 
-    Title_start_mouse_on_img_max_frame = 60
-    Title_exit_img_max_frame = 50
-    Title_exit_mouse_on_img_max_frame = 30
-
-    # 객체 생성! 출력 좌표, 이미지 사이즈 조정은 여기서
-
-    Title_start_mouse_on = IMG_class.MenuMouseOnIMG(240, 438, 320, 116, Title_start_mouse_on_img_max_frame, 4, 1)
-    Title_exit = IMG_class.MenuIMG(592, 122, 184, 128, Title_exit_img_max_frame, 4, 2)
-    Title_exit_mouse_on = IMG_class.MenuMouseOnIMG(592, 122, 184, 128, Title_exit_mouse_on_img_max_frame, 4, 2)
 
 
 class MenuStartIMG():
@@ -98,7 +89,7 @@ class MenuExitIMG():
         self.mouse_on = False
 
         if MenuExitIMG.image == None:
-            MenuStartIMG.image = [load_image('resources\\Title\\Exit\\English\\exiton%d%d.png' % (i // 10, i % 10))  for i in range(0, MenuExitIMG.max_frame)]
+            MenuExitIMG.image = [load_image('resources\\Title\\Exit\\exit%d%d.png' % (i // 10, i % 10))  for i in range(0, MenuExitIMG.max_frame)]
 
     def handle_events(self):
         # 마우스 충돌체크
