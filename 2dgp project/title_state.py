@@ -45,17 +45,25 @@ def enter():
     game_world.add_object(Title_start_mouse_on,0)
     game_world.add_object(Title_exit,0)
     game_world.add_object(Title_exit_mouse_on,0)
-    game_world.add_object(Title_start,0)
     game_world.add_object(cursor_class.cursor,1)
 
 def exit():
-    game_world.clear()
     global Title_BG_img
-    global Title_start_text_img
-    global Title_exit_text_img
+    global Title_start_text_img, Title_exit_text_img
+    global Title_start, Title_start_mouse_on
+    global Title_exit, Title_exit_mouse_on
     del Title_BG_img
     del Title_start_text_img
     del Title_exit_text_img
+
+
+    #game_world.clear()
+    game_world.remove_object(Title_start)
+    game_world.remove_object(Title_start_mouse_on)
+    game_world.remove_object(Title_exit)
+    game_world.remove_object(Title_exit_mouse_on)
+
+
 
 def handle_events():
     events = get_events()
@@ -101,12 +109,11 @@ def draw():
         game_object.draw()
 
     if Title_start_text_img != None:
-        if Title_start.mouse_on==True:
-            Title_start_text_img.draw(200, 500)
+        Title_start_text_img.draw(200, 500)
 
     if Title_exit_text_img != None:
-        if Title_exit.mouse_on == True:
-            Title_exit_text_img.draw(550, 180)
+        Title_exit_text_img.draw(550, 180)
+
 
     update_canvas()
 
