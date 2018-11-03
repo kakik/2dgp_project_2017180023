@@ -1,34 +1,37 @@
 import IMG_class
-
+from pico2d import*
 
 class Cursor:
-    def __init__(self, x, y, max_frame, frame_update_period ):
+    image = None
+    width = 41
+    height = 41
+    max_frame = 5
+    def __init__(self, x, y):
         self.x = x
         self.y = y
-        # 커서 크기, 프레임값 설정
-        self.width = 41
-        self.height = 41
-        self.frame = IMG_class.Frame(max_frame)
+        self.frame = IMG_class.Frame(5)
+        if self.image == None:
+            Cursor.image = load_image('resources\\Cursor\\cursor.png')
 
-    def update_cursor_point(self, x, y):
+    def handle_events(self):
+        pass
+
+    def update(self, x, y):
         self.x = x
         self.y = y
+        self.frame.update()
 
 
     def draw(self):
-        Cursor_img.clip_draw((self.width+3) * self.frame.current_frame+2, 279, self.width, self.height, self.x  , self.y )
-        self.frame.update()
+        self.image.clip_draw((self.width+3) * self.frame.current_frame+2, 279, self.width, self.height, self.x  , self.y )
+
 
 # 마우스 좌표
 mx, my = None, None
-cursor = Cursor(0, 0, 5, 10)
-Cursor_img = None
-
 
 def update_mouse_point(x, y):
     global mx, my
     mx = x
     my = 600 - y
-    cursor.update_cursor_point(mx, my)
 
 

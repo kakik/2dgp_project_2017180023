@@ -196,10 +196,3 @@ class Frame:
 
     def update(self):
         self.current_frame = (self.current_frame + 1) % self.max_frame
-
-
-
-
-
-
-

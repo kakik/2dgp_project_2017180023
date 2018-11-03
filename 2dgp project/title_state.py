@@ -2,26 +2,21 @@ import game_framework
 import difficulty_selection_state
 import IMG_class
 import cursor_class
+import game_world
 from pico2d import *
 
 name = "TitleState"
 
 # 이미지 파일
 Title_BG_img = None
-Title_start_text_img, Title_exit_text_img = None, None
-
-# 이미지별 최대 프레임
-Title_start_img_max_frame = 35
-Title_start_mouse_on_img_max_frame = 60
-Title_exit_img_max_frame = 50
-Title_exit_mouse_on_img_max_frame = 30
 
 # 이미지 객체
 Title_start = None
 Title_start_mouse_on = None
 Title_exit = None
 Title_exit_mouse_on = None
-
+#커서
+cursor = None
 
 def enter():
     global Title_BG_img
@@ -32,21 +27,24 @@ def enter():
     # 초기 마우스 좌표
     cursor_class.mx = 800/2
     cursor_class.my = 600/2
+    Title_BG_img = load_image('resources\\Background\\Title_BG.png')
 
-
-    # 객체 생성! 출력 좌표, 이미지 사이즈 조정은 여기서
+    # 객체 생성!
     Title_start = IMG_class.MenuStartIMG()
     Title_start_mouse_on =IMG_class.MenuStartMouseOnIMG()
     Title_exit = IMG_class.MenuExitIMG()
     Title_exit_mouse_on = IMG_class.MenuExitMouseOnIMG()
+    cursor = cursor_class.Cursor()
 
-
-    # 커서 이미지 로드
-    cursor_class.Cursor_img = load_image('resources\\Cursor\\cursor.png')
+    game_world.add_object(Title_start)
+    game_world.add_object(Title_start_mouse_on)
+    game_world.add_object(Title_exit)
+    game_world.add_object(Title_exit_mouse_on)
+    game_world.add_object(Title_start)
+    game_world.add_object(cursor)
 
 def exit():
-    global Title_BG_img
-    del Title_BG_img
+    game_world.clear()
 
 def handle_events():
     events = get_events()
