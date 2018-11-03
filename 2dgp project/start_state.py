@@ -5,7 +5,7 @@ from pico2d import *
 
 name = "StartState"
 image = None
-logo_time = 0.0
+
 
 
 def enter():
@@ -20,14 +20,9 @@ def exit():
 
 
 def update():
-    global logo_time
 
-    if (logo_time > 1.5):
-        logo_time = 0
+    if (get_time()>1.5):
         game_framework.change_state(title_state)
-
-    delay(0.01)
-    logo_time += 0.01
 
 
 def draw():

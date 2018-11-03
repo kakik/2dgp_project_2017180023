@@ -8,7 +8,7 @@ class Cursor:
         # 커서 크기, 프레임값 설정
         self.width = 41
         self.height = 41
-        self.frame = IMG_class.Frame(max_frame, frame_update_period)
+        self.frame = IMG_class.Frame(max_frame)
 
     def update_cursor_point(self, x, y):
         self.x = x

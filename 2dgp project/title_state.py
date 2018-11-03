@@ -33,16 +33,13 @@ def enter():
     cursor_class.mx = 800/2
     cursor_class.my = 600/2
 
-    # 객체 생성! 출력 좌표, 이미지 사이즈 조정은 여기서
-    Title_start = IMG_class.MenuIMG(240, 438, 320, 116, Title_start_img_max_frame, 4, 1)
-    Title_start_mouse_on = IMG_class.MenuMouseOnIMG(240, 438, 320, 116, Title_start_mouse_on_img_max_frame, 4, 1)
-    Title_exit = IMG_class.MenuIMG(592, 122, 184, 128, Title_exit_img_max_frame, 4, 2)
-    Title_exit_mouse_on = IMG_class.MenuMouseOnIMG(592, 122, 184, 128, Title_exit_mouse_on_img_max_frame, 4, 2)
 
-    # 메뉴 이미지 로드
-    Title_BG_img = load_image('resources\\Title\\Background\\Title_BG.png')
-    Title_start_text_img = load_image('resources\\Title\\Start\\start.png')
-    Title_exit_text_img = load_image('resources\\Title\\Exit\\exit.png')
+    # 객체 생성! 출력 좌표, 이미지 사이즈 조정은 여기서
+    Title_start = IMG_class.MenuStartIMG()
+    Title_start_mouse_on =IMG_class.MenuStartMouseOnIMG()
+    Title_exit = IMG_class.MenuExitIMG()
+    Title_exit_mouse_on = IMG_class.MenuExitMouseOnIMG()
+
 
     # 커서 이미지 로드
     cursor_class.Cursor_img = load_image('resources\\Cursor\\cursor.png')

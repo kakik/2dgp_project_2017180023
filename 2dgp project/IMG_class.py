@@ -39,83 +39,163 @@ class IMG(object):
     def update_frame(self):
         self.frame.update()
 
+    Title_start_mouse_on_img_max_frame = 60
+    Title_exit_img_max_frame = 50
+    Title_exit_mouse_on_img_max_frame = 30
+
+    # 객체 생성! 출력 좌표, 이미지 사이즈 조정은 여기서
+
+    Title_start_mouse_on = IMG_class.MenuMouseOnIMG(240, 438, 320, 116, Title_start_mouse_on_img_max_frame, 4, 1)
+    Title_exit = IMG_class.MenuIMG(592, 122, 184, 128, Title_exit_img_max_frame, 4, 2)
+    Title_exit_mouse_on = IMG_class.MenuMouseOnIMG(592, 122, 184, 128, Title_exit_mouse_on_img_max_frame, 4, 2)
 
 
-class MenuIMG(IMG):
-    Title_start_img = None
-    Title_exit_img = None
+class MenuStartIMG():
+    image = None
+    width = 320
+    height = 116
+    max_frame = 35
 
-    def __init__(self, x, y, width, height, max_frame, frame_update_period, menu_type):
-        super(MenuIMG, self).__init__(x, y, width, height, max_frame, frame_update_period)
-        # 메뉴 타입 1 = title_start 2 = title_exit
-        self.menu_type = menu_type
+    def __init__(self):
+        self.x = 240
+        self.y = 438
 
-        if MenuIMG.Title_start_img == None:
-            MenuIMG.Title_start_img = [load_image('resources\\Title\\Start\\single%d%d.png'%(i//10, i%10)) for i in range(0, max_frame)]
-        if MenuIMG.Title_exit_img == None:
-            MenuIMG.Title_exit_img = [load_image('resources\\Title\\Exit\\English\\exiton%d%d.png'%(i//10, i%10)) for i in range(0, max_frame)]
+        self.frame = Frame(MenuStartIMG.max_frame)
+        self.mouse_on = False
+
+        if MenuStartIMG.image == None:
+            MenuStartIMG.image = [load_image('resources\\Title\\Start\\single%d%d.png'%(i//10, i%10)) for i in range(0, MenuStartIMG.max_frame)]
+
 
     def handle_events(self):
-        super(MenuIMG, self).handle_events()
-
-    def update(self):
-        super(MenuIMG, self).update()
-
-    def draw(self):
-        if self.menu_type == 1:
-            MenuIMG.Title_start_img[self.frame.current_frame].draw(self.x, self.y)
-        elif self.menu_type == 2:
-            MenuIMG.Title_exit_img[self.frame.current_frame].draw(self.x, self.y)
-
-        self.update_frame()
-
-
-class MenuMouseOnIMG(MenuIMG):
-    Title_start_mouse_on_img = None
-    Title_exit_mouse_on_img = None
-
-    def __init__(self, x, y, width, height, max_frame, frame_update_period, menu_type):
-        super(MenuMouseOnIMG, self).__init__(x, y, width, height, max_frame, frame_update_period, menu_type)
-
-        if MenuMouseOnIMG.Title_start_mouse_on_img == None:
-            MenuMouseOnIMG.Title_start_mouse_on_img = [load_image('resources\\Title\\Start\\English\\singleon%d%d.png' % (i // 10, i % 10)) for i in range(0, max_frame)]
-        if MenuMouseOnIMG.Title_exit_mouse_on_img == None:
-            MenuMouseOnIMG.Title_exit_mouse_on_img = [load_image('resources\\Title\\Exit\\English\\exiton%d%d.png'%(i//10, i%10)) for i in range(0, max_frame)]
-
-    def handle_events(self):
-        if self.mouse_on == False:
-            super(MenuMouseOnIMG, self).handle_events()
-            if self.mouse_on == True:
-                self.frame.current_frame = 0
+        # 마우스 충돌체크
+        if (self.x - MenuStartIMG.width/2 <= cursor_class.mx <= self.x + MenuStartIMG.width/2) and (self.y- MenuStartIMG.height/2 <= cursor_class.my <= self.y + MenuStartIMG.height/2):
+            if self.mouse_on == False:
+                self.mouse_on = True
         else:
-            super(MenuMouseOnIMG, self).handle_events()
-
+            if self.mouse_on == False:
+                self.mouse_on = True
 
     def update(self):
-        super(MenuMouseOnIMG, self).update()
+        self.frame.update()
 
     def draw(self):
-        if self.mouse_on == True:
-            if self.menu_type == 1:
-                MenuMouseOnIMG.Title_start_mouse_on_img[self.frame.current_frame].draw(self.x, self.y - 60)
-            elif self.menu_type == 2:
-                MenuMouseOnIMG.Title_exit_mouse_on_img[self.frame.current_frame].draw(self.x + 20, self.y)
+        MenuStartIMG.image[self.frame.current_frame].draw(self.x, self.y)
 
-            self.update_frame()
+
+
+class MenuExitIMG():
+    image = None
+    width = 184
+    height = 128
+    max_frame = 50
+
+    def __init__(self):
+        self.x = 592
+        self.y = 122
+
+        self.frame = Frame(MenuExitIMG.max_frame)
+        self.mouse_on = False
+
+        if MenuExitIMG.image == None:
+            MenuStartIMG.image = [load_image('resources\\Title\\Exit\\English\\exiton%d%d.png' % (i // 10, i % 10))  for i in range(0, MenuExitIMG.max_frame)]
+
+    def handle_events(self):
+        # 마우스 충돌체크
+        if (self.x - MenuExitIMG.width / 2 <= cursor_class.mx <= self.x + MenuExitIMG.width / 2) and (
+                self.y - MenuExitIMG.height / 2 <= cursor_class.my <= self.y + MenuExitIMG.height / 2):
+            if self.mouse_on == False:
+                self.mouse_on = True
+        else:
+            if self.mouse_on == False:
+                self.mouse_on = True
+
+    def update(self):
+        self.frame.update()
+
+    def draw(self):
+        MenuExitIMG.image[self.frame.current_frame].draw(self.x, self.y)
+
+
+class MenuStartMouseOnIMG():
+    image = None
+    width = 320
+    height = 116
+    max_frame = 60
+
+    def __init__(self):
+        self.x = 240
+        self.y = 438
+
+        self.frame = Frame(MenuStartMouseOnIMG.max_frame)
+        self.mouse_on = False
+
+        if MenuStartMouseOnIMG.image == None:
+            MenuStartMouseOnIMG.image =[load_image('resources\\Title\\Start\\English\\singleon%d%d.png' % (i // 10, i % 10)) for i in range(0, MenuStartMouseOnIMG.max_frame)]
+
+    def handle_events(self):
+        # 마우스 충돌체크
+        if (self.x - MenuStartMouseOnIMG.width / 2 <= cursor_class.mx <= self.x + MenuStartMouseOnIMG.width / 2) and (
+                self.y - MenuStartMouseOnIMG.height / 2 <= cursor_class.my <= self.y + MenuStartMouseOnIMG.height / 2):
+            if self.mouse_on == False:
+                self.mouse_on = True
+        else:
+            if self.mouse_on == False:
+                self.mouse_on = True
+
+    def update(self):
+        self.frame.update()
+
+    def draw(self):
+        MenuStartMouseOnIMG.image[self.frame.current_frame].draw(self.x, self.y)
+
+
+class MenuExitMouseOnIMG():
+    image = None
+    width = 184
+    height = 128
+    max_frame = 30
+
+    def __init__(self):
+        self.x = 592
+        self.y = 122
+
+        self.frame = Frame(MenuExitMouseOnIMG.max_frame)
+        self.mouse_on = False
+
+        if MenuExitMouseOnIMG.image == None:
+            MenuExitMouseOnIMG.image = [load_image('resources\\Title\\Exit\\English\\exiton%d%d.png'%(i//10, i%10)) for i in range(0, MenuExitMouseOnIMG.max_frame)]
+
+    def handle_events(self):
+        # 마우스 충돌체크
+        if (self.x - MenuExitMouseOnIMG.width / 2 <= cursor_class.mx <= self.x + MenuExitMouseOnIMG.width / 2) and (
+                self.y - MenuExitMouseOnIMG.height / 2 <= cursor_class.my <= self.y + MenuExitMouseOnIMG.height / 2):
+            if self.mouse_on == False:
+                self.mouse_on = True
+        else:
+            if self.mouse_on == False:
+                self.mouse_on = True
+
+    def update(self):
+        self.frame.update()
+
+    def draw(self):
+        MenuExitMouseOnIMG.image[self.frame.current_frame].draw(self.x, self.y)
+
+
+
+
+
+
 
 
 class Frame:
-    def __init__(self, max_frame, frame_update_period):
+    def __init__(self, max_frame):
         self.current_frame = 0
         self.max_frame = max_frame
-        self.temp_frame_count = 0
-        self.frame_update_period = frame_update_period
 
     def update(self):
-        self.temp_frame_count += 1
-        if self.temp_frame_count == self.frame_update_period:
-            self.current_frame = (self.current_frame + 1) % self.max_frame
-            self.temp_frame_count = 0
+        self.current_frame = (self.current_frame + 1) % self.max_frame
 
 
 
