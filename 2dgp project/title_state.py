@@ -23,11 +23,6 @@ def enter():
     global Title_start_text_img, Title_exit_text_img
     global Title_start, Title_start_mouse_on
     global Title_exit, Title_exit_mouse_on
-    global Title_BG_img
-    global Title_start_text_img
-    global Title_exit_text_img
-
-
 
     Title_BG_img = load_image('resources\\Title\\Background\\Title_BG.png')
     Title_start_text_img = load_image('resources\\Title\\Start\\start.png')
@@ -37,8 +32,6 @@ def enter():
     # 초기 마우스 좌표
     cursor_class.mx = 800/2
     cursor_class.my = 600/2
-    Title_start_text_img = None
-    Title_exit_text_img = None
 
     # 객체 생성!
     Title_start = IMG_class.MenuStartIMG()
@@ -95,23 +88,25 @@ def update():
 
 
 def draw():
-    global Title_start_text_img
-    global Title_exit_text_img
     global Title_BG_img
-    global Title_start_text_img
-    global Title_exit_text_img
+    global Title_start_text_img, Title_exit_text_img
+    global Title_start, Title_start_mouse_on
+    global Title_exit, Title_exit_mouse_on
 
     clear_canvas()
-    if   Title_BG_img!=None:
+    if  Title_BG_img!=None:
         Title_BG_img.draw(400, 300)
 
     for game_object in game_world.all_objects():
         game_object.draw()
 
     if Title_start_text_img != None:
-        Title_start_text_img.draw(200, 480)
+        if Title_start.mouse_on==True:
+            Title_start_text_img.draw(200, 500)
+
     if Title_exit_text_img != None:
-        Title_exit_text_img.draw(550, 180)
+        if Title_exit.mouse_on == True:
+            Title_exit_text_img.draw(550, 180)
 
     update_canvas()
 
