@@ -1,44 +1,6 @@
-import title_state
+
 import cursor_class
 from pico2d import *
-
-class IMG(object):
-    def __init__(self, x, y, width, height, max_frame, frame_update_period): # 두 점의 좌표로 초기화
-        # 이미지 두 점 좌표
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-
-        # 출력을 위한 프레임
-        self.frame = Frame(max_frame)
-        self.mouse_on = False
-
-        # 충돌체크를 위한 두 점 좌표값
-        self.x1 = self.x - (self.width/2)
-        self.y1 = self.y - (self.height / 2)
-        self.x2 = self.x + (self.width / 2)
-        self.y2 = self.y + (self.height / 2)
-
-
-    def draw(self):
-        pass
-
-    def update(self):
-        pass
-
-    def handle_events(self):
-        # 마우스 충돌체크
-        if self.mouse_on == False:
-            if (self.x1 <= cursor_class.mx <= self.x2) and (self.y1 <= cursor_class.my <= self.y2):
-                self.mouse_on = True
-        else:
-            if ((self.x1 <= cursor_class.mx <= self.x2) and (self.y1 <= cursor_class.my <= self.y2)) == False:
-                self.mouse_on = False
-
-    def update_frame(self):
-        self.frame.update()
-
 
 
 class MenuStartIMG():
@@ -59,16 +21,17 @@ class MenuStartIMG():
 
 
     def handle_events(self):
-        # 마우스 충돌체크
-        if (self.x - MenuStartIMG.width/2 <= cursor_class.mx <= self.x + MenuStartIMG.width/2) and (self.y- MenuStartIMG.height/2 <= cursor_class.my <= self.y + MenuStartIMG.height/2):
-            if self.mouse_on == False:
-                self.mouse_on = True
-        else:
-            if self.mouse_on == False:
-                self.mouse_on = True
+        pass
 
     def update(self):
         self.frame.update()
+        if (self.x - MenuStartMouseOnIMG.width / 2 <= cursor_class.mx <= self.x + MenuStartMouseOnIMG.width / 2) and (
+                self.y - MenuStartMouseOnIMG.height / 2 <= cursor_class.my <= self.y + MenuStartMouseOnIMG.height / 2):
+            if self.mouse_on == False:
+                self.mouse_on = True
+        else:
+            if self.mouse_on == True:
+                self.mouse_on = False
 
     def draw(self):
         MenuStartIMG.image[self.frame.current_frame].draw(self.x, self.y)
@@ -92,17 +55,17 @@ class MenuExitIMG():
             MenuExitIMG.image = [load_image('resources\\Title\\Exit\\exit%d%d.png' % (i // 10, i % 10))  for i in range(0, MenuExitIMG.max_frame)]
 
     def handle_events(self):
-        # 마우스 충돌체크
-        if (self.x - MenuExitIMG.width / 2 <= cursor_class.mx <= self.x + MenuExitIMG.width / 2) and (
-                self.y - MenuExitIMG.height / 2 <= cursor_class.my <= self.y + MenuExitIMG.height / 2):
-            if self.mouse_on == False:
-                self.mouse_on = True
-        else:
-            if self.mouse_on == False:
-                self.mouse_on = True
+        pass
 
     def update(self):
         self.frame.update()
+        if (self.x - MenuStartMouseOnIMG.width / 2 <= cursor_class.mx <= self.x + MenuStartMouseOnIMG.width / 2) and (
+                self.y - MenuStartMouseOnIMG.height / 2 <= cursor_class.my <= self.y + MenuStartMouseOnIMG.height / 2):
+            if self.mouse_on == False:
+                self.mouse_on = True
+        else:
+            if self.mouse_on == True:
+                self.mouse_on = False
 
     def draw(self):
         MenuExitIMG.image[self.frame.current_frame].draw(self.x, self.y)
@@ -125,20 +88,21 @@ class MenuStartMouseOnIMG():
             MenuStartMouseOnIMG.image =[load_image('resources\\Title\\Start\\English\\singleon%d%d.png' % (i // 10, i % 10)) for i in range(0, MenuStartMouseOnIMG.max_frame)]
 
     def handle_events(self):
-        # 마우스 충돌체크
+        pass
+
+    def update(self):
+        self.frame.update()
         if (self.x - MenuStartMouseOnIMG.width / 2 <= cursor_class.mx <= self.x + MenuStartMouseOnIMG.width / 2) and (
                 self.y - MenuStartMouseOnIMG.height / 2 <= cursor_class.my <= self.y + MenuStartMouseOnIMG.height / 2):
             if self.mouse_on == False:
                 self.mouse_on = True
         else:
-            if self.mouse_on == False:
-                self.mouse_on = True
-
-    def update(self):
-        self.frame.update()
+            if self.mouse_on == True:
+                self.mouse_on = False
 
     def draw(self):
-        MenuStartMouseOnIMG.image[self.frame.current_frame].draw(self.x, self.y)
+        if self.mouse_on == True:
+            MenuStartMouseOnIMG.image[self.frame.current_frame].draw(self.x, self.y)
 
 
 class MenuExitMouseOnIMG():
@@ -158,20 +122,21 @@ class MenuExitMouseOnIMG():
             MenuExitMouseOnIMG.image = [load_image('resources\\Title\\Exit\\English\\exiton%d%d.png'%(i//10, i%10)) for i in range(0, MenuExitMouseOnIMG.max_frame)]
 
     def handle_events(self):
-        # 마우스 충돌체크
-        if (self.x - MenuExitMouseOnIMG.width / 2 <= cursor_class.mx <= self.x + MenuExitMouseOnIMG.width / 2) and (
-                self.y - MenuExitMouseOnIMG.height / 2 <= cursor_class.my <= self.y + MenuExitMouseOnIMG.height / 2):
-            if self.mouse_on == False:
-                self.mouse_on = True
-        else:
-            if self.mouse_on == False:
-                self.mouse_on = True
+        pass
 
     def update(self):
         self.frame.update()
+        if (self.x - MenuStartMouseOnIMG.width / 2 <= cursor_class.mx <= self.x + MenuStartMouseOnIMG.width / 2) and (
+                self.y - MenuStartMouseOnIMG.height / 2 <= cursor_class.my <= self.y + MenuStartMouseOnIMG.height / 2):
+            if self.mouse_on == False:
+                self.mouse_on = True
+        else:
+            if self.mouse_on == True:
+                self.mouse_on = False
 
     def draw(self):
-        MenuExitMouseOnIMG.image[self.frame.current_frame].draw(self.x, self.y)
+        if self.mouse_on == True:
+            MenuExitMouseOnIMG.image[self.frame.current_frame].draw(self.x, self.y)
 
 
 

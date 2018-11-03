@@ -1,6 +1,7 @@
 import IMG_class
 from pico2d import*
 
+
 class Cursor:
     global mx, my
     image = None
@@ -26,6 +27,7 @@ class Cursor:
     def draw(self):
         self.image.clip_draw((self.width+3) * self.frame.current_frame+2, 279, self.width, self.height, self.x  , self.y )
 
+cursor = None
 
 # 마우스 좌표
 mx, my = None, None

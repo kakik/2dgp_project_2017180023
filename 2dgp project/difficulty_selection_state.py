@@ -45,10 +45,10 @@ def draw():
     clear_canvas()
 
     Difficulty_BG_img.draw(400, 300)
-    cursor_class.cursor.draw()
+
 
     update_canvas()
-    delay(0.01)
+
 
 
 
