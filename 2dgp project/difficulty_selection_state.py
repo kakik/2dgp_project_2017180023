@@ -3,7 +3,7 @@ import cursor_class
 import game_framework
 import game_world
 import Unit_class
-
+import main_state
 
 name = "DifficultySelectionState"
 
@@ -29,8 +29,12 @@ def enter():
 
 
 def exit():
+    global Difficulty_BG_img
     del Difficulty_BG_img
-    game_world.clear()
+    # game_world.clear()
+    game_world.remove_object(scourge)
+    game_world.remove_object(observer)
+    game_world.remove_object(wraith)
 
 def pause():
     pass
@@ -41,6 +45,7 @@ def resume():
 
 
 def handle_events():
+    global observer, wraith, scourge
     events = get_events()
     for event in events:
 
@@ -56,7 +61,12 @@ def handle_events():
             cursor_class.update_mouse_point(event.x, event.y)
 
         elif event.type == SDL_MOUSEBUTTONDOWN:
-            pass
+            if scourge.x-scourge.width/2 < cursor_class.mx <scourge.x+scourge.width/2 and scourge.y-scourge.height/2 < cursor_class.my <scourge.y+scourge.height/2:
+                pass
+            elif observer.x - observer.width / 2 < cursor_class.mx < observer.x + observer.width / 2 and observer.y - observer.height / 2 < cursor_class.my < observer.y + observer.height / 2:
+                pass
+            elif wraith.x - wraith.width / 2 < cursor_class.mx < wraith.x + wraith.width / 2 and wraith.y - wraith.height / 2 < cursor_class.my < wraith.y + wraith.height / 2:
+                game_framework.change_state(main_state)
 
 
 def update():

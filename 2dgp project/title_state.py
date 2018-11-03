@@ -56,13 +56,11 @@ def exit():
     del Title_start_text_img
     del Title_exit_text_img
 
-
     #game_world.clear()
     game_world.remove_object(Title_start)
     game_world.remove_object(Title_start_mouse_on)
     game_world.remove_object(Title_exit)
     game_world.remove_object(Title_exit_mouse_on)
-
 
 
 def handle_events():

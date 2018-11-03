@@ -3,10 +3,12 @@ import game_world
 import Unit_class
 import game_framework
 from pico2d import *
+import cursor_class
 
 import game_framework
 import title_state
 
+play_unit = None
 
 def enter():
     pass
@@ -25,21 +27,36 @@ def resume():
 
 def handle_events():
     events = get_events()
-
     for event in events:
-        pass
 
+        if event.type == SDL_QUIT:
+            game_framework.quit()
+
+        elif event.type == SDL_KEYDOWN:
+            if event.key == SDLK_ESCAPE:
+                game_framework.quit()
+
+        elif event.type == SDL_MOUSEMOTION:
+            # 마우스 좌표 업데이트
+            cursor_class.update_mouse_point(event.x, event.y)
+
+        elif event.type == SDL_MOUSEBUTTONDOWN:
+           pass
 
 
 
 def update():
-    pass
+    for game_object in game_world.all_objects():
+        game_object.update()
 
 
 def draw():
-    pass
+    clear_canvas()
 
+    for game_object in game_world.all_objects():
+        game_object.draw()
 
+    update_canvas()
 
 
 
