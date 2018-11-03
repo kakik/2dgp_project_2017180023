@@ -75,6 +75,7 @@ def handle_events():
         elif event.type == SDL_MOUSEBUTTONDOWN:
             # 게임 시작
             if Title_start.mouse_on:
+
                 game_framework.change_state(difficulty_selection_state)
             # 게임 종료
             elif Title_exit.mouse_on:

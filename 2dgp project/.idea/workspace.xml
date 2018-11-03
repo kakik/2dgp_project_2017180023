@@ -232,11 +232,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="68" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
-    <option name="height" value="824" />
+    <option name="height" value="1059" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -259,7 +259,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Reeaal-2dgp/Drills/Drill 03" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Reeaal-2dgp/Drills/Drill 12" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -282,7 +282,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.mygame">
+  <component name="RunManager" selected="Python.game_main">
     <configuration name="boy" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="2dgp project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -397,11 +397,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.game_main" />
         <item itemvalue="Python.mygame" />
         <item itemvalue="Python.main_state" />
         <item itemvalue="Python.game_framework" />
         <item itemvalue="Python.boy" />
-        <item itemvalue="Python.game_main" />
       </list>
     </recent_temporary>
   </component>
