@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/test_code.py" line="52" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef55620e-127a-47a2-a9dd-e0eb96cb6266" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/difficulty_selection_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/difficulty_selection_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_state.py" afterDir="false" />
-    </list>
+    <list default="true" id="ef55620e-127a-47a2-a9dd-e0eb96cb6266" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,8 +110,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/difficulty_selection_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="209">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -764,8 +761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/difficulty_selection_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="209">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
