@@ -3,6 +3,24 @@ from pico2d import*
 import game_framework
 import difficulty_selection_state
 
+
+
+class Player():
+
+    def __init__(self, unit):
+        self.unit = unit
+
+    def get_events(self):
+        self.unit.get_events()
+
+    def update(self):
+        self.unit.update()
+
+
+    def draw(self):
+        self.unit.draw()
+
+
 class Observer():
     image = None
     width = 36
