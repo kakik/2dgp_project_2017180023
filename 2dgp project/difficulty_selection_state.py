@@ -19,13 +19,14 @@ def enter():
 
     Difficulty_BG_img = load_image('resources\\Title\\Background\\Title_BG.png')
 
+    scourge = Unit_class.Scourge(200, 300)
     observer = Unit_class.Observer(400, 300)
-    wraith = Unit_class.Wraith(200, 300)
-    scourge = Unit_class.Scourge(600, 300)
+    wraith = Unit_class.Wraith(600, 300)
 
+    game_world.add_object(scourge, 1)
     game_world.add_object(observer, 1)
     game_world.add_object(wraith, 1)
-    game_world.add_object(scourge, 1)
+
 
 def exit():
     del Difficulty_BG_img

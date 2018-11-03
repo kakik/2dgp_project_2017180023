@@ -21,7 +21,7 @@ def exit():
 
 def update():
 
-    if (get_time()>1.5):
+    if (get_time()>3.0):
         game_framework.change_state(title_state)
 
 
