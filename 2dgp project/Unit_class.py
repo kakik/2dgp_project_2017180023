@@ -1,4 +1,39 @@
-class Unit(object):
+import IMG_class
+from pico2d import*
+
+class Observer():
+    image = None
+    width = 36
+    height = 34
+    max_frame = 26
+    ACTION_PER_TIME = 0.5
+
+    acceleration = 0.1
+    max_velocity = 1
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+        self.to_x = x
+        self.to_y = y
+        self.velocity = 0.0
+        self.frame = IMG_class.Frame(Observer.max_frame,0)
+
+        if Observer.image == None:
+            Observer.image = [
+                load_image('resources\\Observer\\%d%d.png' % (i // 10, i % 10)) for i in
+                range(0, Observer.max_frame)]
+
+    def get_events(self):
+        pass
+
+    def update(self):
+        pass
+
+    def draw(self):
+        pass
+
+
+class Scourge():
     def __init__(self):
         pass
 
@@ -12,63 +47,16 @@ class Unit(object):
         pass
 
 
-class PlayerUnit(Unit):
+class Wraith():
     def __init__(self):
-        super(PlayerUnit, self).__init__()
-        self.x = 400
-        self.y = 300
-        self.width_half = 0
-        self.x_speed = 0
-        self.y_speed = 0
-        self.direction_angle = 0
+        pass
 
     def get_events(self):
-        super(PlayerUnit, self).get_events()
+        pass
 
     def update(self):
-        super(PlayerUnit, self).update()
+        pass
 
     def draw(self):
-        super(PlayerUnit, self).draw()
+        pass
 
-
-class Observer(Unit):
-    def __init__(self):
-        super(Observer, self).__init__()
-
-    def get_events(self):
-        super(Observer, self).get_events()
-
-    def update(self):
-        super(Observer, self).update()
-
-    def draw(self):
-        super(Observer, self).draw()
-
-
-class Wraith(Unit):
-    def __init__(self):
-        super(Wraith, self).__init__()
-
-    def get_events(self):
-        super(Wraith, self).get_events()
-
-    def update(self):
-        super(Wraith, self).update()
-
-    def draw(self):
-        super(Wraith, self).draw()
-
-
-class Scourge(Unit):
-    def __init__(self):
-        super(Scourge, self).__init__()
-
-    def get_events(self):
-        super(Scourge, self).get_events()
-
-    def update(self):
-        super(Scourge, self).update()
-
-    def draw(self):
-        super(Scourge, self).draw()
