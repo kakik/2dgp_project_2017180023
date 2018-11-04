@@ -10,7 +10,10 @@ import game_framework
 import title_state
 
 player = None
+background_image = None
 def enter():
+    global background_image
+    background_image = load_image('resources\\TileMap\\Map.png')
     game_world.add_object(Unit_class.Observer(400,300),1)
 
 def exit():
@@ -52,8 +55,9 @@ def update():
 
 
 def draw():
+    global background_image
     clear_canvas()
-
+    background_image.clip_draw(game_world.screen_x, game_world.screen_y, 800,600, 800/2, 600/2)
 
     for game_object in game_world.all_objects():
         game_object.draw()
