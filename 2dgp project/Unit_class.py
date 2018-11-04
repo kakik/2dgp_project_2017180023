@@ -39,21 +39,20 @@ class Observer():
     height = 34
     max_frame = 27
     ACTION_PER_TIME = 0.5
+    velocity = 1.0
 
-    acceleration = 0.1
-    max_velocity = 1
     def __init__(self,x,y):
         self.x = x
         self.y = y
-        self.velocity = 0.0
         self.frame = IMG_class.Frame(Observer.max_frame,1)
         self.frame.current_frame = 0
 
         self.to_x = x
         self.to_y = y
-        self.velocity_up_interval = 0
-        self.velocity_down_interval = 0
-        self.t = 0.0
+        self.x_velocity = 0
+        self.y_velocity = 0
+        self.curr_t = 0.0
+        self.to_t = 0.0
 
         if Observer.image == None:
             Observer.image = [load_image('resources\\Observer\\%d%d.png' % (i // 10, i % 10)) for i in range(0, 15)]
@@ -65,7 +64,7 @@ class Observer():
         if game_framework.stack[-1] == difficulty_selection_state:
             self.frame.update()
 
-        if self.t >0:
+        if self.curr_t >0:
             pass
 
         translete(self)
@@ -85,22 +84,20 @@ class Wraith():
     height = 44
     max_frame = 31
     ACTION_PER_TIME = 0.5
-
-    acceleration = 0.1
-    max_velocity = 1
+    velocity = 10.0
 
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.velocity = 0.0
         self.frame = IMG_class.Frame(Wraith.max_frame, 1)
         self.frame.current_frame = 0
 
         self.to_x = x
         self.to_y = y
-        self.velocity_up_interval = 0
-        self.velocity_down_interval = 0
-        self.t = 0.0
+        self.x_velocity = 0
+        self.y_velocity = 0
+        self.curr_t = 0.0
+        self.to_t = 0.0
 
         if Wraith.image == None:
             Wraith.image = [load_image('resources\\Wraith\\%d%d.png' % (i // 10, i % 10)) for i in range(0, 17)]
@@ -112,7 +109,7 @@ class Wraith():
         if game_framework.stack[-1] == difficulty_selection_state:
             self.frame.update()
 
-        if self.t > 0:
+        if self.curr_t > 0:
             pass
         translete(self)
 
@@ -132,24 +129,23 @@ class Scourge():
     height = 27
     max_frame = 16
     ACTION_PER_TIME = 0.5
-
-    acceleration = 0.1
-    max_velocity = 1
+    velocity = 10.0
 
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.velocity = 0.0
         self.frame = IMG_class.Frame(Scourge.max_frame, 1)
         self.frame.current_frame = 0
-        self.IDLE_frame = IMG_class.Frame(4, 2)
-        self.IDLE_frame.current_frame = 0
 
         self.to_x = x
         self.to_y = y
-        self.velocity_up_interval = 0
-        self.velocity_down_interval = 0
-        self.t = 0.0
+        self.x_velocity = 0
+        self.y_velocity = 0
+        self.curr_t = 0.0
+        self.to_t = 0.0
+
+        self.IDLE_frame = IMG_class.Frame(4, 2)
+        self.IDLE_frame.current_frame = 0
 
         if Scourge.image == None:
             Scourge.image = load_image('resources\\Scourge\\Scourge.png' )
@@ -161,7 +157,7 @@ class Scourge():
         if game_framework.stack[-1] == difficulty_selection_state:
             self.frame.update()
 
-        if self.t > 0:
+        if self.curr_t > 0:
             pass
 
         self.IDLE_frame.update()
