@@ -1,6 +1,7 @@
 import cursor_class
 from pico2d import *
 import game_framework
+import game_world
 
 class MenuStartIMG():
     image = None
@@ -25,8 +26,8 @@ class MenuStartIMG():
 
     def update(self):
         self.frame.update()
-        if (self.x - MenuStartMouseOnIMG.width / 2 <= cursor_class.mx <= self.x + MenuStartMouseOnIMG.width / 2) and (
-                self.y - MenuStartMouseOnIMG.height / 2 <= cursor_class.my <= self.y + MenuStartMouseOnIMG.height / 2):
+        if (self.x - MenuStartMouseOnIMG.width / 2 <= game_world.mx <= self.x + MenuStartMouseOnIMG.width / 2) and (
+                self.y - MenuStartMouseOnIMG.height / 2 <= game_world.my <= self.y + MenuStartMouseOnIMG.height / 2):
             if self.mouse_on == False:
                 self.mouse_on = True
         else:
@@ -60,8 +61,8 @@ class MenuExitIMG():
 
     def update(self):
         self.frame.update()
-        if (self.x - MenuStartMouseOnIMG.width / 2 <= cursor_class.mx <= self.x + MenuStartMouseOnIMG.width / 2) and (
-                self.y - MenuStartMouseOnIMG.height / 2 <= cursor_class.my <= self.y + MenuStartMouseOnIMG.height / 2):
+        if (self.x - MenuStartMouseOnIMG.width / 2 <= game_world.mx <= self.x + MenuStartMouseOnIMG.width / 2) and (
+                self.y - MenuStartMouseOnIMG.height / 2 <= game_world.my <= self.y + MenuStartMouseOnIMG.height / 2):
             if self.mouse_on == False:
                 self.mouse_on = True
         else:
@@ -94,8 +95,8 @@ class MenuStartMouseOnIMG():
 
     def update(self):
         self.frame.update()
-        if (self.x - MenuStartMouseOnIMG.width / 2 <= cursor_class.mx <= self.x + MenuStartMouseOnIMG.width / 2) and (
-                self.y - MenuStartMouseOnIMG.height / 2 <= cursor_class.my <= self.y + MenuStartMouseOnIMG.height / 2):
+        if (self.x - MenuStartMouseOnIMG.width / 2 <= game_world.mx <= self.x + MenuStartMouseOnIMG.width / 2) and (
+                self.y - MenuStartMouseOnIMG.height / 2 <= game_world.my <= self.y + MenuStartMouseOnIMG.height / 2):
             if self.mouse_on == False:
                 self.mouse_on = True
                 self.frame.current_frame = 0
@@ -130,8 +131,8 @@ class MenuExitMouseOnIMG():
 
     def update(self):
         self.frame.update()
-        if (self.x - MenuStartMouseOnIMG.width / 2 <= cursor_class.mx <= self.x + MenuStartMouseOnIMG.width / 2) and (
-                self.y - MenuStartMouseOnIMG.height / 2 <= cursor_class.my <= self.y + MenuStartMouseOnIMG.height / 2):
+        if (self.x - MenuStartMouseOnIMG.width / 2 <= game_world.mx <= self.x + MenuStartMouseOnIMG.width / 2) and (
+                self.y - MenuStartMouseOnIMG.height / 2 <= game_world.my <= self.y + MenuStartMouseOnIMG.height / 2):
             if self.mouse_on == False:
                 self.mouse_on = True
                 self.frame.current_frame = 0

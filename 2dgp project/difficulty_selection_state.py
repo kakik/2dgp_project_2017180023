@@ -58,20 +58,20 @@ def handle_events():
 
         elif event.type == SDL_MOUSEMOTION:
             # 마우스 좌표 업데이트
-            cursor_class.update_mouse_point(event.x, event.y)
+            game_world.update_mouse_point(event.x, event.y)
 
         elif event.type == SDL_MOUSEBUTTONDOWN:
-            if scourge.x-scourge.width/2 < cursor_class.mx <scourge.x+scourge.width/2 and scourge.y-scourge.height/2 < cursor_class.my <scourge.y+scourge.height/2:
+            if scourge.x-scourge.width/2 < game_world.mx <scourge.x+scourge.width/2 and scourge.y-scourge.height/2 < game_world.my <scourge.y+scourge.height/2:
                 Unit_class.set_player_unit( main_state.player, 1)
                 game_world.add_object( main_state.player, 1)
                 game_framework.change_state(main_state)
 
-            elif observer.x - observer.width / 2 < cursor_class.mx < observer.x + observer.width / 2 and observer.y - observer.height / 2 < cursor_class.my < observer.y + observer.height / 2:
+            elif observer.x - observer.width / 2 < game_world.mx < observer.x + observer.width / 2 and observer.y - observer.height / 2 < game_world.my < observer.y + observer.height / 2:
                 Unit_class.set_player_unit( main_state.player, 2)
                 game_world.add_object( main_state.player, 1)
                 game_framework.change_state(main_state)
 
-            elif wraith.x - wraith.width / 2 < cursor_class.mx < wraith.x + wraith.width / 2 and wraith.y - wraith.height / 2 < cursor_class.my < wraith.y + wraith.height / 2:
+            elif wraith.x - wraith.width / 2 < game_world.mx < wraith.x + wraith.width / 2 and wraith.y - wraith.height / 2 < game_world.my < wraith.y + wraith.height / 2:
                 main_state.player = Unit_class.Player()
                 Unit_class.set_player_unit( main_state.player,3)
                 game_world.add_object( main_state.player, 1)

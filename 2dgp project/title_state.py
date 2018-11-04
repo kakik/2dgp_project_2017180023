@@ -30,8 +30,8 @@ def enter():
 
 
     # 초기 마우스 좌표
-    cursor_class.mx = 800/2
-    cursor_class.my = 600/2
+    game_world.mx = 800/2
+    game_world.my = 600/2
 
     # 객체 생성!
     Title_start = IMG_class.MenuStartIMG()
@@ -39,13 +39,14 @@ def enter():
     Title_exit = IMG_class.MenuExitIMG()
     Title_exit_mouse_on = IMG_class.MenuExitMouseOnIMG()
 
-    cursor_class.cursor = cursor_class.Cursor(800 / 2, 600 / 2)
-
     game_world.add_object(Title_start,0)
     game_world.add_object(Title_start_mouse_on,0)
     game_world.add_object(Title_exit,0)
     game_world.add_object(Title_exit_mouse_on,0)
-    game_world.add_object(cursor_class.cursor,1)
+
+    game_world.cursor = cursor_class.Cursor(800 / 2, 600 / 2)
+    game_world.add_object(game_world.cursor, 1)
+
 
 def exit():
     global Title_BG_img
@@ -78,7 +79,7 @@ def handle_events():
 
         elif event.type == SDL_MOUSEMOTION:
             # 마우스 좌표 업데이트
-            cursor_class.update_mouse_point(event.x, event.y)
+            game_world.update_mouse_point(event.x, event.y)
 
         elif event.type == SDL_MOUSEBUTTONDOWN:
             # 게임 시작

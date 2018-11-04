@@ -41,9 +41,9 @@ def handle_events():
 
         elif event.type == SDL_MOUSEMOTION:
             # 마우스 좌표 업데이트
-            cursor_class.update_mouse_point(event.x, event.y)
-            player.unit.x=cursor_class.mx
-            player.unit.y = cursor_class.my
+            game_world.update_mouse_point(event.x, event.y)
+            player.unit.x=game_world.mx
+            player.unit.y = game_world.my
 
         elif event.type == SDL_MOUSEBUTTONDOWN:
            pass

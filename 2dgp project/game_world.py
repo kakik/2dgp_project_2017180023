@@ -1,4 +1,4 @@
-
+import cursor_class
 # layer 0: Background Objects
 # layer 1: Foreground Objects
 objects = [[],[]]
@@ -23,7 +23,30 @@ def clear():
 
 
 def all_objects():
+    global cursor
+    global mx, my
+    is_curror_exist = False
+
     for i in range(len(objects)):
         for o in objects[i]:
+            #커서 맨 위로
+            if o == cursor:
+                is_curror_exist = True
+                continue
             yield o
 
+    if is_curror_exist == True:
+        yield cursor
+
+
+
+
+# 마우스 좌표
+mx, my = None, None
+
+def update_mouse_point(x, y):
+    global mx, my
+    mx = x
+    my = 600 - y
+
+cursor = None
