@@ -41,7 +41,7 @@ class Observer():
     height = 34
     max_frame = 27
     ACTION_PER_TIME = 0.5
-    velocity = 1.0
+    velocity = 100.0
 
     def __init__(self,x,y):
         self.x = x
@@ -112,8 +112,8 @@ class Observer():
             self.to_t = 0.0
         else:
             self.x += self.x_velocity * (get_time() - self.curr_t)
-            self.y += self.y_velocity
-            self.curr_time = get_time()
+            self.y += self.y_velocity * (get_time() - self.curr_t)
+            self.curr_t = get_time()
 
 
 
@@ -124,7 +124,7 @@ class Wraith():
     height = 44
     max_frame = 31
     ACTION_PER_TIME = 0.5
-    velocity = 2.0
+    velocity = 200.0
 
     def __init__(self, x, y):
         self.x = x
@@ -196,8 +196,10 @@ class Wraith():
             self.to_t = 0.0
         else:
             self.x += self.x_velocity * (get_time() - self.curr_t)
-            self.y += self.y_velocity
-            self.curr_time = get_time()
+            self.y += self.y_velocity* (get_time() - self.curr_t)
+            self.curr_t = get_time()
+
+
 
 
 
@@ -207,7 +209,7 @@ class Scourge():
     height = 27
     max_frame = 16
     ACTION_PER_TIME = 0.5
-    velocity = 2.0
+    velocity = 200.0
 
     def __init__(self, x, y):
         self.x = x
@@ -285,7 +287,7 @@ class Scourge():
             self.to_t = 0.0
         else:
             self.x += self.x_velocity * (get_time() - self.curr_t)
-            self.y += self.y_velocity
-            self.curr_time = get_time()
+            self.y += self.y_velocity * (get_time() - self.curr_t)
+            self.curr_t = get_time()
 
 
