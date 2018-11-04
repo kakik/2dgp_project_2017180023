@@ -77,6 +77,14 @@ class Observer():
             Observer.image[(int)(self.frame.current_frame)].draw(self.x-game_world.screen_x, self.y-game_world.screen_y )
 
 
+    def set_move_point(self):
+        pass
+
+
+    def move(self):
+        pass
+
+
 
 class Wraith():
     image = None
@@ -120,6 +128,12 @@ class Wraith():
         else:
             Wraith.image[(int)(self.frame.current_frame)].draw(self.x-game_world.screen_x, self.y-game_world.screen_y )
 
+
+    def set_move_point(self):
+        pass
+
+    def move(self):
+        pass
 
 
 
@@ -171,5 +185,10 @@ class Scourge():
             Scourge.image.clip_draw((self.width+3)*(int)(self.frame.current_frame)+2,369-((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1), self.width, self.height-2,self.x-game_world.screen_x,
                                                                                 self.y-game_world.screen_y )
 
+    def set_move_point(self):
+        pass
+
+    def move(self):
+        pass
 
 
