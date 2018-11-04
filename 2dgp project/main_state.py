@@ -8,8 +8,8 @@ import cursor_class
 import game_framework
 import title_state
 
-play_unit = None
-background = None
+player = None
+
 def enter():
     pass
 
