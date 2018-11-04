@@ -67,7 +67,7 @@ class Observer():
             self.frame.update()
         else:
             if self.curr_t < 0.0000001:
-                self.set_move_point()
+                self.set_random_move_point()
             else:
                 self.move()
 
@@ -82,7 +82,7 @@ class Observer():
         else:
             Observer.image[(int)(self.frame.current_frame)].draw(self.x-game_world.screen_x, self.y-game_world.screen_y )
 
-    def set_move_point(self):
+    def set_random_move_point(self):
         x_distance = random.randint(0, 1000) - 500
         y_distance = random.randint(0, 1000) - 500
 
@@ -115,7 +115,7 @@ class Observer():
             self.y_velocity = 0
             self.curr_t = 0.0
             self.to_t = 0.0
-            self.set_move_point()
+            self.set_random_move_point()
         else:
             self.x += self.x_velocity * (get_time() - self.curr_t)
             self.y += self.y_velocity * (get_time() - self.curr_t)
@@ -156,7 +156,7 @@ class Wraith():
             self.frame.update()
         else:
             if self.curr_t < 0.0000001:
-                self.set_move_point()
+                self.set_random_move_point()
             else:
                 self.move()
 
@@ -172,7 +172,7 @@ class Wraith():
 
 
 
-    def set_move_point(self):
+    def set_random_move_point(self):
         x_distance = random.randint(0, 1000) - 500
         y_distance = random.randint(0, 1000) - 500
 
@@ -206,7 +206,7 @@ class Wraith():
             self.y_velocity = 0
             self.curr_t = 0.0
             self.to_t = 0.0
-            self.set_move_point()
+            self.set_random_move_point()
         else:
             self.x += self.x_velocity * (get_time() - self.curr_t)
             self.y += self.y_velocity * (get_time() - self.curr_t)
@@ -252,7 +252,7 @@ class Scourge():
             self.frame.update()
         else:
             if self.curr_t < 0.0000001:
-                self.set_move_point()
+                self.set_random_move_point()
             else:
                 self.move()
 
@@ -268,7 +268,7 @@ class Scourge():
             Scourge.image.clip_draw((self.width+3)*(int)(self.frame.current_frame)+2,369-((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1), self.width, self.height-2,self.x-game_world.screen_x,
                                                                                 self.y-game_world.screen_y )
 
-    def set_move_point(self):
+    def set_random_move_point(self):
         x_distance = random.randint(0, 1000) - 500
         y_distance = random.randint(0, 1000) - 500
 
@@ -301,7 +301,7 @@ class Scourge():
             self.y_velocity = 0
             self.curr_t = 0.0
             self.to_t = 0.0
-            self.set_move_point()
+            self.set_random_move_point()
         else:
             self.x += self.x_velocity * (get_time() - self.curr_t)
             self.y += self.y_velocity * (get_time() - self.curr_t)
