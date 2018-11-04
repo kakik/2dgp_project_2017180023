@@ -4,6 +4,8 @@ import game_framework
 import difficulty_selection_state
 import main_state
 import game_world
+import random
+import math
 
 def set_player_unit(player, key):
     if key == 1:
@@ -39,7 +41,7 @@ class Observer():
     height = 34
     max_frame = 27
     ACTION_PER_TIME = 0.5
-    velocity = 1.0
+    velocity = 10.0
 
     def __init__(self,x,y):
         self.x = x
@@ -78,12 +80,30 @@ class Observer():
 
 
     def set_move_point(self):
-        pass
+        x_distance = random.randint(0,1000)-500
+        y_distance = random.randint(0,1000)-500
 
+        if 0 + self.width/2 < self.x + x_distance  < game_world.map_x - self.width/2 and 0 + self.height/2 < self.y + y_distance + self.height/2 < game_world.map_y - self.height/2:
+            self.to_x +=  x_distance
+            self.to_y += y_distance
+        else:
+            if self.x + x_distance < 0 + self.width / 2:
+                x_distance = 0 - self.x + self.width
+            elif game_world.map_x < self.x + x_distance - self.width / 2:
+                x_distance = game_world.map_x - self.x - self.width
+
+            if self.y + y_distance < 0 + self.height / 2:
+                y_distance = 0 - self.y+ self.height
+            elif game_world.map_x < self.y + y_distance - self.height / 2:
+                y_distance = game_world.map_y - self.y - self.height
+
+        self.to_t = math.sqrt(x_distance**2 + y_distance**2) / self.velocity
+        self.x_velocity = x_distance / self.to_t
+        self.y_velocity = y_distance / self.to_t
+        self.curr_t = get_time()
 
     def move(self):
         pass
-
 
 
 class Wraith():
@@ -92,7 +112,7 @@ class Wraith():
     height = 44
     max_frame = 31
     ACTION_PER_TIME = 0.5
-    velocity = 10.0
+    velocity = 20.0
 
     def __init__(self, x, y):
         self.x = x
@@ -130,7 +150,27 @@ class Wraith():
 
 
     def set_move_point(self):
-        pass
+        x_distance = random.randint(0, 1000) - 500
+        y_distance = random.randint(0, 1000) - 500
+
+        if 0 + self.width / 2 < self.x + x_distance < game_world.map_x - self.width / 2 and 0 + self.height / 2 < self.y + y_distance + self.height / 2 < game_world.map_y - self.height / 2:
+            self.to_x += x_distance
+            self.to_y += y_distance
+        else:
+            if self.x + x_distance < 0 + self.width / 2:
+                x_distance = 0 - self.x + self.width
+            elif game_world.map_x < self.x + x_distance - self.width / 2:
+                x_distance = game_world.map_x - self.x - self.width
+
+            if self.y + y_distance < 0 + self.height / 2:
+                y_distance = 0 - self.y + self.height
+            elif game_world.map_x < self.y + y_distance - self.height / 2:
+                y_distance = game_world.map_y - self.y - self.height
+
+        self.to_t = math.sqrt(x_distance ** 2 + y_distance ** 2) / self.velocity
+        self.x_velocity = x_distance / self.to_t
+        self.y_velocity = y_distance / self.to_t
+        self.curr_t = get_time()
 
     def move(self):
         pass
@@ -143,7 +183,7 @@ class Scourge():
     height = 27
     max_frame = 16
     ACTION_PER_TIME = 0.5
-    velocity = 10.0
+    velocity = 20.0
 
     def __init__(self, x, y):
         self.x = x
@@ -186,7 +226,27 @@ class Scourge():
                                                                                 self.y-game_world.screen_y )
 
     def set_move_point(self):
-        pass
+        x_distance = random.randint(0, 1000) - 500
+        y_distance = random.randint(0, 1000) - 500
+
+        if 0 + self.width / 2 < self.x + x_distance < game_world.map_x - self.width / 2 and 0 + self.height / 2 < self.y + y_distance + self.height / 2 < game_world.map_y - self.height / 2:
+            self.to_x += x_distance
+            self.to_y += y_distance
+        else:
+            if self.x + x_distance < 0 + self.width / 2:
+                x_distance = 0 - self.x + self.width
+            elif game_world.map_x < self.x + x_distance - self.width / 2:
+                x_distance = game_world.map_x - self.x - self.width
+
+            if self.y + y_distance < 0 + self.height / 2:
+                y_distance = 0 - self.y + self.height
+            elif game_world.map_x < self.y + y_distance - self.height / 2:
+                y_distance = game_world.map_y - self.y - self.height
+
+        self.to_t = math.sqrt(x_distance ** 2 + y_distance ** 2) / self.velocity
+        self.x_velocity = x_distance / self.to_t
+        self.y_velocity = y_distance / self.to_t
+        self.curr_t = get_time()
 
     def move(self):
         pass

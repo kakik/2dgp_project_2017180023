@@ -53,3 +53,8 @@ cursor = None
 
 #스크린 좌하단 좌표
 screen_x, screen_y = 0,0
+
+#맵 사이즈
+map_x, map_y = 1860, 1860
+
+#스크린 사이즈
