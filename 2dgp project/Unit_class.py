@@ -27,6 +27,15 @@ class Player():
 
     def update(self):
         self.unit.move()
+        # 이동 종료
+        if (self.unit.curr_t) > self.unit.to_t:
+            self.unit.to_x = self.unit.x
+            self.unit.to_y = self.unit.y
+            self.unit.x_velocity = 0
+            self.unit.y_velocity = 0
+            self.unit.curr_t = 0.0
+            self.unit.to_t = 0.0
+
 
 
     def draw(self):
