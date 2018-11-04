@@ -15,9 +15,6 @@ def set_player_unit(player, key):
     elif key == 3:
         player.unit = Wraith(100 ,100)
 
-def translete(self): #그냥 self로 지어봤어요
-    if game_framework.stack[-1]==main_state:
-        pass
 
 class Player():
 
@@ -71,8 +68,6 @@ class Observer():
             else:
                 self.move()
 
-
-        translete(self)
 
 
 
@@ -161,7 +156,6 @@ class Wraith():
                 self.move()
 
 
-        translete(self)
 
     def draw(self):
         if 17 <= self.frame.current_frame:
@@ -257,7 +251,6 @@ class Scourge():
                 self.move()
 
         self.IDLE_frame.update()
-        translete(self)
 
 
     def draw(self):
