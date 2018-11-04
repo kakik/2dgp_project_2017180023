@@ -84,12 +84,12 @@ def handle_events():
                     game_world.screen_scroll_x = 0
 
 
-        elif event.type == SDL_MOUSEMOTION:
+        if event.type == SDL_MOUSEMOTION:
             # 마우스 좌표 업데이트
             game_world.update_mouse_point(event.x, event.y)
 
-        elif event.type == SDL_MOUSEBUTTONDOWN:
-           pass
+        if event.type == SDL_MOUSEBUTTONDOWN:
+            player.get_events()
 
 
 

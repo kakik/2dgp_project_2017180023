@@ -9,11 +9,11 @@ import math
 
 def set_player_unit(player, key):
     if key == 1:
-        player.unit = Scourge(100 ,100)
+        player.unit = Scourge(200 ,250)
     elif key == 2:
-        player.unit = Observer(100 ,100)
+        player.unit = Observer(200 ,250)
     elif key == 3:
-        player.unit = Wraith(100 ,100)
+        player.unit = Wraith(200 ,250)
 
 
 class Player():
@@ -22,13 +22,11 @@ class Player():
         self.unit = None
 
     def get_events(self):
+        self.unit.set_move_point(game_world.mx,game_world.my)
         self.unit.get_events()
 
     def update(self):
-        if self.unit.curr_t < 0.0000001:
-            self.unit.set_random_move_point()
-        else:
-            self.unit.move()
+        self.unit.move()
 
 
     def draw(self):
@@ -66,17 +64,17 @@ class Observer():
         if game_framework.stack[-1] == difficulty_selection_state:
             self.frame.update()
         else:
-            if self.curr_t >= 0.0000001:
-                self.move()
-                # 이동 종료
-                if (self.curr_t) > self.to_t:
-                    self.to_x = self.x
-                    self.to_y = self.y
-                    self.x_velocity = 0
-                    self.y_velocity = 0
-                    self.curr_t = 0.0
-                    self.to_t = 0.0
-                    self.set_random_move_point()
+
+            self.move()
+            # 이동 종료
+            if (self.curr_t) > self.to_t:
+                self.to_x = self.x
+                self.to_y = self.y
+                self.x_velocity = 0
+                self.y_velocity = 0
+                self.curr_t = 0.0
+                self.to_t = 0.0
+                self.set_random_move_point()
 
 
 
@@ -91,10 +89,8 @@ class Observer():
         y_distance = random.randint(0, 1000) - 500
 
         if self.x + x_distance < 0 + self.width / 2:
-            print('a')
             x_distance = 0 - self.x + self.width
         elif game_world.map_x - self.width / 2 < self.x + x_distance:
-            print('b')
             x_distance = game_world.map_x - self.x - self.width
 
         if self.y + y_distance < 0 + self.height / 2:
@@ -102,6 +98,19 @@ class Observer():
         elif game_world.map_y - self.height / 2 < self.y + y_distance:
             y_distance = game_world.map_y - self.y - self.height
 
+        self.set_velocity(x_distance, y_distance)
+
+
+    def set_move_point(self, to_x, to_y):
+        self.set_velocity(to_x - self.x, to_y - self.y)
+
+
+    def move(self):
+        self.x += self.x_velocity * (get_time() - self.curr_t)
+        self.y += self.y_velocity * (get_time() - self.curr_t)
+        self.curr_t = get_time()
+
+    def set_velocity(self, x_distance, y_distance):
         self.to_t = math.sqrt(x_distance ** 2 + y_distance ** 2) / self.velocity + get_time()
         self.x_velocity = x_distance / (self.to_t - get_time())
         self.y_velocity = y_distance / (self.to_t - get_time())
@@ -110,10 +119,6 @@ class Observer():
         self.to_x = self.x + self.x_velocity
         self.to_y = self.y + self.y_velocity
 
-    def move(self):
-        self.x += self.x_velocity * (get_time() - self.curr_t)
-        self.y += self.y_velocity * (get_time() - self.curr_t)
-        self.curr_t = get_time()
 
 
 
@@ -149,17 +154,17 @@ class Wraith():
         if game_framework.stack[-1] == difficulty_selection_state:
             self.frame.update()
         else:
-            if self.curr_t >= 0.0000001:
-                self.move()
-                # 이동 종료
-                if (self.curr_t) > self.to_t:
-                    self.to_x = self.x
-                    self.to_y = self.y
-                    self.x_velocity = 0
-                    self.y_velocity = 0
-                    self.curr_t = 0.0
-                    self.to_t = 0.0
-                    self.set_random_move_point()
+
+            self.move()
+            # 이동 종료
+            if (self.curr_t) > self.to_t:
+                self.to_x = self.x
+                self.to_y = self.y
+                self.x_velocity = 0
+                self.y_velocity = 0
+                self.curr_t = 0.0
+                self.to_t = 0.0
+                self.set_random_move_point()
 
 
 
@@ -169,8 +174,6 @@ class Wraith():
                                                                               self.y - game_world.screen_coord_y, self.width, self.height)
         else:
             Wraith.image[(int)(self.frame.current_frame)].draw(self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y)
-
-
 
     def set_random_move_point(self):
         x_distance = random.randint(0, 1000) - 500
@@ -186,22 +189,24 @@ class Wraith():
         elif game_world.map_y - self.height / 2 < self.y + y_distance:
             y_distance = game_world.map_y - self.y - self.height
 
-        self.to_t = math.sqrt(x_distance ** 2 + y_distance ** 2) / self.velocity + get_time()
-        self.x_velocity = x_distance / (self.to_t-get_time())
-        self.y_velocity = y_distance / ( self.to_t-get_time())
-        self.curr_t = get_time()
-        self.frame.direction_update(self.x_velocity, self.y_velocity)
-        self.to_x = self.x+self.x_velocity
-        self.to_y = self.y + self.y_velocity
+        self.set_velocity(x_distance, y_distance)
 
+    def set_move_point(self, to_x, to_y):
+        self.set_velocity(to_x - self.x, to_y - self.y)
 
     def move(self):
         self.x += self.x_velocity * (get_time() - self.curr_t)
         self.y += self.y_velocity * (get_time() - self.curr_t)
         self.curr_t = get_time()
 
-
-
+    def set_velocity(self, x_distance, y_distance):
+        self.to_t = math.sqrt(x_distance ** 2 + y_distance ** 2) / self.velocity + get_time()
+        self.x_velocity = x_distance / (self.to_t - get_time())
+        self.y_velocity = y_distance / (self.to_t - get_time())
+        self.curr_t = get_time()
+        self.frame.direction_update(self.x_velocity, self.y_velocity)
+        self.to_x = self.x + self.x_velocity
+        self.to_y = self.y + self.y_velocity
 
 
 class Scourge():
@@ -239,17 +244,17 @@ class Scourge():
         if game_framework.stack[-1] == difficulty_selection_state:
             self.frame.update()
         else:
-            if self.curr_t >= 0.0000001:
-                self.move()
-                # 이동 종료
-                if (self.curr_t) > self.to_t:
-                    self.to_x = self.x
-                    self.to_y = self.y
-                    self.x_velocity = 0
-                    self.y_velocity = 0
-                    self.curr_t = 0.0
-                    self.to_t = 0.0
-                    self.set_random_move_point()
+
+            self.move()
+            # 이동 종료
+            if (self.curr_t) > self.to_t:
+                self.to_x = self.x
+                self.to_y = self.y
+                self.x_velocity = 0
+                self.y_velocity = 0
+                self.curr_t = 0.0
+                self.to_t = 0.0
+                self.set_random_move_point()
 
         self.IDLE_frame.update()
 
@@ -276,6 +281,17 @@ class Scourge():
         elif game_world.map_y - self.height / 2 < self.y + y_distance:
             y_distance = game_world.map_y - self.y - self.height
 
+        self.set_velocity(x_distance, y_distance)
+
+    def set_move_point(self, to_x, to_y):
+        self.set_velocity(to_x - self.x, to_y - self.y)
+
+    def move(self):
+        self.x += self.x_velocity * (get_time() - self.curr_t)
+        self.y += self.y_velocity * (get_time() - self.curr_t)
+        self.curr_t = get_time()
+
+    def set_velocity(self, x_distance, y_distance):
         self.to_t = math.sqrt(x_distance ** 2 + y_distance ** 2) / self.velocity + get_time()
         self.x_velocity = x_distance / (self.to_t - get_time())
         self.y_velocity = y_distance / (self.to_t - get_time())
@@ -283,15 +299,5 @@ class Scourge():
         self.frame.direction_update(self.x_velocity, self.y_velocity)
         self.to_x = self.x + self.x_velocity
         self.to_y = self.y + self.y_velocity
-
-
-    def move(self):
-        self.x += self.x_velocity * (get_time() - self.curr_t)
-        self.y += self.y_velocity * (get_time() - self.curr_t)
-        self.curr_t = get_time()
-
-
-
-
 
 
