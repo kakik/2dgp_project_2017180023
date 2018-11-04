@@ -41,7 +41,7 @@ class Observer():
     height = 34
     max_frame = 27
     ACTION_PER_TIME = 0.5
-    velocity = 10.0
+    velocity = 1.0
 
     def __init__(self,x,y):
         self.x = x
@@ -65,9 +65,12 @@ class Observer():
     def update(self):
         if game_framework.stack[-1] == difficulty_selection_state:
             self.frame.update()
+        else:
+            if self.curr_t < 0.0000001:
+                self.set_move_point()
+            else:
+                self.move()
 
-        if self.curr_t >0:
-            pass
 
         translete(self)
 
@@ -114,6 +117,8 @@ class Observer():
         else:
             self.x += self.x_velocity * (get_time() - self.curr_t)
             self.y += self.y_velocity
+            self.curr_time = get_time()
+
 
 
 
@@ -123,7 +128,7 @@ class Wraith():
     height = 44
     max_frame = 31
     ACTION_PER_TIME = 0.5
-    velocity = 20.0
+    velocity = 2.0
 
     def __init__(self, x, y):
         self.x = x
@@ -147,9 +152,13 @@ class Wraith():
     def update(self):
         if game_framework.stack[-1] == difficulty_selection_state:
             self.frame.update()
+        else:
+            if self.curr_t < 0.0000001:
+                self.set_move_point()
+            else:
+                self.move()
 
-        if self.curr_t > 0:
-            pass
+
         translete(self)
 
     def draw(self):
@@ -196,6 +205,7 @@ class Wraith():
         else:
             self.x += self.x_velocity * (get_time() - self.curr_t)
             self.y += self.y_velocity
+            self.curr_time = get_time()
 
 
 
@@ -205,7 +215,7 @@ class Scourge():
     height = 27
     max_frame = 16
     ACTION_PER_TIME = 0.5
-    velocity = 20.0
+    velocity = 2.0
 
     def __init__(self, x, y):
         self.x = x
@@ -233,9 +243,11 @@ class Scourge():
     def update(self):
         if game_framework.stack[-1] == difficulty_selection_state:
             self.frame.update()
-
-        if self.curr_t > 0:
-            pass
+        else:
+            if self.curr_t < 0.0000001:
+                self.set_move_point()
+            else:
+                self.move()
 
         self.IDLE_frame.update()
         translete(self)
@@ -286,5 +298,6 @@ class Scourge():
         else:
             self.x += self.x_velocity * (get_time() - self.curr_t)
             self.y += self.y_velocity
+            self.curr_time = get_time()
 
 
