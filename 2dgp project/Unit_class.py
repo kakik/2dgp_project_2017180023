@@ -4,11 +4,19 @@ import game_framework
 import difficulty_selection_state
 
 
+def set_player_unit(player, key):
+    if key == 1:
+        player.unit = Scourge(100 ,100)
+    elif key == 2:
+        player.unit = Observer(100 ,100)
+    elif key == 3:
+        player.unit = Wraith(100 ,100)
+
 
 class Player():
 
-    def __init__(self, unit):
-        self.unit = unit
+    def __init__(self):
+        self.unit = None
 
     def get_events(self):
         self.unit.get_events()
