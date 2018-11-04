@@ -103,7 +103,18 @@ class Observer():
         self.curr_t = get_time()
 
     def move(self):
-        pass
+        # 이동 종료
+        if (get_time() - self.curr_t) > self.to_t:
+            self.to_x = self.x
+            self.to_y = self.y
+            self.x_velocity = 0
+            self.y_velocity = 0
+            self.curr_t = 0.0
+            self.to_t = 0.0
+        else:
+            self.x += self.x_velocity * (get_time() - self.curr_t)
+            self.y += self.y_velocity
+
 
 
 class Wraith():
@@ -172,8 +183,19 @@ class Wraith():
         self.y_velocity = y_distance / self.to_t
         self.curr_t = get_time()
 
+
     def move(self):
-        pass
+        # 이동 종료
+        if (get_time() - self.curr_t) > self.to_t:
+            self.to_x = self.x
+            self.to_y = self.y
+            self.x_velocity = 0
+            self.y_velocity = 0
+            self.curr_t = 0.0
+            self.to_t = 0.0
+        else:
+            self.x += self.x_velocity * (get_time() - self.curr_t)
+            self.y += self.y_velocity
 
 
 
@@ -207,6 +229,7 @@ class Scourge():
     def get_events(self):
         pass
 
+
     def update(self):
         if game_framework.stack[-1] == difficulty_selection_state:
             self.frame.update()
@@ -217,6 +240,7 @@ class Scourge():
         self.IDLE_frame.update()
         translete(self)
 
+
     def draw(self):
         if 9 <= self.frame.current_frame:
             Scourge.image.clip_composite_draw((self.width+3)*(16-(int)(self.frame.current_frame))+2,369-((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1),
@@ -224,6 +248,7 @@ class Scourge():
         else:
             Scourge.image.clip_draw((self.width+3)*(int)(self.frame.current_frame)+2,369-((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1), self.width, self.height-2,self.x-game_world.screen_x,
                                                                                 self.y-game_world.screen_y )
+
 
     def set_move_point(self):
         x_distance = random.randint(0, 1000) - 500
@@ -248,7 +273,18 @@ class Scourge():
         self.y_velocity = y_distance / self.to_t
         self.curr_t = get_time()
 
+
     def move(self):
-        pass
+        # 이동 종료
+        if (get_time() - self.curr_t) > self.to_t:
+            self.to_x = self.x
+            self.to_y = self.y
+            self.x_velocity = 0
+            self.y_velocity = 0
+            self.curr_t = 0.0
+            self.to_t = 0.0
+        else:
+            self.x += self.x_velocity * (get_time() - self.curr_t)
+            self.y += self.y_velocity
 
 
