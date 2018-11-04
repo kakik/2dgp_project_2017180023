@@ -73,9 +73,9 @@ class Observer():
 
     def draw(self):
         if 15 <= self.frame.current_frame:
-            Observer.image[(int)(28- self.frame.current_frame)].composite_draw(3.141595653589793238,'v',self.x-game_world.screen_x,self.y-game_world.screen_y ,self.width, self.height )
+            Observer.image[(int)(28- self.frame.current_frame)].composite_draw(3.141595653589793238,'v', self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y, self.width, self.height)
         else:
-            Observer.image[(int)(self.frame.current_frame)].draw(self.x-game_world.screen_x, self.y-game_world.screen_y )
+            Observer.image[(int)(self.frame.current_frame)].draw(self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y)
 
     def set_random_move_point(self):
         x_distance = random.randint(0, 1000) - 500
@@ -159,10 +159,10 @@ class Wraith():
 
     def draw(self):
         if 17 <= self.frame.current_frame:
-            Wraith.image[(int)(32 - self.frame.current_frame)].composite_draw(3.141595653589793238, 'v', self.x-game_world.screen_x,
-                                                                                self.y-game_world.screen_y , self.width, self.height)
+            Wraith.image[(int)(32 - self.frame.current_frame)].composite_draw(3.141595653589793238, 'v', self.x - game_world.screen_coord_x,
+                                                                              self.y - game_world.screen_coord_y, self.width, self.height)
         else:
-            Wraith.image[(int)(self.frame.current_frame)].draw(self.x-game_world.screen_x, self.y-game_world.screen_y )
+            Wraith.image[(int)(self.frame.current_frame)].draw(self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y)
 
 
 
@@ -171,10 +171,8 @@ class Wraith():
         y_distance = random.randint(0, 1000) - 500
 
         if self.x + x_distance < 0 + self.width / 2:
-            print('a')
             x_distance = 0 - self.x + self.width
         elif game_world.map_x - self.width / 2 < self.x + x_distance:
-            print('b')
             x_distance = game_world.map_x - self.x - self.width
 
         if self.y + y_distance < 0 + self.height / 2:
@@ -255,21 +253,19 @@ class Scourge():
 
     def draw(self):
         if 9 <= self.frame.current_frame:
-            Scourge.image.clip_composite_draw((self.width+3)*(16-(int)(self.frame.current_frame))+2,369-((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1),
-                                              self.width,self.height-2,3.141595653589793238, 'v', self.x-game_world.screen_x, self.y-game_world.screen_y , self.width, self.height)
+            Scourge.image.clip_composite_draw((self.width+3) * (16-(int)(self.frame.current_frame)) + 2, 369 - ((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1),
+                                              self.width, self.height - 2, 3.141595653589793238, 'v', self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y, self.width, self.height)
         else:
-            Scourge.image.clip_draw((self.width+3)*(int)(self.frame.current_frame)+2,369-((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1), self.width, self.height-2,self.x-game_world.screen_x,
-                                                                                self.y-game_world.screen_y )
+            Scourge.image.clip_draw((self.width+3) * (int)(self.frame.current_frame) + 2, 369 - ((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1), self.width, self.height - 2, self.x - game_world.screen_coord_x,
+                                    self.y - game_world.screen_coord_y)
 
     def set_random_move_point(self):
         x_distance = random.randint(0, 1000) - 500
         y_distance = random.randint(0, 1000) - 500
 
         if self.x + x_distance < 0 + self.width / 2:
-            print('a')
             x_distance = 0 - self.x + self.width
         elif game_world.map_x - self.width / 2 < self.x + x_distance:
-            print('b')
             x_distance = game_world.map_x - self.x - self.width
 
         if self.y + y_distance < 0 + self.height / 2:

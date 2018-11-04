@@ -91,6 +91,8 @@ def handle_events():
                 game_framework.quit()
 
 
+
+
 def update():
     for game_object in game_world.all_objects():
         game_object.update()

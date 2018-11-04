@@ -25,7 +25,7 @@ class Cursor:
 
 
     def draw(self):
-        self.image.clip_draw((self.width+3) * (int)(self.frame.current_frame)+2, 279, self.width, self.height, self.x-game_world.screen_x  , self.y-game_world.screen_y )
+        self.image.clip_draw((self.width+3) * (int)(self.frame.current_frame) + 2 , 279, self.width, self.height, self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y)
 
 
 

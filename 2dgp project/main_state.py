@@ -1,11 +1,8 @@
-import random
 import game_world
 import Unit_class
 import game_framework
 from pico2d import *
-import cursor_class
 import Unit_class
-
 import game_framework
 import title_state
 
@@ -14,7 +11,10 @@ background_image = None
 def enter():
     global background_image
     background_image = load_image('resources\\TileMap\\Map.png')
-    game_world.add_object(Unit_class.Observer(400,300),1)
+    for i in range(0,9):
+        for j in range(0,9):
+            for k in range (0,4):
+                game_world.add_object(Unit_class.Observer(game_world.map_x/9*(j+0.5),game_world.map_y/9*(i+0.5)),1)
 
 
 def exit():
@@ -40,6 +40,49 @@ def handle_events():
         elif event.type == SDL_KEYDOWN:
             if event.key == SDLK_ESCAPE:
                 game_framework.quit()
+            elif event.key == SDLK_w:
+                if game_world.screen_scroll_y == 0:
+                    game_world.screen_scroll_y = 1
+                elif game_world.screen_scroll_y == -1:
+                    game_world.screen_scroll_y = 0
+            elif event.key == SDLK_a:
+                if game_world.screen_scroll_x == 0:
+                    game_world.screen_scroll_x = -1
+                elif game_world.screen_scroll_x == 0:
+                    game_world.screen_scroll_x = 1
+            elif event.key == SDLK_s:
+                if game_world.screen_scroll_y == 0:
+                    game_world.screen_scroll_y = -1
+                elif game_world.screen_scroll_y == 1:
+                    game_world.screen_scroll_y = 0
+            elif event.key == SDLK_d:
+                if game_world.screen_scroll_x == 0:
+                    game_world.screen_scroll_x = 1
+                elif game_world.screen_scroll_x == -1:
+                    game_world.screen_scroll_x = 0
+
+        elif event.type == SDL_KEYUP:
+            if event.key == SDLK_w:
+                if game_world.screen_scroll_y == 0:
+                    game_world.screen_scroll_y = -1
+                elif game_world.screen_scroll_y == 1:
+                    game_world.screen_scroll_y = 0
+            elif event.key == SDLK_a:
+                if game_world.screen_scroll_x == 0:
+                    game_world.screen_scroll_x = 1
+                elif game_world.screen_scroll_x == -1:
+                    game_world.screen_scroll_x = 0
+            elif event.key == SDLK_s:
+                if game_world.screen_scroll_y == 0:
+                    game_world.screen_scroll_y = 1
+                elif game_world.screen_scroll_y == -1:
+                    game_world.screen_scroll_y = 0
+            elif event.key == SDLK_d:
+                if game_world.screen_scroll_x == 0:
+                    game_world.screen_scroll_x = -1
+                elif game_world.screen_scroll_x == 1:
+                    game_world.screen_scroll_x = 0
+
 
         elif event.type == SDL_MOUSEMOTION:
             # 마우스 좌표 업데이트
@@ -50,7 +93,10 @@ def handle_events():
 
 
 
+
+
 def update():
+    game_world.update_screen_xy()
     for game_object in game_world.all_objects():
         game_object.update()
 
@@ -58,7 +104,7 @@ def update():
 def draw():
     global background_image
     clear_canvas()
-    background_image.clip_draw(game_world.screen_x, game_world.screen_y, 800,600, 800/2, 600/2)
+    background_image.clip_draw(game_world.screen_coord_x, game_world.screen_coord_y, 800, 600, 800 / 2, 600 / 2)
 
     for game_object in game_world.all_objects():
         game_object.draw()
