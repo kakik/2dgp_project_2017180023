@@ -4,6 +4,7 @@ import Unit_class
 import game_framework
 from pico2d import *
 import cursor_class
+import Unit_class
 
 import game_framework
 import title_state
@@ -11,6 +12,7 @@ import title_state
 player = None
 
 def enter():
+    game_world.add_object(Unit_class.Observer(400,300),1)
     pass
 
 def exit():
@@ -26,6 +28,7 @@ def resume():
 
 
 def handle_events():
+    global player
     events = get_events()
     for event in events:
 
@@ -39,6 +42,8 @@ def handle_events():
         elif event.type == SDL_MOUSEMOTION:
             # 마우스 좌표 업데이트
             cursor_class.update_mouse_point(event.x, event.y)
+            player.unit.x=cursor_class.mx
+            player.unit.y = cursor_class.my
 
         elif event.type == SDL_MOUSEBUTTONDOWN:
            pass

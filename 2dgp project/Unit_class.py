@@ -2,7 +2,7 @@ import IMG_class
 from pico2d import*
 import game_framework
 import difficulty_selection_state
-
+import main_state
 
 def set_player_unit(player, key):
     if key == 1:
@@ -12,6 +12,9 @@ def set_player_unit(player, key):
     elif key == 3:
         player.unit = Wraith(100 ,100)
 
+def translete(self): #그냥 self로 지어봤어요
+    if game_framework.stack[-1]==main_state:
+        pass
 
 class Player():
 
@@ -64,6 +67,8 @@ class Observer():
         if self.t >0:
             pass
 
+        translete(self)
+
 
     def draw(self):
         if 15 <= self.frame.current_frame:
@@ -108,6 +113,7 @@ class Wraith():
 
         if self.t > 0:
             pass
+        translete(self)
 
     def draw(self):
         if 17 <= self.frame.current_frame:
@@ -158,6 +164,7 @@ class Scourge():
             pass
 
         self.IDLE_frame.update()
+        translete(self)
 
     def draw(self):
         if 9 <= self.frame.current_frame:

@@ -73,7 +73,7 @@ def handle_events():
 
             elif wraith.x - wraith.width / 2 < cursor_class.mx < wraith.x + wraith.width / 2 and wraith.y - wraith.height / 2 < cursor_class.my < wraith.y + wraith.height / 2:
                 main_state.player = Unit_class.Player()
-                Unit_class.set_player_unit( main_state.player,2)
+                Unit_class.set_player_unit( main_state.player,3)
                 game_world.add_object( main_state.player, 1)
                 game_framework.change_state(main_state)
 
