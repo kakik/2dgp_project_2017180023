@@ -13,7 +13,7 @@ class MenuStartIMG():
 
     def __init__(self):
         self.x = 240
-        self.y = 438
+        self.y = game_world.screen_y - 162
 
         self.frame = Frame(MenuStartIMG.max_frame,self.ACTION_PER_TIME)
         self.mouse_on = False
@@ -48,7 +48,7 @@ class MenuExitIMG():
     ACTION_PER_TIME = 0.5
 
     def __init__(self):
-        self.x = 592
+        self.x = game_world.screen_x - 208
         self.y = 122
 
         self.frame = Frame(MenuExitIMG.max_frame,self.ACTION_PER_TIME)
@@ -83,7 +83,7 @@ class MenuStartMouseOnIMG():
 
     def __init__(self):
         self.x = 240
-        self.y = 438
+        self.y = game_world.screen_y - 162
 
         self.frame = Frame(MenuStartMouseOnIMG.max_frame,self.ACTION_PER_TIME)
         self.mouse_on = False
@@ -118,7 +118,7 @@ class MenuExitMouseOnIMG():
     ACTION_PER_TIME = 0.5
 
     def __init__(self):
-        self.x = 592
+        self.x = game_world.screen_x - 208
         self.y = 122
 
         self.frame = Frame(MenuExitMouseOnIMG.max_frame,self.ACTION_PER_TIME)

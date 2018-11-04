@@ -104,7 +104,7 @@ def update():
 def draw():
     global background_image
     clear_canvas()
-    background_image.clip_draw(game_world.screen_coord_x, game_world.screen_coord_y, 800, 600, 800 / 2, 600 / 2)
+    background_image.clip_draw(game_world.screen_coord_x, game_world.screen_coord_y, game_world.screen_x, game_world.screen_y, game_world.screen_x / 2, game_world.screen_y / 2)
 
     for game_object in game_world.all_objects():
         game_object.draw()

@@ -19,9 +19,9 @@ def enter():
 
     Difficulty_BG_img = load_image('resources\\Title\\Background\\Title_BG.png')
 
-    scourge = Unit_class.Scourge(200, 300)
-    observer = Unit_class.Observer(400, 300)
-    wraith = Unit_class.Wraith(600, 300)
+    scourge = Unit_class.Scourge(game_world.screen_x/3*0.5, game_world.screen_y/3*1.5)
+    observer = Unit_class.Observer(game_world.screen_x/3*1.5, game_world.screen_y/3*1.5)
+    wraith = Unit_class.Wraith(game_world.screen_x/3*2.5, game_world.screen_y/3*1.5)
 
     game_world.add_object(scourge, 1)
     game_world.add_object(observer, 1)
@@ -88,7 +88,7 @@ def draw():
     clear_canvas()
 
     if Difficulty_BG_img != None:
-        Difficulty_BG_img.draw(800/2, 600/2)
+        Difficulty_BG_img.clip_draw(0,0,game_world.screen_x,game_world.screen_y,game_world.screen_x/2, game_world.screen_y/2)
 
     for game_object in game_world.all_objects():
         game_object.draw()

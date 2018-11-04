@@ -30,8 +30,8 @@ def enter():
 
 
     # 초기 마우스 좌표
-    game_world.mx = 800/2
-    game_world.my = 600/2
+    game_world.mx = game_world.screen_x/2
+    game_world.my = game_world.screen_y/2
 
     # 객체 생성!
     Title_start = IMG_class.MenuStartIMG()
@@ -44,7 +44,7 @@ def enter():
     game_world.add_object(Title_exit,0)
     game_world.add_object(Title_exit_mouse_on,0)
 
-    game_world.cursor = cursor_class.Cursor(800 / 2, 600 / 2)
+    game_world.cursor = cursor_class.Cursor(game_world.screen_x / 2, game_world.screen_y / 2)
     game_world.add_object(game_world.cursor, 1)
 
 
@@ -106,16 +106,16 @@ def draw():
 
     clear_canvas()
     if  Title_BG_img!=None:
-        Title_BG_img.draw(400, 300)
+        Title_BG_img.clip_draw(0,0,game_world.screen_x,game_world.screen_y,game_world.screen_x/2,game_world.screen_y/2)
 
     for game_object in game_world.all_objects():
         game_object.draw()
 
     if Title_start_text_img != None:
-        Title_start_text_img.draw(200, 500)
+        Title_start_text_img.draw(200, game_world.screen_y - 100)
 
     if Title_exit_text_img != None:
-        Title_exit_text_img.draw(550, 180)
+        Title_exit_text_img.draw(game_world.screen_x - 250, 180)
 
 
     update_canvas()

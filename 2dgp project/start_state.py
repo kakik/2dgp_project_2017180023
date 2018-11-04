@@ -1,7 +1,7 @@
 import game_framework
 import title_state
 from pico2d import *
-
+import game_world
 
 name = "StartState"
 image = None
@@ -28,7 +28,7 @@ def update():
 def draw():
     global image
     clear_canvas()
-    image.draw(400, 300)
+    image.clip_draw(0,0,game_world.screen_x, game_world.screen_y, game_world.screen_x/2, game_world.screen_y/2)
     update_canvas()
 
 def handle_events():
