@@ -10,10 +10,8 @@ import game_framework
 import title_state
 
 player = None
-
 def enter():
     game_world.add_object(Unit_class.Observer(400,300),1)
-    pass
 
 def exit():
     pass
@@ -42,8 +40,6 @@ def handle_events():
         elif event.type == SDL_MOUSEMOTION:
             # 마우스 좌표 업데이트
             game_world.update_mouse_point(event.x, event.y)
-            player.unit.x=game_world.mx
-            player.unit.y = game_world.my
 
         elif event.type == SDL_MOUSEBUTTONDOWN:
            pass
@@ -57,6 +53,7 @@ def update():
 
 def draw():
     clear_canvas()
+
 
     for game_object in game_world.all_objects():
         game_object.draw()

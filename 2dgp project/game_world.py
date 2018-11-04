@@ -50,3 +50,6 @@ def update_mouse_point(x, y):
     my = 600 - y
 
 cursor = None
+
+#스크린 좌하단 좌표
+screen_x, screen_y = 0,0

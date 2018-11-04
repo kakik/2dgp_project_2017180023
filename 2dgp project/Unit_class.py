@@ -3,6 +3,7 @@ from pico2d import*
 import game_framework
 import difficulty_selection_state
 import main_state
+import game_world
 
 def set_player_unit(player, key):
     if key == 1:
@@ -72,9 +73,9 @@ class Observer():
 
     def draw(self):
         if 15 <= self.frame.current_frame:
-            Observer.image[(int)(28- self.frame.current_frame)].composite_draw(3.141595653589793238,'v',self.x,self.y,self.width, self.height )
+            Observer.image[(int)(28- self.frame.current_frame)].composite_draw(3.141595653589793238,'v',self.x-game_world.screen_x,self.y-game_world.screen_y ,self.width, self.height )
         else:
-            Observer.image[(int)(self.frame.current_frame)].draw(self.x, self.y)
+            Observer.image[(int)(self.frame.current_frame)].draw(self.x-game_world.screen_x, self.y-game_world.screen_y )
 
 
 
@@ -117,10 +118,10 @@ class Wraith():
 
     def draw(self):
         if 17 <= self.frame.current_frame:
-            Wraith.image[(int)(32 - self.frame.current_frame)].composite_draw(3.141595653589793238, 'v', self.x,
-                                                                                self.y, self.width, self.height)
+            Wraith.image[(int)(32 - self.frame.current_frame)].composite_draw(3.141595653589793238, 'v', self.x-game_world.screen_x,
+                                                                                self.y-game_world.screen_y , self.width, self.height)
         else:
-            Wraith.image[(int)(self.frame.current_frame)].draw(self.x, self.y)
+            Wraith.image[(int)(self.frame.current_frame)].draw(self.x-game_world.screen_x, self.y-game_world.screen_y )
 
 
 
@@ -168,11 +169,11 @@ class Scourge():
 
     def draw(self):
         if 9 <= self.frame.current_frame:
-            Scourge.image.clip_composite_draw((self.width+3)*(16-(int)(self.frame.current_frame))+2,369-((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1),self.width,self.height-2,3.141595653589793238, 'v', self.x,
-                                                                                self.y, self.width, self.height)
+            Scourge.image.clip_composite_draw((self.width+3)*(16-(int)(self.frame.current_frame))+2,369-((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1),
+                                              self.width,self.height-2,3.141595653589793238, 'v', self.x-game_world.screen_x, self.y-game_world.screen_y , self.width, self.height)
         else:
-            Scourge.image.clip_draw((self.width+3)*(int)(self.frame.current_frame)+2,369-((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1), self.width, self.height-2,self.x,
-                                                                                self.y)
+            Scourge.image.clip_draw((self.width+3)*(int)(self.frame.current_frame)+2,369-((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1), self.width, self.height-2,self.x-game_world.screen_x,
+                                                                                self.y-game_world.screen_y )
 
 
 
