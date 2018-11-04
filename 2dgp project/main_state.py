@@ -15,7 +15,7 @@ def enter():
     global background_image
     background_image = load_image('resources\\TileMap\\Map.png')
     game_world.add_object(Unit_class.Observer(400,300),1)
-    print('a')
+
 
 def exit():
     pass
