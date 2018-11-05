@@ -18,8 +18,8 @@ def enter():
 
 
 def exit():
-    pass
 
+    pass
 
 def pause():
     pass
