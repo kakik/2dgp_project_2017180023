@@ -4,11 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/test_code.py" line="52" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef55620e-127a-47a2-a9dd-e0eb96cb6266" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../2dgp project documents/2DGP PROJECT.pptx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_state.py" afterDir="false" />
-    </list>
+    <list default="true" id="ef55620e-127a-47a2-a9dd-e0eb96cb6266" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +47,7 @@
     <session id="1632726190">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.0" value="5" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.4" value="1" />
@@ -192,8 +188,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="266">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -240,11 +236,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="2" />
-    <option name="width" value="1933" />
-    <option name="height" value="1085" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="y" value="1" />
+    <option name="width" value="1238" />
+    <option name="height" value="695" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -474,15 +470,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="2" width="1546" height="868" extended-state="0" />
-    <editor active="true" />
+    <frame x="-6" y="2" width="1237" height="694" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15043075" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18885191" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.19693655" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30245233" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39222616" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.24699454" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -750,8 +745,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="266">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>

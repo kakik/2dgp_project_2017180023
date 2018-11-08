@@ -11,6 +11,7 @@ background_image = None
 def enter():
     global background_image
     background_image = load_image('resources\\TileMap\\Map.png')
+
     for i in range(0,9):
         for j in range(0,9):
             for k in range (0,4):

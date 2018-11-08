@@ -128,8 +128,8 @@ class Observer():
         self.to_x = self.x + self.x_velocity
         self.to_y = self.y + self.y_velocity
 
-
-
+    def collision_check(self):
+        pass
 
 
 class Wraith():
@@ -216,6 +216,11 @@ class Wraith():
         self.frame.direction_update(self.x_velocity, self.y_velocity)
         self.to_x = self.x + self.x_velocity
         self.to_y = self.y + self.y_velocity
+
+    def collision_check(self):
+        pass
+
+
 
 
 class Scourge():
@@ -308,5 +313,8 @@ class Scourge():
         self.frame.direction_update(self.x_velocity, self.y_velocity)
         self.to_x = self.x + self.x_velocity
         self.to_y = self.y + self.y_velocity
+
+    def collision_check(self):
+        pass
 
 
