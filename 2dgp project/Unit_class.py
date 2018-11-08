@@ -99,20 +99,20 @@ class Observer():
                        self.y + self.height / 2 - game_world.screen_coord_y)
 
     def set_random_move_point(self):
-        x_distance = random.randint(0, 1000) - 500
-        y_distance = random.randint(0, 1000) - 500
+        x_move_distance = random.randint(0, 1000) - 500
+        y_move_distance = random.randint(0, 1000) - 500
 
-        if self.x + x_distance < 0 + self.width / 2:
-            x_distance = 0 - self.x + self.width
-        elif game_world.map_x - self.width / 2 < self.x + x_distance:
-            x_distance = game_world.map_x - self.x - self.width
+        if self.x + x_move_distance < 0 + self.width / 2:
+            x_move_distance = 0 - self.x + self.width
+        elif game_world.map_x - self.width / 2 < self.x + x_move_distance:
+            x_move_distance = game_world.map_x - self.x - self.width
 
-        if self.y + y_distance < 0 + self.height / 2:
-            y_distance = 0 - self.y + self.height
-        elif game_world.map_y - self.height / 2 < self.y + y_distance:
-            y_distance = game_world.map_y - self.y - self.height
+        if self.y + y_move_distance < 0 + self.height / 2:
+            y_move_distance = 0 - self.y + self.height
+        elif game_world.map_y - self.height / 2 < self.y + y_move_distance:
+            y_move_distance = game_world.map_y - self.y - self.height
 
-        self.set_velocity(x_distance, y_distance)
+        self.set_velocity(x_move_distance, y_move_distance)
 
 
     def set_move_point(self, to_x, to_y):
@@ -124,10 +124,10 @@ class Observer():
         self.y += self.y_velocity * (get_time() - self.curr_t)
         self.curr_t = get_time()
 
-    def set_velocity(self, x_distance, y_distance):
-        self.to_t = math.sqrt(x_distance ** 2 + y_distance ** 2) / self.velocity + get_time()
-        self.x_velocity = x_distance / (self.to_t - get_time())
-        self.y_velocity = y_distance / (self.to_t - get_time())
+    def set_velocity(self, x_move_distance, y_move_distance):
+        self.to_t = math.sqrt(x_move_distance ** 2 + y_move_distance ** 2) / self.velocity + get_time()
+        self.x_velocity = x_move_distance / (self.to_t - get_time())
+        self.y_velocity = y_move_distance / (self.to_t - get_time())
         self.curr_t = get_time()
         self.frame.direction_update(self.x_velocity, self.y_velocity)
         self.to_x = self.x + self.x_velocity
@@ -155,7 +155,24 @@ class Observer():
             for game_object in game_world.all_objects():
                     if game_object.__class__.__name__ == Observer:
                         if game_object != self:
-                            pass
+                            if (31 * 4  <= self.x  <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12):
+                            self.x = 200
+                            self.y = 250
+                            self.to_x = self.x
+                            self.to_y = self.y
+                            self.x_velocity = 0
+                            self.y_velocity = 0
+                            self.curr_t = 0.0
+                            self.to_t = 0.0
+        else:
+            self.x = 200
+            self.y = 250
+            self.to_x =   self.x
+            self.to_y =  self.y
+            self.x_velocity = 0
+            self.y_velocity = 0
+            self.curr_t = 0.0
+            self.to_t = 0.0
 
 
 
@@ -216,20 +233,20 @@ class Wraith():
                        self.y + self.height / 2 - game_world.screen_coord_y)
 
     def set_random_move_point(self):
-        x_distance = random.randint(0, 1000) - 500
-        y_distance = random.randint(0, 1000) - 500
+        x_move_distance = random.randint(0, 1000) - 500
+        y_move_distance = random.randint(0, 1000) - 500
 
-        if self.x + x_distance < 0 + self.width / 2:
-            x_distance = 0 - self.x + self.width
-        elif game_world.map_x - self.width / 2 < self.x + x_distance:
-            x_distance = game_world.map_x - self.x - self.width
+        if self.x + x_move_distance < 0 + self.width / 2:
+            x_move_distance = 0 - self.x + self.width
+        elif game_world.map_x - self.width / 2 < self.x + x_move_distance:
+            x_move_distance = game_world.map_x - self.x - self.width
 
-        if self.y + y_distance < 0 + self.height / 2:
-            y_distance = 0 - self.y + self.height
-        elif game_world.map_y - self.height / 2 < self.y + y_distance:
-            y_distance = game_world.map_y - self.y - self.height
+        if self.y + y_move_distance < 0 + self.height / 2:
+            y_move_distance = 0 - self.y + self.height
+        elif game_world.map_y - self.height / 2 < self.y + y_move_distance:
+            y_move_distance = game_world.map_y - self.y - self.height
 
-        self.set_velocity(x_distance, y_distance)
+        self.set_velocity(x_move_distance, y_move_distance)
 
     def set_move_point(self, to_x, to_y):
         self.set_velocity(to_x - self.x, to_y - self.y)
@@ -239,10 +256,10 @@ class Wraith():
         self.y += self.y_velocity * (get_time() - self.curr_t)
         self.curr_t = get_time()
 
-    def set_velocity(self, x_distance, y_distance):
-        self.to_t = math.sqrt(x_distance ** 2 + y_distance ** 2) / self.velocity + get_time()
-        self.x_velocity = x_distance / (self.to_t - get_time())
-        self.y_velocity = y_distance / (self.to_t - get_time())
+    def set_velocity(self, x_move_distance, y_move_distance):
+        self.to_t = math.sqrt(x_move_distance ** 2 + y_move_distance ** 2) / self.velocity + get_time()
+        self.x_velocity = x_move_distance / (self.to_t - get_time())
+        self.y_velocity = y_move_distance / (self.to_t - get_time())
         self.curr_t = get_time()
         self.frame.direction_update(self.x_velocity, self.y_velocity)
         self.to_x = self.x + self.x_velocity
@@ -271,7 +288,23 @@ class Wraith():
             for game_object in game_world.all_objects():
                     if game_object.__class__.__name__ == Observer:
                         if game_object != self:
-                            pass
+                            self.x = 200
+                            self.y = 250
+                            self.to_x = self.x
+                            self.to_y = self.y
+                            self.x_velocity = 0
+                            self.y_velocity = 0
+                            self.curr_t = 0.0
+                            self.to_t = 0.0
+        else:
+            self.x = 200
+            self.y = 250
+            self.to_x =   self.x
+            self.to_y =  self.y
+            self.x_velocity = 0
+            self.y_velocity = 0
+            self.curr_t = 0.0
+            self.to_t = 0.0
 
 
 
@@ -338,20 +371,20 @@ class Scourge():
                        self.y + self.height / 2 - game_world.screen_coord_y)
 
     def set_random_move_point(self):
-        x_distance = random.randint(0, 1000) - 500
-        y_distance = random.randint(0, 1000) - 500
+        x_move_distance = random.randint(0, 1000) - 500
+        y_move_distance = random.randint(0, 1000) - 500
 
-        if self.x + x_distance < 0 + self.width / 2:
-            x_distance = 0 - self.x + self.width
-        elif game_world.map_x - self.width / 2 < self.x + x_distance:
-            x_distance = game_world.map_x - self.x - self.width
+        if self.x + x_move_distance < 0 + self.width / 2:
+            x_move_distance = 0 - self.x + self.width
+        elif game_world.map_x - self.width / 2 < self.x + x_move_distance:
+            x_move_distance = game_world.map_x - self.x - self.width
 
-        if self.y + y_distance < 0 + self.height / 2:
-            y_distance = 0 - self.y + self.height
-        elif game_world.map_y - self.height / 2 < self.y + y_distance:
-            y_distance = game_world.map_y - self.y - self.height
+        if self.y + y_move_distance < 0 + self.height / 2:
+            y_move_distance = 0 - self.y + self.height
+        elif game_world.map_y - self.height / 2 < self.y + y_move_distance:
+            y_move_distance = game_world.map_y - self.y - self.height
 
-        self.set_velocity(x_distance, y_distance)
+        self.set_velocity(x_move_distance, y_move_distance)
 
     def set_move_point(self, to_x, to_y):
         self.set_velocity(to_x - self.x, to_y - self.y)
@@ -361,10 +394,10 @@ class Scourge():
         self.y += self.y_velocity * (get_time() - self.curr_t)
         self.curr_t = get_time()
 
-    def set_velocity(self, x_distance, y_distance):
-        self.to_t = math.sqrt(x_distance ** 2 + y_distance ** 2) / self.velocity + get_time()
-        self.x_velocity = x_distance / (self.to_t - get_time())
-        self.y_velocity = y_distance / (self.to_t - get_time())
+    def set_velocity(self, x_move_distance, y_move_distance):
+        self.to_t = math.sqrt(x_move_distance ** 2 + y_move_distance ** 2) / self.velocity + get_time()
+        self.x_velocity = x_move_distance / (self.to_t - get_time())
+        self.y_velocity = y_move_distance / (self.to_t - get_time())
         self.curr_t = get_time()
         self.frame.direction_update(self.x_velocity, self.y_velocity)
         self.to_x = self.x + self.x_velocity
@@ -392,8 +425,20 @@ class Scourge():
             for game_object in game_world.all_objects():
                     if game_object.__class__.__name__ == Observer:
                         if game_object != self:
-                            pass
-
-
-
-
+                            self.x = 200
+                            self.y = 250
+                            self.to_x = self.x
+                            self.to_y = self.y
+                            self.x_velocity = 0
+                            self.y_velocity = 0
+                            self.curr_t = 0.0
+                            self.to_t = 0.0
+        else:
+            self.x = 200
+            self.y = 250
+            self.to_x =   self.x
+            self.to_y =  self.y
+            self.x_velocity = 0
+            self.y_velocity = 0
+            self.curr_t = 0.0
+            self.to_t = 0.0
