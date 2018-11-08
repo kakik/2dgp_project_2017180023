@@ -129,7 +129,17 @@ class Observer():
         self.to_y = self.y + self.y_velocity
 
     def collision_check(self):
-        pass
+        #안전지역 체크
+        if (31*4 + self.width/2 <= self.x <= 31*10 - self.width/2) and (31*4 + self.height/2 <= self.y <= 31*10 - self.height/2):
+            print("start_zone")
+        #안전지역 체크
+        elif  (31*4 + self.width/2 <= self.x <= 31*10 - self.width/2) and (31*10 + self.height/2 <= self.y <= 31*16 - self.height/2):
+            print("safe_zone")
+        #종료지역 체크
+        elif (31*49 + self.width/2 <= self.x <= 31*55 - self.width/2) and (31*49 + self.height/2 <= self.y <= 31*55 - self.height/2):
+            print("clear")
+        else:
+            pass
 
 
 class Wraith():
@@ -217,8 +227,19 @@ class Wraith():
         self.to_x = self.x + self.x_velocity
         self.to_y = self.y + self.y_velocity
 
+
     def collision_check(self):
-        pass
+        #안전지역 체크
+        if (31*4 + self.width/2 <= self.x <= 31*10 - self.width/2) and (31*4 + self.height/2 <= self.y <= 31*10 - self.height/2):
+            print("start_zone")
+        #안전지역 체크
+        elif  (31*4 + self.width/2 <= self.x <= 31*10 - self.width/2) and (31*10 + self.height/2 <= self.y <= 31*16 - self.height/2):
+            print("safe_zone")
+        #종료지역 체크
+        elif (31*49 + self.width/2 <= self.x <= 31*55 - self.width/2) and (31*49 + self.height/2 <= self.y <= 31*55 - self.height/2):
+            print("clear")
+        else:
+            pass
 
 
 
@@ -315,6 +336,16 @@ class Scourge():
         self.to_y = self.y + self.y_velocity
 
     def collision_check(self):
-        pass
+        #안전지역 체크
+        if (31*4 + self.width/2 <= self.x <= 31*10 - self.width/2) and (31*4 + self.height/2 <= self.y <= 31*10 - self.height/2):
+            print("start_zone")
+        #안전지역 체크
+        elif  (31*4 + self.width/2 <= self.x <= 31*10 - self.width/2) and (31*10 + self.height/2 <= self.y <= 31*16 - self.height/2):
+            print("safe_zone")
+        #종료지역 체크
+        elif (31*49 + self.width/2 <= self.x <= 31*55 - self.width/2) and (31*49 + self.height/2 <= self.y <= 31*55 - self.height/2):
+            print("clear")
+        else:
+            pass
 
 
