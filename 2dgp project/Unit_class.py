@@ -93,7 +93,10 @@ class Observer():
             Observer.image[(int)(28- self.frame.current_frame)].composite_draw(3.141595653589793238,'v', self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y, self.width, self.height)
         else:
             Observer.image[(int)(self.frame.current_frame)].draw(self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y)
-        draw_rectangle(self.x-self.width/2,self.y-self.height/2,self.x+self.width/2,self.y+self.height/2)
+        draw_rectangle(self.x - self.width / 2 - game_world.screen_coord_x,
+                       self.y - self.height / 2 - game_world.screen_coord_y,
+                       self.x + self.width / 2 - game_world.screen_coord_x,
+                       self.y + self.height / 2 - game_world.screen_coord_y)
 
     def set_random_move_point(self):
         x_distance = random.randint(0, 1000) - 500
@@ -132,19 +135,28 @@ class Observer():
 
     def collision_check(self):
         # 안전지역 체크
-        if (31 * 4 + self.width / 2 <= self.x <= 31 * 12 - self.width / 2) and (
-                31 * 4 + self.height / 2 <= self.y <= 31 * 12 - self.height / 2):
+        if (31 * 4<= self.x <= 31 * 12 ) and ( 31 * 4 <= self.y <= 31 * 12 ):
             print("start_zone")
         # 안전지역 체크
-        elif (31 * 4 + self.width / 2 <= self.x <= 31 * 12 - self.width / 2) and (
-                31 * 18 + self.height / 2 <= self.y <= 31 * 24 - self.height / 2):
+        elif (31 * 4 <= self.x <= 31 * 12 ) and (31 * 17  <= self.y <= 31 * 25 ):
             print("safe_zone")
         # 종료지역 체크
-        elif (31 * 47 + self.width / 2 <= self.x <= 31 * 55 - self.width / 2) and (
-                31 * 47 + self.height / 2 <= self.y <= 31 * 55 - self.height / 2):
+        elif (31 * 48<= self.x <= 31 * 56 ) and (31 * 48  <= self.y <= 31 * 56):
             print("clear")
-        else:
-            pass
+        elif ((31 * 4  <= self.x <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12)) or \
+                ((31 * 48  <= self.x <= 31 * 56 ) and ( 31 * 12  <= self.y <= 31 * 40 ))or \
+                ((31 * 4  <= self.x <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12)) or \
+                ((31 * 32  <= self.x <= 31 * 48 ) and ( 31 * 33<= self.y <= 31 * 40 ))or \
+                ((31 * 32  <= self.x <= 31 * 40 ) and ( 31 * 17  <= self.y <= 31 * 33 ))or \
+                ((31 * 12  <= self.x <= 31 * 32 ) and (31 * 17 <= self.y <= 31 * 25)) or \
+                ((31 * 4  <= self.x <= 31 * 12 ) and ( 31 * 17  <= self.y <= 31 * 56 ))or \
+                ((31 * 12  <= self.x <= 31 * 48 ) and ( 31 * 48  <= self.y <= 31 * 56 )):
+            print("road")
+            for game_object in game_world.all_objects():
+                    if game_object.__class__.__name__ == Observer:
+                        if game_object != self:
+                            pass
+
 
 
 class Wraith():
@@ -198,8 +210,10 @@ class Wraith():
                                                                               self.y - game_world.screen_coord_y, self.width, self.height)
         else:
             Wraith.image[(int)(self.frame.current_frame)].draw(self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y)
-        draw_rectangle(self.x - self.width / 2, self.y - self.height / 2, self.x + self.width / 2,
-                       self.y + self.height / 2)
+        draw_rectangle(self.x - self.width / 2 - game_world.screen_coord_x,
+                       self.y - self.height / 2 - game_world.screen_coord_y,
+                       self.x + self.width / 2 - game_world.screen_coord_x,
+                       self.y + self.height / 2 - game_world.screen_coord_y)
 
     def set_random_move_point(self):
         x_distance = random.randint(0, 1000) - 500
@@ -236,18 +250,28 @@ class Wraith():
 
 
     def collision_check(self):
-        #안전지역 체크
-        if (31*4 + self.width/2 <= self.x <= 31*12 - self.width/2) and (31*4 + self.height/2 <= self.y <= 31*12 - self.height/2):
+        # 안전지역 체크
+        if (31 * 4<= self.x <= 31 * 12 ) and ( 31 * 4 <= self.y <= 31 * 12 ):
             print("start_zone")
-        #안전지역 체크
-        elif  (31*4 + self.width/2 <= self.x <= 31*12 - self.width/2) and (31*18 + self.height/2 <= self.y <= 31*24 - self.height/2):
+        # 안전지역 체크
+        elif (31 * 4 <= self.x <= 31 * 12 ) and (31 * 17  <= self.y <= 31 * 25 ):
             print("safe_zone")
-        #종료지역 체크
-        elif (31*47 + self.width/2 <= self.x <= 31*55 - self.width/2) and (31*47 + self.height/2 <= self.y <= 31*55 - self.height/2):
+        # 종료지역 체크
+        elif (31 * 48<= self.x <= 31 * 56 ) and (31 * 48  <= self.y <= 31 * 56):
             print("clear")
-        else:
-            pass
-
+        elif ((31 * 4  <= self.x <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12)) or \
+                ((31 * 48  <= self.x <= 31 * 56 ) and ( 31 * 12  <= self.y <= 31 * 40 ))or \
+                ((31 * 4  <= self.x <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12)) or \
+                ((31 * 32  <= self.x <= 31 * 48 ) and ( 31 * 33<= self.y <= 31 * 40 ))or \
+                ((31 * 32  <= self.x <= 31 * 40 ) and ( 31 * 17  <= self.y <= 31 * 33 ))or \
+                ((31 * 12  <= self.x <= 31 * 32 ) and (31 * 17 <= self.y <= 31 * 25)) or \
+                ((31 * 4  <= self.x <= 31 * 12 ) and ( 31 * 17  <= self.y <= 31 * 56 ))or \
+                ((31 * 12  <= self.x <= 31 * 48 ) and ( 31 * 48  <= self.y <= 31 * 56 )):
+            print("road")
+            for game_object in game_world.all_objects():
+                    if game_object.__class__.__name__ == Observer:
+                        if game_object != self:
+                            pass
 
 
 
@@ -308,8 +332,10 @@ class Scourge():
         else:
             Scourge.image.clip_draw((self.width+3) * (int)(self.frame.current_frame) + 2, 369 - ((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1), self.width, self.height - 2, self.x - game_world.screen_coord_x,
                                     self.y - game_world.screen_coord_y)
-        draw_rectangle(self.x - self.width / 2, self.y - self.height / 2, self.x + self.width / 2,
-                       self.y + self.height / 2)
+        draw_rectangle(self.x - self.width / 2 - game_world.screen_coord_x,
+                       self.y - self.height / 2 - game_world.screen_coord_y,
+                       self.x + self.width / 2 - game_world.screen_coord_x,
+                       self.y + self.height / 2 - game_world.screen_coord_y)
 
     def set_random_move_point(self):
         x_distance = random.randint(0, 1000) - 500
@@ -346,18 +372,28 @@ class Scourge():
 
     def collision_check(self):
         # 안전지역 체크
-        if (31 * 4 + self.width / 2 <= self.x <= 31 * 12 - self.width / 2) and (
-                31 * 4 + self.height / 2 <= self.y <= 31 * 12 - self.height / 2):
+        if (31 * 4<= self.x <= 31 * 12 ) and ( 31 * 4 <= self.y <= 31 * 12 ):
             print("start_zone")
         # 안전지역 체크
-        elif (31 * 4 + self.width / 2 <= self.x <= 31 * 12 - self.width / 2) and (
-                31 * 18 + self.height / 2 <= self.y <= 31 * 24 - self.height / 2):
+        elif (31 * 4 <= self.x <= 31 * 12 ) and (31 * 17  <= self.y <= 31 * 25 ):
             print("safe_zone")
         # 종료지역 체크
-        elif (31 * 47 + self.width / 2 <= self.x <= 31 * 55 - self.width / 2) and (
-                31 * 47 + self.height / 2 <= self.y <= 31 * 55 - self.height / 2):
+        elif (31 * 48<= self.x <= 31 * 56 ) and (31 * 48  <= self.y <= 31 * 56):
             print("clear")
-        else:
-            pass
+        elif ((31 * 4  <= self.x <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12)) or \
+                ((31 * 48  <= self.x <= 31 * 56 ) and ( 31 * 12  <= self.y <= 31 * 40 ))or \
+                ((31 * 4  <= self.x <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12)) or \
+                ((31 * 32  <= self.x <= 31 * 48 ) and ( 31 * 33<= self.y <= 31 * 40 ))or \
+                ((31 * 32  <= self.x <= 31 * 40 ) and ( 31 * 17  <= self.y <= 31 * 33 ))or \
+                ((31 * 12  <= self.x <= 31 * 32 ) and (31 * 17 <= self.y <= 31 * 25)) or \
+                ((31 * 4  <= self.x <= 31 * 12 ) and ( 31 * 17  <= self.y <= 31 * 56 ))or \
+                ((31 * 12  <= self.x <= 31 * 48 ) and ( 31 * 48  <= self.y <= 31 * 56 )):
+            print("road")
+            for game_object in game_world.all_objects():
+                    if game_object.__class__.__name__ == Observer:
+                        if game_object != self:
+                            pass
+
+
 
 

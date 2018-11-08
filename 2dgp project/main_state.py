@@ -110,6 +110,28 @@ def draw():
     for game_object in game_world.all_objects():
         game_object.draw()
 
+
+    #collision boxes for collision_check
+    draw_rectangle(31 * 4 - game_world.screen_coord_x, 31 * 4 - game_world.screen_coord_y,
+                       31 * 12 - game_world.screen_coord_x, 31 * 12 - game_world.screen_coord_y)
+    draw_rectangle(31 * 4 - game_world.screen_coord_x, 31 * 17 - game_world.screen_coord_y,
+                   31 * 12 - game_world.screen_coord_x, 31 * 25 - game_world.screen_coord_y)
+    draw_rectangle(31 * 48 - game_world.screen_coord_x, 31 * 48 - game_world.screen_coord_y,
+                   31 * 56 - game_world.screen_coord_x, 31 * 56- game_world.screen_coord_y)
+    draw_rectangle(31 * 4 - game_world.screen_coord_x, 31 * 4 - game_world.screen_coord_y,
+                   31 * 56 - game_world.screen_coord_x, 31 * 12 - game_world.screen_coord_y)
+    draw_rectangle(31 * 48 - game_world.screen_coord_x, 31 * 12 - game_world.screen_coord_y,
+                   31 * 56 - game_world.screen_coord_x, 31 * 40 - game_world.screen_coord_y)
+    draw_rectangle(31 * 32 - game_world.screen_coord_x, 31 * 33 - game_world.screen_coord_y,
+                   31 * 48 - game_world.screen_coord_x, 31 * 40 - game_world.screen_coord_y)
+    draw_rectangle(31 * 32 - game_world.screen_coord_x, 31 * 17 - game_world.screen_coord_y,
+                   31 * 40 - game_world.screen_coord_x, 31 * 33 - game_world.screen_coord_y)
+    draw_rectangle(31 * 12 - game_world.screen_coord_x, 31 * 17 - game_world.screen_coord_y,
+                   31 * 32 - game_world.screen_coord_x, 31 * 25 - game_world.screen_coord_y)
+    draw_rectangle(31 * 4 - game_world.screen_coord_x, 31 * 17 - game_world.screen_coord_y,
+                   31 * 12 - game_world.screen_coord_x, 31 * 56 - game_world.screen_coord_y)
+    draw_rectangle(31 * 12 - game_world.screen_coord_x, 31 * 48 - game_world.screen_coord_y,
+                   31 * 48 - game_world.screen_coord_x, 31 * 56 - game_world.screen_coord_y)
     update_canvas()
 
 
