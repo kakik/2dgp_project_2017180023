@@ -39,6 +39,9 @@ class Player():
             self.unit.curr_t = 0.0
             self.unit.to_t = 0.0
 
+        if self.unit.__class__.__name__== 'Scourge':
+            self.unit.IDLE_frame.update()
+
 
 
     def draw(self):
@@ -420,6 +423,7 @@ class Scourge():
         self.y_velocity = y_move_distance / (self.to_t - get_time())
         self.curr_t = get_time()
         self.frame.direction_update(self.x_velocity, self.y_velocity)
+        self.frame.current_frame += 1
         self.to_x = self.x + self.x_velocity
         self.to_y = self.y + self.y_velocity
 
