@@ -17,7 +17,7 @@ def create_enemy_observers(level):
                 game_world.add_object(Unit_class.Observer(game_world.map_x/9*(j+0.5),game_world.map_y/9*(i+0.5)),1)
 
 
-def delete_enemy_observers(level):
+def delete_enemy_observers():
     global player
 
     for game_object in game_world.all_objects():
@@ -25,6 +25,12 @@ def delete_enemy_observers(level):
             if game_object != player:
                 game_world.remove_object(game_object)
 
+def proceed_next_stage():
+    global stage_level
+
+    delete_enemy_observers()
+    stage_level+=1
+    create_enemy_observers(stage_level)
 
 def enter():
     global background_image
