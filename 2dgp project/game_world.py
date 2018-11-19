@@ -77,7 +77,10 @@ def update_screen_xy():
     screen_coord_x = (int)(screen_coordf_x)
     screen_coord_y = (int)(screen_coordf_y)
 
+def reset_screen_xy():
+    global screen_coordf_x, screen_coordf_y
 
+    screen_coordf_x, screen_coordf_y =0,0
 
 
 

@@ -175,8 +175,7 @@ class Observer():
                             self.y_velocity = 0
                             self.curr_t = 0.0
                             self.to_t = 0.0
-                            game_world.screen_coordf_x = 0
-                            game_world.screen_coordf_y = 0
+                            game_world.reset_screen_xy()
         #길 밖으로 나가면
         else:
             self.x = 200
@@ -187,11 +186,7 @@ class Observer():
             self.y_velocity = 0
             self.curr_t = 0.0
             self.to_t = 0.0
-            game_world.screen_coordf_x = 0
-            game_world.screen_coordf_y = 0
-
-
-
+            game_world.reset_screen_xy()
 
 
 class Wraith():
@@ -318,8 +313,7 @@ class Wraith():
                             self.y_velocity = 0
                             self.curr_t = 0.0
                             self.to_t = 0.0
-                            game_world.screen_coordf_x = 0
-                            game_world.screen_coordf_y = 0
+                            game_world.reset_screen_xy()
         #길 밖으로 나가면
         else:
             self.x = 200
@@ -330,8 +324,7 @@ class Wraith():
             self.y_velocity = 0
             self.curr_t = 0.0
             self.to_t = 0.0
-            game_world.screen_coordf_x = 0
-            game_world.screen_coordf_y = 0
+            game_world.reset_screen_xy()
 
 
 
@@ -466,8 +459,7 @@ class Scourge():
                             self.y_velocity = 0
                             self.curr_t = 0.0
                             self.to_t = 0.0
-                            game_world.screen_coordf_x = 0
-                            game_world.screen_coordf_y = 0
+                            game_world.reset_screen_xy()
         #길 밖으로 나가면
         else:
             self.x = 200
@@ -478,5 +470,4 @@ class Scourge():
             self.y_velocity = 0
             self.curr_t = 0.0
             self.to_t = 0.0
-            game_world.screen_coordf_x = 0
-            game_world.screen_coordf_y = 0
+            game_world.reset_screen_xy()
