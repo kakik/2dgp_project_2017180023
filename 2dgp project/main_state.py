@@ -6,15 +6,34 @@ import game_framework
 player = None
 background_image = None
 collision_box = False
-def enter():
-    global background_image
-    background_image = load_image('resources\\TileMap\\Map.png')
+stage_level = None
 
-    #초기 셋팅 : 옵저버 162 마리
+def create_enemy_observers(level):
+    global player
+
     for i in range(0,9):
         for j in range(0,9):
-            for k in range (0,2):
+            for k in range (0,1+level):
                 game_world.add_object(Unit_class.Observer(game_world.map_x/9*(j+0.5),game_world.map_y/9*(i+0.5)),1)
+
+
+def delete_enemy_observers(level):
+    global player
+
+    for game_object in game_world.all_objects():
+        if game_object.__class__.__name__=='Observer':
+            if game_object != player:
+                game_world.remove_object(game_object)
+
+
+def enter():
+    global background_image
+    global stage_level
+    background_image = load_image('resources\\TileMap\\Map.png')
+
+    stage_level = 1
+    #초기 셋팅 : 옵저버 162 마리
+    create_enemy_observers(stage_level)
 
 
 def exit():
