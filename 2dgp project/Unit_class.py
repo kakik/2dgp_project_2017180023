@@ -98,10 +98,7 @@ class Observer():
             Observer.image[(int)(28- self.frame.current_frame)].composite_draw(3.141595653589793238,'v', self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y, self.width, self.height)
         else:
             Observer.image[(int)(self.frame.current_frame)].draw(self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y)
-        draw_rectangle(self.x - self.width / 2 - game_world.screen_coord_x,
-                       self.y - self.height / 2 - game_world.screen_coord_y,
-                       self.x + self.width / 2 - game_world.screen_coord_x,
-                       self.y + self.height / 2 - game_world.screen_coord_y)
+
 
     def set_random_move_point(self):
         x_move_distance = random.randint(0, 1000) - 500
@@ -241,10 +238,6 @@ class Wraith():
                                                                               self.y - game_world.screen_coord_y, self.width, self.height)
         else:
             Wraith.image[(int)(self.frame.current_frame)].draw(self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y)
-        draw_rectangle(self.x - self.width / 2 - game_world.screen_coord_x,
-                       self.y - self.height / 2 - game_world.screen_coord_y,
-                       self.x + self.width / 2 - game_world.screen_coord_x,
-                       self.y + self.height / 2 - game_world.screen_coord_y)
 
     def set_random_move_point(self):
         x_move_distance = random.randint(0, 1000) - 500
@@ -388,10 +381,6 @@ class Scourge():
         else:
             Scourge.image.clip_draw((self.width+3) * (int)(self.frame.current_frame) + 2, 369 - ((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1), self.width, self.height - 2, self.x - game_world.screen_coord_x,
                                     self.y - game_world.screen_coord_y)
-        draw_rectangle(self.x - self.width / 2 - game_world.screen_coord_x,
-                       self.y - self.height / 2 - game_world.screen_coord_y,
-                       self.x + self.width / 2 - game_world.screen_coord_x,
-                       self.y + self.height / 2 - game_world.screen_coord_y)
 
     def set_random_move_point(self):
         x_move_distance = random.randint(0, 1000) - 500
