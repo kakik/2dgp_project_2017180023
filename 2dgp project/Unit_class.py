@@ -185,7 +185,8 @@ class Observer():
             self.y_velocity = 0
             self.curr_t = 0.0
             self.to_t = 0.0
-        
+
+
 
 
 
