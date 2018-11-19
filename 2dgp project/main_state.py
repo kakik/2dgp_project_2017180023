@@ -13,9 +13,10 @@ def enter():
     global background_image
     background_image = load_image('resources\\TileMap\\Map.png')
 
+    #초기 셋팅 : 옵저버 162 마리
     for i in range(0,9):
         for j in range(0,9):
-            for k in range (0,4):
+            for k in range (0,2):
                 game_world.add_object(Unit_class.Observer(game_world.map_x/9*(j+0.5),game_world.map_y/9*(i+0.5)),1)
 
 

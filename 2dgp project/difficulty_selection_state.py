@@ -62,11 +62,13 @@ def handle_events():
 
         elif event.type == SDL_MOUSEBUTTONDOWN:
             if scourge.x-scourge.width/2 < game_world.mx <scourge.x+scourge.width/2 and scourge.y-scourge.height/2 < game_world.my <scourge.y+scourge.height/2:
+                main_state.player = Unit_class.Player()
                 Unit_class.set_player_unit( main_state.player, 1)
                 game_world.add_object( main_state.player, 1)
                 game_framework.change_state(main_state)
 
             elif observer.x - observer.width / 2 < game_world.mx < observer.x + observer.width / 2 and observer.y - observer.height / 2 < game_world.my < observer.y + observer.height / 2:
+                main_state.player = Unit_class.Player()
                 Unit_class.set_player_unit( main_state.player, 2)
                 game_world.add_object( main_state.player, 1)
                 game_framework.change_state(main_state)
