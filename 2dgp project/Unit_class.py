@@ -7,6 +7,8 @@ import game_world
 import random
 import math
 
+tile_size = 31
+
 def set_player_unit(player, key):
     if key == 1:
         player.unit = Scourge(200 ,250)
@@ -135,35 +137,36 @@ class Observer():
 
     def collision_check(self):
         # 안전지역 체크
-        if (31 * 4<= self.x <= 31 * 12 ) and ( 31 * 4 <= self.y <= 31 * 12 ):
+        if (tile_size * 4<= self.x <= tile_size * 12 ) and ( tile_size * 4 <= self.y <= tile_size * 12 ):
             print("start_zone")
         # 안전지역 체크
-        elif (31 * 4 <= self.x <= 31 * 12 ) and (31 * 17  <= self.y <= 31 * 25 ):
+        elif (tile_size * 4 <= self.x <= tile_size * 12 ) and (tile_size * 17  <= self.y <= tile_size * 25 ):
             print("safe_zone")
         # 종료지역 체크
-        elif (31 * 48<= self.x <= 31 * 56 ) and (31 * 48  <= self.y <= 31 * 56):
+        elif (tile_size * 48<= self.x <= tile_size * 56 ) and (tile_size * 48  <= self.y <= tile_size * 56):
             print("clear")
-        elif ((31 * 4  <= self.x <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12)) or \
-                ((31 * 48  <= self.x <= 31 * 56 ) and ( 31 * 12  <= self.y <= 31 * 40 ))or \
-                ((31 * 4  <= self.x <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12)) or \
-                ((31 * 32  <= self.x <= 31 * 48 ) and ( 31 * 33<= self.y <= 31 * 40 ))or \
-                ((31 * 32  <= self.x <= 31 * 40 ) and ( 31 * 17  <= self.y <= 31 * 33 ))or \
-                ((31 * 12  <= self.x <= 31 * 32 ) and (31 * 17 <= self.y <= 31 * 25)) or \
-                ((31 * 4  <= self.x <= 31 * 12 ) and ( 31 * 17  <= self.y <= 31 * 56 ))or \
-                ((31 * 12  <= self.x <= 31 * 48 ) and ( 31 * 48  <= self.y <= 31 * 56 )):
+        elif ((tile_size * 4  <= self.x <= tile_size * 56 ) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
+                ((tile_size * 48  <= self.x <= tile_size * 56 ) and ( tile_size * 12  <= self.y <= tile_size * 40 ))or \
+                ((tile_size * 4  <= self.x <= tile_size * 56 ) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
+                ((tile_size * 32  <= self.x <= tile_size * 48 ) and ( tile_size * 33<= self.y <= tile_size * 40 ))or \
+                ((tile_size * 32  <= self.x <= tile_size * 40 ) and ( tile_size * 17  <= self.y <= tile_size * 33 ))or \
+                ((tile_size * 12  <= self.x <= 31 * 32 ) and (tile_size * 17 <= self.y <= tile_size * 25)) or \
+                ((tile_size * 4  <= self.x <= 31 * 12 ) and ( tile_size * 17  <= self.y <= tile_size * 56 ))or \
+                ((tile_size * 12  <= self.x <= 31 * 48 ) and ( tile_size * 48  <= self.y <= tile_size * 56 )):
             print("road")
             for game_object in game_world.all_objects():
                     if game_object.__class__.__name__ == Observer:
                         if game_object != self:
-                            if (31 * 4  <= self.x  <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12):
-                            self.x = 200
-                            self.y = 250
-                            self.to_x = self.x
-                            self.to_y = self.y
-                            self.x_velocity = 0
-                            self.y_velocity = 0
-                            self.curr_t = 0.0
-                            self.to_t = 0.0
+                            if (tile_size * 4  <= self.x  <= tile_size * 56 ) and (tile_size * 4 <= self.y <= tile_size * 12):
+                                self.x = 200
+                                self.y = 250
+                                self.to_x = self.x
+                                self.to_y = self.y
+                                self.x_velocity = 0
+                                self.y_velocity = 0
+                                self.curr_t = 0.0
+                                self.to_t = 0.0
+
         else:
             self.x = 200
             self.y = 250
@@ -265,29 +268,38 @@ class Wraith():
         self.to_x = self.x + self.x_velocity
         self.to_y = self.y + self.y_velocity
 
-
     def collision_check(self):
         # 안전지역 체크
-        if (31 * 4<= self.x <= 31 * 12 ) and ( 31 * 4 <= self.y <= 31 * 12 ):
+        if (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 4 <= self.y <= tile_size * 12):
             print("start_zone")
         # 안전지역 체크
-        elif (31 * 4 <= self.x <= 31 * 12 ) and (31 * 17  <= self.y <= 31 * 25 ):
+        elif (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 17 <= self.y <= tile_size * 25):
             print("safe_zone")
         # 종료지역 체크
-        elif (31 * 48<= self.x <= 31 * 56 ) and (31 * 48  <= self.y <= 31 * 56):
+        elif (tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 48 <= self.y <= tile_size * 56):
             print("clear")
-        elif ((31 * 4  <= self.x <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12)) or \
-                ((31 * 48  <= self.x <= 31 * 56 ) and ( 31 * 12  <= self.y <= 31 * 40 ))or \
-                ((31 * 4  <= self.x <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12)) or \
-                ((31 * 32  <= self.x <= 31 * 48 ) and ( 31 * 33<= self.y <= 31 * 40 ))or \
-                ((31 * 32  <= self.x <= 31 * 40 ) and ( 31 * 17  <= self.y <= 31 * 33 ))or \
-                ((31 * 12  <= self.x <= 31 * 32 ) and (31 * 17 <= self.y <= 31 * 25)) or \
-                ((31 * 4  <= self.x <= 31 * 12 ) and ( 31 * 17  <= self.y <= 31 * 56 ))or \
-                ((31 * 12  <= self.x <= 31 * 48 ) and ( 31 * 48  <= self.y <= 31 * 56 )):
+        elif ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
+                ((tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 12 <= self.y <= tile_size * 40)) or \
+                ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
+                ((tile_size * 32 <= self.x <= tile_size * 48) and (tile_size * 33 <= self.y <= tile_size * 40)) or \
+                ((tile_size * 32 <= self.x <= tile_size * 40) and (tile_size * 17 <= self.y <= tile_size * 33)) or \
+                ((tile_size * 12 <= self.x <= 31 * 32) and (tile_size * 17 <= self.y <= tile_size * 25)) or \
+                ((tile_size * 4 <= self.x <= 31 * 12) and (tile_size * 17 <= self.y <= tile_size * 56)) or \
+                ((tile_size * 12 <= self.x <= 31 * 48) and (tile_size * 48 <= self.y <= tile_size * 56)):
             print("road")
             for game_object in game_world.all_objects():
-                    if game_object.__class__.__name__ == Observer:
-                        if game_object != self:
+                #print(game_object.__class__.__name__)
+                #옵저버와 충돌
+                if game_object.__class__.__name__ == 'Observer':
+                    print("sef")
+                    if game_object != self:
+                        #옵저버가 시작지역 / 안전지역 / 종료지역에 있으면
+                        if ((tile_size * 4 <= game_object.x <= tile_size * 12) and (tile_size * 4 <= game_object.y <= tile_size * 12)) or \
+                            ((tile_size * 4 <= game_object.x <= tile_size * 12) and (tile_size * 17 <= game_object.y <= tile_size * 25)) or \
+                            ((tile_size * 48 <= game_object.x <= tile_size * 56) and (tile_size * 48 <= game_object.y <= tile_size * 56)):
+                            pass
+
+                        elif (abs(game_object.x - self.x)<=(game_object.width/2 + self.width/2)) and (abs(game_object.y - self.y)<=(game_object.height/2 + self.height/2)):
                             self.x = 200
                             self.y = 250
                             self.to_x = self.x
@@ -299,8 +311,8 @@ class Wraith():
         else:
             self.x = 200
             self.y = 250
-            self.to_x =   self.x
-            self.to_y =  self.y
+            self.to_x = self.x
+            self.to_y = self.y
             self.x_velocity = 0
             self.y_velocity = 0
             self.curr_t = 0.0
@@ -405,26 +417,27 @@ class Scourge():
 
     def collision_check(self):
         # 안전지역 체크
-        if (31 * 4<= self.x <= 31 * 12 ) and ( 31 * 4 <= self.y <= 31 * 12 ):
+        if (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 4 <= self.y <= tile_size * 12):
             print("start_zone")
         # 안전지역 체크
-        elif (31 * 4 <= self.x <= 31 * 12 ) and (31 * 17  <= self.y <= 31 * 25 ):
+        elif (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 17 <= self.y <= tile_size * 25):
             print("safe_zone")
         # 종료지역 체크
-        elif (31 * 48<= self.x <= 31 * 56 ) and (31 * 48  <= self.y <= 31 * 56):
+        elif (tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 48 <= self.y <= tile_size * 56):
             print("clear")
-        elif ((31 * 4  <= self.x <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12)) or \
-                ((31 * 48  <= self.x <= 31 * 56 ) and ( 31 * 12  <= self.y <= 31 * 40 ))or \
-                ((31 * 4  <= self.x <= 31 * 56 ) and (31 * 4 <= self.y <= 31 * 12)) or \
-                ((31 * 32  <= self.x <= 31 * 48 ) and ( 31 * 33<= self.y <= 31 * 40 ))or \
-                ((31 * 32  <= self.x <= 31 * 40 ) and ( 31 * 17  <= self.y <= 31 * 33 ))or \
-                ((31 * 12  <= self.x <= 31 * 32 ) and (31 * 17 <= self.y <= 31 * 25)) or \
-                ((31 * 4  <= self.x <= 31 * 12 ) and ( 31 * 17  <= self.y <= 31 * 56 ))or \
-                ((31 * 12  <= self.x <= 31 * 48 ) and ( 31 * 48  <= self.y <= 31 * 56 )):
+        elif ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
+                ((tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 12 <= self.y <= tile_size * 40)) or \
+                ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
+                ((tile_size * 32 <= self.x <= tile_size * 48) and (tile_size * 33 <= self.y <= tile_size * 40)) or \
+                ((tile_size * 32 <= self.x <= tile_size * 40) and (tile_size * 17 <= self.y <= tile_size * 33)) or \
+                ((tile_size * 12 <= self.x <= 31 * 32) and (tile_size * 17 <= self.y <= tile_size * 25)) or \
+                ((tile_size * 4 <= self.x <= 31 * 12) and (tile_size * 17 <= self.y <= tile_size * 56)) or \
+                ((tile_size * 12 <= self.x <= 31 * 48) and (tile_size * 48 <= self.y <= tile_size * 56)):
             print("road")
             for game_object in game_world.all_objects():
-                    if game_object.__class__.__name__ == Observer:
-                        if game_object != self:
+                if game_object.__class__.__name__ == Observer:
+                    if game_object != self:
+                        if (tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12):
                             self.x = 200
                             self.y = 250
                             self.to_x = self.x
@@ -433,11 +446,12 @@ class Scourge():
                             self.y_velocity = 0
                             self.curr_t = 0.0
                             self.to_t = 0.0
+
         else:
             self.x = 200
             self.y = 250
-            self.to_x =   self.x
-            self.to_y =  self.y
+            self.to_x = self.x
+            self.to_y = self.y
             self.x_velocity = 0
             self.y_velocity = 0
             self.curr_t = 0.0

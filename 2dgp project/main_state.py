@@ -8,6 +8,7 @@ import title_state
 
 player = None
 background_image = None
+collision_box = False
 def enter():
     global background_image
     background_image = load_image('resources\\TileMap\\Map.png')
@@ -32,6 +33,7 @@ def resume():
 
 def handle_events():
     global player
+    global collision_box
     events = get_events()
     for event in events:
 
@@ -61,6 +63,11 @@ def handle_events():
                     game_world.screen_scroll_x = 1
                 elif game_world.screen_scroll_x == -1:
                     game_world.screen_scroll_x = 0
+            elif event.key == SDLK_r:
+                if collision_box == True:
+                    collision_box = False
+                elif collision_box == False:
+                    collision_box = True
 
         elif event.type == SDL_KEYUP:
             if event.key == SDLK_w:
@@ -104,34 +111,36 @@ def update():
 
 def draw():
     global background_image
+    global collision_box
     clear_canvas()
+    #배경 이미지
     background_image.clip_draw(game_world.screen_coord_x, game_world.screen_coord_y, game_world.screen_x, game_world.screen_y, game_world.screen_x / 2, game_world.screen_y / 2)
 
     for game_object in game_world.all_objects():
         game_object.draw()
 
-
-    #collision boxes for collision_check
-    draw_rectangle(31 * 4 - game_world.screen_coord_x, 31 * 4 - game_world.screen_coord_y,
+    if collision_box == True:
+        # collision boxes for collision_check
+        draw_rectangle(31 * 4 - game_world.screen_coord_x, 31 * 4 - game_world.screen_coord_y,
                        31 * 12 - game_world.screen_coord_x, 31 * 12 - game_world.screen_coord_y)
-    draw_rectangle(31 * 4 - game_world.screen_coord_x, 31 * 17 - game_world.screen_coord_y,
-                   31 * 12 - game_world.screen_coord_x, 31 * 25 - game_world.screen_coord_y)
-    draw_rectangle(31 * 48 - game_world.screen_coord_x, 31 * 48 - game_world.screen_coord_y,
-                   31 * 56 - game_world.screen_coord_x, 31 * 56- game_world.screen_coord_y)
-    draw_rectangle(31 * 4 - game_world.screen_coord_x, 31 * 4 - game_world.screen_coord_y,
-                   31 * 56 - game_world.screen_coord_x, 31 * 12 - game_world.screen_coord_y)
-    draw_rectangle(31 * 48 - game_world.screen_coord_x, 31 * 12 - game_world.screen_coord_y,
-                   31 * 56 - game_world.screen_coord_x, 31 * 40 - game_world.screen_coord_y)
-    draw_rectangle(31 * 32 - game_world.screen_coord_x, 31 * 33 - game_world.screen_coord_y,
-                   31 * 48 - game_world.screen_coord_x, 31 * 40 - game_world.screen_coord_y)
-    draw_rectangle(31 * 32 - game_world.screen_coord_x, 31 * 17 - game_world.screen_coord_y,
-                   31 * 40 - game_world.screen_coord_x, 31 * 33 - game_world.screen_coord_y)
-    draw_rectangle(31 * 12 - game_world.screen_coord_x, 31 * 17 - game_world.screen_coord_y,
-                   31 * 32 - game_world.screen_coord_x, 31 * 25 - game_world.screen_coord_y)
-    draw_rectangle(31 * 4 - game_world.screen_coord_x, 31 * 17 - game_world.screen_coord_y,
-                   31 * 12 - game_world.screen_coord_x, 31 * 56 - game_world.screen_coord_y)
-    draw_rectangle(31 * 12 - game_world.screen_coord_x, 31 * 48 - game_world.screen_coord_y,
-                   31 * 48 - game_world.screen_coord_x, 31 * 56 - game_world.screen_coord_y)
+        draw_rectangle(31 * 4 - game_world.screen_coord_x, 31 * 17 - game_world.screen_coord_y,
+                       31 * 12 - game_world.screen_coord_x, 31 * 25 - game_world.screen_coord_y)
+        draw_rectangle(31 * 48 - game_world.screen_coord_x, 31 * 48 - game_world.screen_coord_y,
+                       31 * 56 - game_world.screen_coord_x, 31 * 56 - game_world.screen_coord_y)
+        draw_rectangle(31 * 4 - game_world.screen_coord_x, 31 * 4 - game_world.screen_coord_y,
+                       31 * 56 - game_world.screen_coord_x, 31 * 12 - game_world.screen_coord_y)
+        draw_rectangle(31 * 48 - game_world.screen_coord_x, 31 * 12 - game_world.screen_coord_y,
+                       31 * 56 - game_world.screen_coord_x, 31 * 40 - game_world.screen_coord_y)
+        draw_rectangle(31 * 32 - game_world.screen_coord_x, 31 * 33 - game_world.screen_coord_y,
+                       31 * 48 - game_world.screen_coord_x, 31 * 40 - game_world.screen_coord_y)
+        draw_rectangle(31 * 32 - game_world.screen_coord_x, 31 * 17 - game_world.screen_coord_y,
+                       31 * 40 - game_world.screen_coord_x, 31 * 33 - game_world.screen_coord_y)
+        draw_rectangle(31 * 12 - game_world.screen_coord_x, 31 * 17 - game_world.screen_coord_y,
+                       31 * 32 - game_world.screen_coord_x, 31 * 25 - game_world.screen_coord_y)
+        draw_rectangle(31 * 4 - game_world.screen_coord_x, 31 * 17 - game_world.screen_coord_y,
+                       31 * 12 - game_world.screen_coord_x, 31 * 56 - game_world.screen_coord_y)
+        draw_rectangle(31 * 12 - game_world.screen_coord_x, 31 * 48 - game_world.screen_coord_y,
+                       31 * 48 - game_world.screen_coord_x, 31 * 56 - game_world.screen_coord_y)
     update_canvas()
 
 
