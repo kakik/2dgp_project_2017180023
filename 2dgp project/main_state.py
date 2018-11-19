@@ -1,10 +1,7 @@
 import game_world
-import Unit_class
-import game_framework
 from pico2d import *
 import Unit_class
 import game_framework
-import title_state
 
 player = None
 background_image = None
@@ -99,6 +96,7 @@ def handle_events():
 
         if event.type == SDL_MOUSEBUTTONDOWN:
             player.get_events()
+            game_world.cursor.get_events()
 
 
 

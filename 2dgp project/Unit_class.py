@@ -22,6 +22,7 @@ class Player():
 
     def __init__(self):
         self.unit = None
+        self.under_unit_cursor_img =  load_image('resources\\Cursor\\cursor.png')
 
     def get_events(self):
         self.unit.set_move_point(game_world.mx,game_world.my)
@@ -45,8 +46,8 @@ class Player():
 
 
     def draw(self):
+        self.under_unit_cursor_img.clip_draw(46, 232, 41, 41, self.unit.x - game_world.screen_coord_x, self.unit.y - game_world.screen_coord_y - self.unit.height / 5 - 10, self.unit.width, self.unit.height)
         self.unit.draw()
-
 
 class Observer():
     image = None
@@ -184,6 +185,7 @@ class Observer():
             self.y_velocity = 0
             self.curr_t = 0.0
             self.to_t = 0.0
+        
 
 
 
