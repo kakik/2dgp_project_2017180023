@@ -15,7 +15,7 @@ def set_player_unit(player, key):
     elif key == 2:
         player.unit = Observer(200 ,250)
     elif key == 3:
-        player.unit = Wraith(tile_size*40 ,tile_size*50)
+        player.unit = Wraith(200,250)
 
 
 class Player():
@@ -51,10 +51,10 @@ class Player():
         self.unit.draw()
 
     def return_to_start_point(self):
-        self.unit.x = tile_size*40
-        self.unit.y = tile_size*50
-        self.unit.to_x = tile_size*40
-        self.unit.to_y = tile_size*50
+        self.unit.x = 200
+        self.unit.y = 250
+        self.unit.to_x = 200
+        self.unit.to_y = 250
         self.unit.x_velocity = 0
         self.unit.y_velocity = 0
         self.unit.curr_t = 0.0
@@ -305,21 +305,7 @@ class Scourge(Unit):
 
 
     def update(self):
-        if game_framework.stack[-1] == difficulty_selection_state:
-            self.frame.update()
-        else:
-
-            self.move()
-            # 이동 종료
-            if (self.curr_t) > self.to_t:
-                self.to_x = self.x
-                self.to_y = self.y
-                self.x_velocity = 0
-                self.y_velocity = 0
-                self.curr_t = 0.0
-                self.to_t = 0.0
-                self.set_random_move_point()
-
+        super(Scourge, self).update()
         self.IDLE_frame.update()
 
 
