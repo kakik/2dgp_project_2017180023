@@ -149,13 +149,15 @@ class Observer():
     def collision_check(self):
         # 안전지역 체크
         if (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 4 <= self.y <= tile_size * 12):
-            print("start_zone")
+            #print("start_zone")
         # 안전지역 체크
+            pass
         elif (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 17 <= self.y <= tile_size * 25):
-            print("safe_zone")
+            #print("safe_zone")
         # 종료지역 체크
+            pass
         elif (tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 48 <= self.y <= tile_size * 56):
-            print("clear")
+            #print("clear")
             main_state.proceed_next_stage()
             game_world.reset_screen_xy()
         elif ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
@@ -166,12 +168,12 @@ class Observer():
                 ((tile_size * 12 <= self.x <= 31 * 32) and (tile_size * 17 <= self.y <= tile_size * 25)) or \
                 ((tile_size * 4 <= self.x <= 31 * 12) and (tile_size * 17 <= self.y <= tile_size * 56)) or \
                 ((tile_size * 12 <= self.x <= 31 * 48) and (tile_size * 48 <= self.y <= tile_size * 56)):
-            print("road")
+            #print("road")
             for game_object in game_world.all_objects():
                 #print(game_object.__class__.__name__)
                 #옵저버와 충돌
                 if game_object.__class__.__name__ == 'Observer':
-                    print("sef")
+                    #print("sef")
                     if game_object != self:
                         #옵저버가 시작지역 / 안전지역 / 종료지역에 있으면
                         if ((tile_size * 4 <= game_object.x <= tile_size * 12) and (tile_size * 4 <= game_object.y <= tile_size * 12)) or \
@@ -289,13 +291,15 @@ class Wraith():
     def collision_check(self):
         # 안전지역 체크
         if (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 4 <= self.y <= tile_size * 12):
-            print("start_zone")
+           # print("start_zone")
         # 안전지역 체크
+           pass
         elif (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 17 <= self.y <= tile_size * 25):
-            print("safe_zone")
+           # print("safe_zone")
+           pass
         # 종료지역 체크
         elif (tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 48 <= self.y <= tile_size * 56):
-            print("clear")
+           # print("clear")
             main_state.proceed_next_stage()
             game_world.reset_screen_xy()
         elif ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
@@ -306,12 +310,12 @@ class Wraith():
                 ((tile_size * 12 <= self.x <= 31 * 32) and (tile_size * 17 <= self.y <= tile_size * 25)) or \
                 ((tile_size * 4 <= self.x <= 31 * 12) and (tile_size * 17 <= self.y <= tile_size * 56)) or \
                 ((tile_size * 12 <= self.x <= 31 * 48) and (tile_size * 48 <= self.y <= tile_size * 56)):
-            print("road")
+           # print("road")
             for game_object in game_world.all_objects():
                 #print(game_object.__class__.__name__)
                 #옵저버와 충돌
                 if game_object.__class__.__name__ == 'Observer':
-                    print("sef")
+                   # print("sef")
                     if game_object != self:
                         #옵저버가 시작지역 / 안전지역 / 종료지역에 있으면
                         if ((tile_size * 4 <= game_object.x <= tile_size * 12) and (tile_size * 4 <= game_object.y <= tile_size * 12)) or \
@@ -428,13 +432,15 @@ class Scourge():
     def collision_check(self):
         # 안전지역 체크
         if (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 4 <= self.y <= tile_size * 12):
-            print("start_zone")
+            #print("start_zone")
+           pass
         # 안전지역 체크
         elif (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 17 <= self.y <= tile_size * 25):
-            print("safe_zone")
+            #print("safe_zone")
         # 종료지역 체크
+           pass
         elif (tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 48 <= self.y <= tile_size * 56):
-            print("clear")
+            #print("clear")
             main_state.proceed_next_stage()
             game_world.reset_screen_xy()
         elif ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
@@ -445,12 +451,12 @@ class Scourge():
                 ((tile_size * 12 <= self.x <= 31 * 32) and (tile_size * 17 <= self.y <= tile_size * 25)) or \
                 ((tile_size * 4 <= self.x <= 31 * 12) and (tile_size * 17 <= self.y <= tile_size * 56)) or \
                 ((tile_size * 12 <= self.x <= 31 * 48) and (tile_size * 48 <= self.y <= tile_size * 56)):
-            print("road")
+            #print("road")
             for game_object in game_world.all_objects():
                 #print(game_object.__class__.__name__)
                 #옵저버와 충돌
                 if game_object.__class__.__name__ == 'Observer':
-                    print("sef")
+                    #print("sef")
                     if game_object != self:
                         #옵저버가 시작지역 / 안전지역 / 종료지역에 있으면
                         if ((tile_size * 4 <= game_object.x <= tile_size * 12) and (tile_size * 4 <= game_object.y <= tile_size * 12)) or \
