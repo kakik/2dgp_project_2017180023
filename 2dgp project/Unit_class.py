@@ -15,7 +15,7 @@ def set_player_unit(player, key):
     elif key == 2:
         player.unit = Observer(200 ,250)
     elif key == 3:
-        player.unit = Wraith(200 ,250)
+        player.unit = Wraith(tile_size*40 ,tile_size*50)
 
 
 class Player():
@@ -48,6 +48,16 @@ class Player():
     def draw(self):
         self.under_unit_cursor_img.clip_draw(46, 232, 41, 41, self.unit.x - game_world.screen_coord_x, self.unit.y - game_world.screen_coord_y - self.unit.height / 5 - 10, self.unit.width, self.unit.height)
         self.unit.draw()
+
+    def return_to_start_point(self):
+        self.unit.x = tile_size*40
+        self.unit.y = tile_size*50
+        self.unit.to_x = tile_size*40
+        self.unit.to_y = tile_size*50
+        self.unit.x_velocity = 0
+        self.unit.y_velocity = 0
+        self.unit.curr_t = 0.0
+        self.unit.to_t = 0.0
 
 class Observer():
     image = None

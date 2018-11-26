@@ -13,8 +13,9 @@ def create_enemy_observers(level):
 
     for i in range(0,9):
         for j in range(0,9):
-            for k in range (0,1+level):
+            for k in range (0,1 + level):
                 game_world.add_object(Unit_class.Observer(game_world.map_x/9*(j+0.5),game_world.map_y/9*(i+0.5)),1)
+
 
 
 def delete_enemy_observers():
@@ -25,8 +26,12 @@ def delete_enemy_observers():
             if game_object != player:
                 game_world.remove_object(game_object)
 
+
 def proceed_next_stage():
     global stage_level
+    global player
+
+    player.return_to_start_point()
 
     delete_enemy_observers()
     stage_level+=1
