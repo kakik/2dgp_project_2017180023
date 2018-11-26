@@ -331,92 +331,20 @@ class Scourge(Unit):
             Scourge.image.clip_draw((self.width+3) * (int)(self.frame.current_frame) + 2, 369 - ((self.height+3)*(int)(self.IDLE_frame.current_frame+1)-1), self.width, self.height - 2, self.x - game_world.screen_coord_x,
                                     self.y - game_world.screen_coord_y)
 
+
     def set_random_move_point(self):
-        x_move_distance = random.randint(0, 1000) - 500
-        y_move_distance = random.randint(0, 1000) - 500
+        super(Scourge, self).set_random_move_point()
 
-        if self.x + x_move_distance < 0 + self.width / 2:
-            x_move_distance = 0 - self.x + self.width
-        elif game_world.map_x - self.width / 2 < self.x + x_move_distance:
-            x_move_distance = game_world.map_x - self.x - self.width
-
-        if self.y + y_move_distance < 0 + self.height / 2:
-            y_move_distance = 0 - self.y + self.height
-        elif game_world.map_y - self.height / 2 < self.y + y_move_distance:
-            y_move_distance = game_world.map_y - self.y - self.height
-
-        self.set_velocity(x_move_distance, y_move_distance)
 
     def set_move_point(self, to_x, to_y):
-        self.set_velocity(to_x - self.x, to_y - self.y)
+        super(Scourge, self).set_move_point(to_x, to_y)
+
 
     def move(self):
-        self.x += self.x_velocity * (get_time() - self.curr_t)
-        self.y += self.y_velocity * (get_time() - self.curr_t)
-        self.curr_t = get_time()
+        super(Scourge, self).move()
 
     def set_velocity(self, x_move_distance, y_move_distance):
-        self.to_t = math.sqrt(x_move_distance ** 2 + y_move_distance ** 2) / self.velocity + get_time()
-        self.x_velocity = x_move_distance / (self.to_t - get_time())
-        self.y_velocity = y_move_distance / (self.to_t - get_time())
-        self.curr_t = get_time()
-        self.frame.direction_update(self.x_velocity, self.y_velocity)
-        self.frame.current_frame += 1
-        self.to_x = self.x + self.x_velocity
-        self.to_y = self.y + self.y_velocity
+        super(Scourge, self).set_velocity( x_move_distance, y_move_distance)
 
     def collision_check(self):
-        # 안전지역 체크
-        if (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 4 <= self.y <= tile_size * 12):
-            #print("start_zone")
-           pass
-        # 안전지역 체크
-        elif (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 17 <= self.y <= tile_size * 25):
-            #print("safe_zone")
-        # 종료지역 체크
-           pass
-        elif (tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 48 <= self.y <= tile_size * 56):
-            #print("clear")
-            main_state.proceed_next_stage()
-            game_world.reset_screen_xy()
-        elif ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
-                ((tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 12 <= self.y <= tile_size * 40)) or \
-                ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
-                ((tile_size * 32 <= self.x <= tile_size * 48) and (tile_size * 33 <= self.y <= tile_size * 40)) or \
-                ((tile_size * 32 <= self.x <= tile_size * 40) and (tile_size * 17 <= self.y <= tile_size * 33)) or \
-                ((tile_size * 12 <= self.x <= 31 * 32) and (tile_size * 17 <= self.y <= tile_size * 25)) or \
-                ((tile_size * 4 <= self.x <= 31 * 12) and (tile_size * 17 <= self.y <= tile_size * 56)) or \
-                ((tile_size * 12 <= self.x <= 31 * 48) and (tile_size * 48 <= self.y <= tile_size * 56)):
-            #print("road")
-            for game_object in game_world.all_objects():
-                #print(game_object.__class__.__name__)
-                #옵저버와 충돌
-                if game_object.__class__.__name__ == 'Observer':
-                    #print("sef")
-                    if game_object != self:
-                        #옵저버가 시작지역 / 안전지역 / 종료지역에 있으면
-                        if ((tile_size * 4 <= game_object.x <= tile_size * 12) and (tile_size * 4 <= game_object.y <= tile_size * 12)) or \
-                            ((tile_size * 4 <= game_object.x <= tile_size * 12) and (tile_size * 17 <= game_object.y <= tile_size * 25)) or \
-                            ((tile_size * 48 <= game_object.x <= tile_size * 56) and (tile_size * 48 <= game_object.y <= tile_size * 56)):
-                            pass
-                        elif (abs(game_object.x - self.x)<=(game_object.width/2 + self.width/2)) and (abs(game_object.y - self.y)<=(game_object.height/2 + self.height/2)):
-                            self.x = 200
-                            self.y = 250
-                            self.to_x = self.x
-                            self.to_y = self.y
-                            self.x_velocity = 0
-                            self.y_velocity = 0
-                            self.curr_t = 0.0
-                            self.to_t = 0.0
-                            game_world.reset_screen_xy()
-        #길 밖으로 나가면
-        else:
-            self.x = 200
-            self.y = 250
-            self.to_x = self.x
-            self.to_y = self.y
-            self.x_velocity = 0
-            self.y_velocity = 0
-            self.curr_t = 0.0
-            self.to_t = 0.0
-            game_world.reset_screen_xy()
+        super(Scourge, self).collision_check()
