@@ -209,10 +209,19 @@ class MainBottomUI():
     image = None
     width = 1280
     height = 330
+    minimap_image = None
+    minimap_image_width = 1860
+    minimap_image_height = 1860
 
     def __init__(self):
         if self.image == None:
             self.image =load_image('resources\\UI\\bottom_UI.png')
+        if self.minimap_image == None:
+            self.minimap_image = load_image('resources\\TileMap\\Map.png')
+        self.minimap_x =game_world.screen_x*27/self.width
+        self.minimap_y = game_world.screen_y*6/self.height
+        self.minimap_width = game_world.screen_x*256/self.width
+        self.minimap_height = (game_world.screen_x /self.width * self.height)*256/self.height
 
     def handle_events(self):
         pass
@@ -222,7 +231,15 @@ class MainBottomUI():
 
     def draw(self):
         if self.image != None:
-            self.image.clip_draw(0, 0, self.width, self.height, int(game_world.screen_x / 2), int(game_world.screen_x /self.width * self.height/2), game_world.screen_x, int(game_world.screen_x /self.width * self.height))
+            self.image.clip_draw(0, 0, self.width, self.height, int(game_world.screen_x / 2), int(game_world.screen_x /self.width * self.height/2),
+                                 game_world.screen_x, int(game_world.screen_x /self.width * self.height))
+        if self.minimap_image != None:
+            self.minimap_image.clip_draw(0,0,self.minimap_image_width, self.minimap_image_height,
+                                         int((self.minimap_x+self.minimap_width)/2),int((self.minimap_y+self.minimap_height)/2), int(self.minimap_width), int(self.minimap_height))
+
+        #draw_rectangle(self.minimap_x, self.minimap_y, self.minimap_width + self.minimap_x, self.minimap_height + self.minimap_y)
+
+
 
 
 
