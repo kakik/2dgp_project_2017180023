@@ -45,6 +45,7 @@ class Player():
 
 
 
+
     def draw(self):
         self.under_unit_cursor_img.clip_draw(46, 232, 41, 41, self.unit.x - game_world.screen_coord_x, self.unit.y - game_world.screen_coord_y - self.unit.height / 5 - 10, self.unit.width, self.unit.height)
         self.unit.draw()
@@ -76,25 +77,6 @@ class Unit():
     def get_events(self):
         pass
 
-
-class Observer(Unit):
-    image = None
-    width = 36
-    height = 34
-    max_frame = 28
-    ACTION_PER_TIME = 0.5
-    velocity = 100.0
-
-    def __init__(self,x,y):
-        super(Observer, self).__init__(x, y)
-
-
-        if Observer.image == None:
-            Observer.image = [load_image('resources\\Observer\\%d%d.png' % (i // 10, i % 10)) for i in range(0, 15)]
-
-    def get_events(self):
-        pass
-
     def update(self):
         if game_framework.stack[-1] == difficulty_selection_state:
             self.frame.update()
@@ -111,14 +93,8 @@ class Observer(Unit):
                 self.to_t = 0.0
                 self.set_random_move_point()
 
-
-
     def draw(self):
-        if 15 <= self.frame.current_frame:
-            Observer.image[(int)(28- self.frame.current_frame)].composite_draw(3.141595653589793238,'v', self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y, self.width, self.height)
-        else:
-            Observer.image[(int)(self.frame.current_frame)].draw(self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y)
-
+        pass
 
     def set_random_move_point(self):
         x_move_distance = random.randint(0, 1000) - 500
@@ -210,6 +186,54 @@ class Observer(Unit):
             self.curr_t = 0.0
             self.to_t = 0.0
             game_world.reset_screen_xy()
+
+
+class Observer(Unit):
+    image = None
+    width = 36
+    height = 34
+    max_frame = 28
+    ACTION_PER_TIME = 0.5
+    velocity = 100.0
+
+    def __init__(self,x,y):
+        super(Observer, self).__init__(x, y)
+
+
+        if Observer.image == None:
+            Observer.image = [load_image('resources\\Observer\\%d%d.png' % (i // 10, i % 10)) for i in range(0, 15)]
+
+    def get_events(self):
+        pass
+
+    def update(self):
+        super(Observer, self).update()
+
+
+
+    def draw(self):
+        if 15 <= self.frame.current_frame:
+            Observer.image[(int)(28- self.frame.current_frame)].composite_draw(3.141595653589793238,'v', self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y, self.width, self.height)
+        else:
+            Observer.image[(int)(self.frame.current_frame)].draw(self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y)
+
+
+    def set_random_move_point(self):
+        super(Observer, self).set_random_move_point()
+
+
+    def set_move_point(self, to_x, to_y):
+        super(Observer, self).set_move_point(to_x, to_y)
+
+
+    def move(self):
+        super(Observer, self).move()
+
+    def set_velocity(self, x_move_distance, y_move_distance):
+        super(Observer, self).set_velocity( x_move_distance, y_move_distance)
+
+    def collision_check(self):
+        super(Observer, self).collision_check()
 
 
 class Wraith(Unit):
