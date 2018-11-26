@@ -64,7 +64,7 @@ class Unit():
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.frame = IMG_class.Frame(Observer.max_frame, 1)
+        self.frame = IMG_class.Frame(self.max_frame, 1)
         self.frame.current_frame = 0
 
         self.to_x = x
@@ -264,6 +264,7 @@ class Wraith(Unit):
                                                                               self.y - game_world.screen_coord_y, self.width, self.height)
         else:
             Wraith.image[(int)(self.frame.current_frame)].draw(self.x - game_world.screen_coord_x, self.y - game_world.screen_coord_y)
+
     def set_random_move_point(self):
         super(Wraith, self).set_random_move_point()
 
