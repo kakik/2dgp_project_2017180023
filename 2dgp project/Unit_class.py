@@ -146,6 +146,8 @@ class Observer():
         # 종료지역 체크
         elif (tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 48 <= self.y <= tile_size * 56):
             print("clear")
+            main_state.proceed_next_stage()
+            game_world.reset_screen_xy()
         elif ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
                 ((tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 12 <= self.y <= tile_size * 40)) or \
                 ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
@@ -284,6 +286,8 @@ class Wraith():
         # 종료지역 체크
         elif (tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 48 <= self.y <= tile_size * 56):
             print("clear")
+            main_state.proceed_next_stage()
+            game_world.reset_screen_xy()
         elif ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
                 ((tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 12 <= self.y <= tile_size * 40)) or \
                 ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
@@ -304,16 +308,7 @@ class Wraith():
                             ((tile_size * 4 <= game_object.x <= tile_size * 12) and (tile_size * 17 <= game_object.y <= tile_size * 25)) or \
                             ((tile_size * 48 <= game_object.x <= tile_size * 56) and (tile_size * 48 <= game_object.y <= tile_size * 56)):
                             pass
-                        elif (abs(game_object.x - self.x)<=(game_object.width/2 + self.width/2)) and (abs(game_object.y - self.y)<=(game_object.height/2 + self.height/2)):
-                            self.x = 200
-                            self.y = 250
-                            self.to_x = self.x
-                            self.to_y = self.y
-                            self.x_velocity = 0
-                            self.y_velocity = 0
-                            self.curr_t = 0.0
-                            self.to_t = 0.0
-                            game_world.reset_screen_xy()
+
         #길 밖으로 나가면
         else:
             self.x = 200
@@ -430,6 +425,8 @@ class Scourge():
         # 종료지역 체크
         elif (tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 48 <= self.y <= tile_size * 56):
             print("clear")
+            main_state.proceed_next_stage()
+            game_world.reset_screen_xy()
         elif ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
                 ((tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 12 <= self.y <= tile_size * 40)) or \
                 ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
