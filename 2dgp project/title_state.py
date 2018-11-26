@@ -28,26 +28,25 @@ def enter():
     game_world.mx = game_world.screen_x / 2
     game_world.my = game_world.screen_y / 2
 
-    Title_BG_img = MenuBGIMG()
-    game_world.add_object(Title_BG_img, 0)
-    Title_start_text_img = MenuStartText()
-    game_world.add_object(Title_start_text_img, 0)
-    Title_exit_text_img = MenuExitText()
-    game_world.add_object(Title_exit_text_img, 0)
-
-
-
     # 객체 생성!
+    Title_BG_img = MenuBGIMG()
     Title_start = MenuStartIMG()
     Title_start_mouse_on =MenuStartMouseOnIMG()
     Title_exit = MenuExitIMG()
     Title_exit_mouse_on = MenuExitMouseOnIMG()
+    Title_start_text_img = MenuStartText()
+    Title_exit_text_img = MenuExitText()
 
+    #월드에 객체 추가!
+    game_world.add_object(Title_BG_img, 0)
     game_world.add_object(Title_start,0)
     game_world.add_object(Title_start_mouse_on,0)
     game_world.add_object(Title_exit,0)
     game_world.add_object(Title_exit_mouse_on,0)
+    game_world.add_object(Title_start_text_img, 0)
+    game_world.add_object(Title_exit_text_img, 0)
 
+    #커서 추가
     game_world.cursor = cursor_class.Cursor(game_world.screen_x / 2, game_world.screen_y / 2)
     game_world.add_object(game_world.cursor, 1)
 
@@ -57,6 +56,7 @@ def exit():
     global Title_start, Title_start_mouse_on
     global Title_exit, Title_exit_mouse_on
 
+    #배경, 커서 제외 삭제
     game_world.remove_object(Title_start_text_img)
     game_world.remove_object(Title_exit_text_img)
     game_world.remove_object(Title_start)
