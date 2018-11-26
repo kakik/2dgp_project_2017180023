@@ -59,18 +59,11 @@ class Player():
         self.unit.curr_t = 0.0
         self.unit.to_t = 0.0
 
-class Observer():
-    image = None
-    width = 36
-    height = 34
-    max_frame = 28
-    ACTION_PER_TIME = 0.5
-    velocity = 100.0
-
-    def __init__(self,x,y):
+class Unit():
+    def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.frame = IMG_class.Frame(Observer.max_frame,1)
+        self.frame = IMG_class.Frame(Observer.max_frame, 1)
         self.frame.current_frame = 0
 
         self.to_x = x
@@ -79,6 +72,22 @@ class Observer():
         self.y_velocity = 0
         self.curr_t = 0.0
         self.to_t = 0.0
+
+    def get_events(self):
+        pass
+
+
+class Observer(Unit):
+    image = None
+    width = 36
+    height = 34
+    max_frame = 28
+    ACTION_PER_TIME = 0.5
+    velocity = 100.0
+
+    def __init__(self,x,y):
+        super(Observer, self).__init__(x, y)
+
 
         if Observer.image == None:
             Observer.image = [load_image('resources\\Observer\\%d%d.png' % (i // 10, i % 10)) for i in range(0, 15)]
@@ -203,7 +212,7 @@ class Observer():
             game_world.reset_screen_xy()
 
 
-class Wraith():
+class Wraith(Unit):
     image = None
     width = 52
     height = 44
@@ -212,17 +221,7 @@ class Wraith():
     velocity = 200.0
 
     def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        self.frame = IMG_class.Frame(Wraith.max_frame, 1)
-        self.frame.current_frame = 0
-
-        self.to_x = x
-        self.to_y = y
-        self.x_velocity = 0
-        self.y_velocity = 0
-        self.curr_t = 0.0
-        self.to_t = 0.0
+        super(Wraith, self).__init__(x, y)
 
         if Wraith.image == None:
             Wraith.image = [load_image('resources\\Wraith\\%d%d.png' % (i // 10, i % 10)) for i in range(0, 17)]
@@ -337,7 +336,7 @@ class Wraith():
 
 
 
-class Scourge():
+class Scourge(Unit):
     image = None
     width = 31
     height = 27
@@ -346,17 +345,7 @@ class Scourge():
     velocity = 200.0
 
     def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        self.frame = IMG_class.Frame(Scourge.max_frame, 1)
-        self.frame.current_frame = 0
-
-        self.to_x = x
-        self.to_y = y
-        self.x_velocity = 0
-        self.y_velocity = 0
-        self.curr_t = 0.0
-        self.to_t = 0.0
+        super(Scourge, self).__init__(x, y)
 
         self.IDLE_frame = IMG_class.Frame(4, 2)
         self.IDLE_frame.current_frame = 0
