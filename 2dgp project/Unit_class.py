@@ -254,20 +254,7 @@ class Wraith(Unit):
         pass
 
     def update(self):
-        if game_framework.stack[-1] == difficulty_selection_state:
-            self.frame.update()
-        else:
-
-            self.move()
-            # 이동 종료
-            if (self.curr_t) > self.to_t:
-                self.to_x = self.x
-                self.to_y = self.y
-                self.x_velocity = 0
-                self.y_velocity = 0
-                self.curr_t = 0.0
-                self.to_t = 0.0
-                self.set_random_move_point()
+        super(Wraith, self).update()
 
 
 
