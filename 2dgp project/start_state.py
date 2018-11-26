@@ -4,31 +4,32 @@ from pico2d import *
 import game_world
 
 name = "StartState"
-image = None
 
-
+Start_BG_image = None
+Time_to_change_state = 3.0
 
 def enter():
-    global image
-    image = load_image('resources\\Start\\start.png')
-    hide_cursor()
+    global Start_BG_image
+    Start_BG_image = StartBGIMG()
+    game_world.add_object(Start_BG_image , 0)
 
 
 def exit():
-    global image
-    del (image)
-
+    game_world.remove_object(Start_BG_image)
 
 def update():
-
-    if (get_time()>3.0):
+    global Time_to_change_state
+    #일정 시간 경과 후 타이틀 화면으로 이동
+    if (get_time()>Time_to_change_state):
         game_framework.change_state(title_state)
 
 
 def draw():
-    global image
     clear_canvas()
-    image.clip_draw(0,0,game_world.screen_x, game_world.screen_y, game_world.screen_x/2, game_world.screen_y/2)
+
+    for game_object in game_world.all_objects():
+        game_object.draw()
+
     update_canvas()
 
 def handle_events():
@@ -47,6 +48,26 @@ def resume(): pass
 
 
 
+
+
+class StartBGIMG():
+    image = None
+    width = 800
+    height = 600
+
+    def __init__(self):
+        if self.image == None:
+            self.image = load_image('resources\\Start\\start.png')
+
+    def handle_events(self):
+        pass
+
+    def update(self):
+        pass
+
+    def draw(self):
+        if self.image != None:
+            self.image.clip_draw(0, 0, game_world.screen_x, game_world.screen_y, game_world.screen_x / 2, game_world.screen_y / 2)
 
 
 
