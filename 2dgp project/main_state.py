@@ -222,6 +222,7 @@ class MainBottomUI():
         self.minimap_y = game_world.screen_y*6/self.height
         self.minimap_width = game_world.screen_x*256/self.width
         self.minimap_height = (game_world.screen_x /self.width * self.height)*256/self.height
+        print(self.minimap_x)
 
     def handle_events(self):
         pass
@@ -230,12 +231,35 @@ class MainBottomUI():
         pass
 
     def draw(self):
+        global player
         if self.image != None:
             self.image.clip_draw(0, 0, self.width, self.height, int(game_world.screen_x / 2), int(game_world.screen_x /self.width * self.height/2),
                                  game_world.screen_x, int(game_world.screen_x /self.width * self.height))
         if self.minimap_image != None:
             self.minimap_image.clip_draw(0,0,self.minimap_image_width, self.minimap_image_height,
                                          int((self.minimap_x+self.minimap_width)/2),int((self.minimap_y+self.minimap_height)/2), int(self.minimap_width), int(self.minimap_height))
+
+        bbbbb =True
+
+        for game_object in game_world.all_objects():
+            if game_object == player:
+                draw_green_rectangle(
+                    int(self.minimap_x / 2 + game_object.unit.x / self.minimap_image_width * self.minimap_width) - 1,
+                    int(self.minimap_y / 2 + game_object.unit.y / self.minimap_image_height * self.minimap_height) - 1,
+                    int(self.minimap_x / 2 + game_object.unit.x / self.minimap_image_width * self.minimap_width) + 1,
+                    int(self.minimap_y / 2 + game_object.unit.y / self.minimap_image_height * self.minimap_height) + 1)
+
+            elif game_object.__class__.__name__ == 'Observer':
+                draw_rectangle(int(self.minimap_x/2 + game_object.x/self.minimap_image_width*self.minimap_width)-1,
+                               int(self.minimap_y/2+ game_object.y/self.minimap_image_height*self.minimap_height)-1,
+                               int(self.minimap_x/2 + game_object.x/self.minimap_image_width*self.minimap_width)+1,
+                               int(self.minimap_y/2+ game_object.y/self.minimap_image_height*self.minimap_height)+1)
+
+        draw_white_rectangle(int(self.minimap_x / 2 + game_world.screen_coord_x / self.minimap_image_width * self.minimap_width) ,
+                       int(self.minimap_y / 2 + (game_world.screen_coord_y + self.height/3  )/ self.minimap_image_height * self.minimap_height)  ,
+                       int(self.minimap_x / 2 + (game_world.screen_coord_x + game_world.screen_x) / self.minimap_image_width * self.minimap_width) ,
+                       int(self.minimap_y / 2 + (game_world.screen_coord_y + game_world.screen_y) / self.minimap_image_height * self.minimap_height) )
+
 
         #draw_rectangle(self.minimap_x, self.minimap_y, self.minimap_width + self.minimap_x, self.minimap_height + self.minimap_y)
 
