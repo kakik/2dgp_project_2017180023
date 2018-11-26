@@ -8,14 +8,18 @@ import random
 import math
 
 tile_size = 31
+start_point_x = 200
+start_point_y = 250
 
 def set_player_unit(player, key):
+
+
     if key == 1:
-        player.unit = Scourge(200 ,250)
+        player.unit = Scourge(start_point_x ,start_point_y)
     elif key == 2:
-        player.unit = Observer(200 ,250)
+        player.unit = Observer(start_point_x ,start_point_y)
     elif key == 3:
-        player.unit = Wraith(200,250)
+        player.unit = Wraith(start_point_x,start_point_y)
 
 
 class Player():
@@ -43,22 +47,12 @@ class Player():
         if self.unit.__class__.__name__== 'Scourge':
             self.unit.IDLE_frame.update()
 
-
-
-
     def draw(self):
         self.under_unit_cursor_img.clip_draw(46, 232, 41, 41, self.unit.x - game_world.screen_coord_x, self.unit.y - game_world.screen_coord_y - self.unit.height / 5 - 10, self.unit.width, self.unit.height)
         self.unit.draw()
 
     def return_to_start_point(self):
-        self.unit.x = 200
-        self.unit.y = 250
-        self.unit.to_x = 200
-        self.unit.to_y = 250
-        self.unit.x_velocity = 0
-        self.unit.y_velocity = 0
-        self.unit.curr_t = 0.0
-        self.unit.to_t = 0.0
+        self.unit.return_to_start_point()
 
 class Unit():
     def __init__(self, x, y):
@@ -97,6 +91,7 @@ class Unit():
         pass
 
     def set_random_move_point(self):
+        #한 번에 이동하는 거리 조절
         x_move_distance = random.randint(0, 1000) - 500
         y_move_distance = random.randint(0, 1000) - 500
 
@@ -117,11 +112,6 @@ class Unit():
         self.set_velocity(to_x - self.x, to_y - self.y)
 
 
-    def move(self):
-        self.x += self.x_velocity * (get_time() - self.curr_t)
-        self.y += self.y_velocity * (get_time() - self.curr_t)
-        self.curr_t = get_time()
-
     def set_velocity(self, x_move_distance, y_move_distance):
         self.to_t = math.sqrt(x_move_distance ** 2 + y_move_distance ** 2) / self.velocity + get_time()
         self.x_velocity = x_move_distance / (self.to_t - get_time())
@@ -131,20 +121,27 @@ class Unit():
         self.to_x = self.x + self.x_velocity
         self.to_y = self.y + self.y_velocity
 
+    def move(self):
+        self.x += self.x_velocity * (get_time() - self.curr_t)
+        self.y += self.y_velocity * (get_time() - self.curr_t)
+        self.curr_t = get_time()
+
     def collision_check(self):
         # 안전지역 체크
         if (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 4 <= self.y <= tile_size * 12):
             #print("start_zone")
-        # 안전지역 체크
             pass
+        # 안전지역 체크
         elif (tile_size * 4 <= self.x <= tile_size * 12) and (tile_size * 17 <= self.y <= tile_size * 25):
             #print("safe_zone")
-        # 종료지역 체크
             pass
+        # 종료지역 체크
         elif (tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 48 <= self.y <= tile_size * 56):
             #print("clear")
             main_state.proceed_next_stage()
             game_world.reset_screen_xy()
+
+        # 길 체크
         elif ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
                 ((tile_size * 48 <= self.x <= tile_size * 56) and (tile_size * 12 <= self.y <= tile_size * 40)) or \
                 ((tile_size * 4 <= self.x <= tile_size * 56) and (tile_size * 4 <= self.y <= tile_size * 12)) or \
@@ -154,38 +151,38 @@ class Unit():
                 ((tile_size * 4 <= self.x <= 31 * 12) and (tile_size * 17 <= self.y <= tile_size * 56)) or \
                 ((tile_size * 12 <= self.x <= 31 * 48) and (tile_size * 48 <= self.y <= tile_size * 56)):
             #print("road")
+            # 충돌검사
             for game_object in game_world.all_objects():
-                #print(game_object.__class__.__name__)
-                #옵저버와 충돌
+                # 충돌한 물체가 옵저버이면
                 if game_object.__class__.__name__ == 'Observer':
-                    #print("sef")
                     if game_object != self:
-                        #옵저버가 시작지역 / 안전지역 / 종료지역에 있으면
+                        # 옵저버가 시작지역 / 안전지역 / 종료지역에 있으면 충돌처리 x
                         if ((tile_size * 4 <= game_object.x <= tile_size * 12) and (tile_size * 4 <= game_object.y <= tile_size * 12)) or \
                             ((tile_size * 4 <= game_object.x <= tile_size * 12) and (tile_size * 17 <= game_object.y <= tile_size * 25)) or \
                             ((tile_size * 48 <= game_object.x <= tile_size * 56) and (tile_size * 48 <= game_object.y <= tile_size * 56)):
                             pass
                         elif (abs(game_object.x - self.x)<=(game_object.width/2 + self.width/2)) and (abs(game_object.y - self.y)<=(game_object.height/2 + self.height/2)):
-                            self.x = 200
-                            self.y = 250
-                            self.to_x = self.x
-                            self.to_y = self.y
-                            self.x_velocity = 0
-                            self.y_velocity = 0
-                            self.curr_t = 0.0
-                            self.to_t = 0.0
+                            #시작지점으로 리턴
+                            self.return_to_start_point()
                             game_world.reset_screen_xy()
-        #길 밖으로 나가면
+        #길 밖으로 나가면 시작지점으로 리턴
         else:
-            self.x = 200
-            self.y = 250
-            self.to_x = self.x
-            self.to_y = self.y
-            self.x_velocity = 0
-            self.y_velocity = 0
-            self.curr_t = 0.0
-            self.to_t = 0.0
+            self.return_to_start_point()
             game_world.reset_screen_xy()
+
+    def return_to_start_point(self):
+        global start_point_x, start_point_y
+
+        self.x = start_point_x
+        self.y = start_point_y
+        self.to_x = start_point_x
+        self.to_y = start_point_y
+        self.x_velocity = 0
+        self.y_velocity = 0
+        self.curr_t = 0.0
+        self.to_t = 0.0
+
+
 
 
 class Observer(Unit):
