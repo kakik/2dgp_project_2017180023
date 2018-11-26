@@ -24,15 +24,18 @@ def enter():
     global Title_start, Title_start_mouse_on
     global Title_exit, Title_exit_mouse_on
 
+    # 초기 마우스 좌표
+    game_world.mx = game_world.screen_x / 2
+    game_world.my = game_world.screen_y / 2
+
     Title_BG_img = MenuBGIMG()
     game_world.add_object(Title_BG_img, 0)
-    Title_start_text_img = load_image('resources\\Title\\Start\\start.png')
-    Title_exit_text_img = load_image('resources\\Title\\Exit\\exit.png')
+    Title_start_text_img = MenuStartText()
+    game_world.add_object(Title_start_text_img, 0)
+    Title_exit_text_img = MenuExitText()
+    game_world.add_object(Title_exit_text_img, 0)
 
 
-    # 초기 마우스 좌표
-    game_world.mx = game_world.screen_x/2
-    game_world.my = game_world.screen_y/2
 
     # 객체 생성!
     Title_start = MenuStartIMG()
@@ -54,9 +57,9 @@ def exit():
     global Title_start_text_img, Title_exit_text_img
     global Title_start, Title_start_mouse_on
     global Title_exit, Title_exit_mouse_on
-    del Title_start_text_img
-    del Title_exit_text_img
 
+    game_world.remove_object(Title_start_text_img)
+    game_world.remove_object(Title_exit_text_img)
     game_world.remove_object(Title_BG_img)
     game_world.remove_object(Title_start)
     game_world.remove_object(Title_start_mouse_on)
@@ -99,24 +102,13 @@ def update():
 
 
 def draw():
-    global Title_BG_img
-    global Title_start_text_img, Title_exit_text_img
-    global Title_start, Title_start_mouse_on
-    global Title_exit, Title_exit_mouse_on
-
     clear_canvas()
 
     for game_object in game_world.all_objects():
         game_object.draw()
 
-    if Title_start_text_img != None:
-        Title_start_text_img.draw(200, game_world.screen_y - 100)
-
-    if Title_exit_text_img != None:
-        Title_exit_text_img.draw(game_world.screen_x - 250, 180)
-
-
     update_canvas()
+
 
 def pause():
     pass
@@ -125,6 +117,10 @@ def pause():
 def resume():
     pass
 
+
+############################################################################################################################################################
+############################################################################################################################################################
+############################################################################################################################################################
 
 
 class MenuBGIMG():
@@ -286,11 +282,50 @@ class MenuExitMouseOnIMG():
         if self.mouse_on == True:
             self.image[(int)(self.frame.current_frame)].draw(self.x, self.y)
 
+class MenuStartText():
+    image = None
+    width = 200
+    height = 100
+
+    def __init__(self):
+        if self.image == None:
+            self.image =load_image('resources\\Title\\Start\\start.png')
+
+    def handle_events(self):
+        pass
+
+    def update(self):
+        pass
+
+    def draw(self):
+        if self.image != None:
+            self.image.draw(200, game_world.screen_y - 100)
+
+class MenuExitText():
+    image = None
+    width = 200
+    height = 100
+
+    def __init__(self):
+        if self.image == None:
+            self.image = load_image('resources\\Title\\Exit\\exit.png')
+
+    def handle_events(self):
+        pass
+
+    def update(self):
+        pass
+
+    def draw(self):
+        if self.image != None:
+            self.image.draw(game_world.screen_x - 250, 180)
 
 
 
 
-
+############################################################################################################################################################
+############################################################################################################################################################
+############################################################################################################################################################
 
 
 
