@@ -1,4 +1,5 @@
 import game_framework
+import main_state
 # layer 0: Background Objects
 # layer 1: Foreground Objects
 objects = [[],[]]
@@ -26,6 +27,7 @@ def all_objects():
     global cursor
     global mx, my
     is_curror_exist = False
+    is_main_UI_exist = False
 
     for i in range(len(objects)):
         for o in objects[i]:
@@ -33,7 +35,13 @@ def all_objects():
             if o == cursor:
                 is_curror_exist = True
                 continue
+            if o == main_state.bottom_UI:
+                is_main_UI_exist = True
+                continue
+
             yield o
+    if is_main_UI_exist == True:
+        yield  main_state.bottom_UI
 
     if is_curror_exist == True:
         yield cursor

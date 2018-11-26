@@ -3,10 +3,12 @@ from pico2d import *
 import Unit_class
 import game_framework
 
-player = None
 background_image = None
+bottom_UI = None
+
 collision_box_on = False
 stage_level = None
+player = None
 
 def create_enemy_observers(level):
     global player
@@ -40,10 +42,13 @@ def proceed_next_stage():
     create_enemy_observers(stage_level)
 
 def enter():
-    global background_image
+    global background_image, bottom_UI
     global stage_level
+
     background_image = MainBGIMG()
     game_world.add_object(background_image, 0)
+    bottom_UI = MainBottomUI()
+    game_world.add_object(bottom_UI, 1)
 
     stage_level = 1
     #초기 셋팅 : 옵저버 162 마리
@@ -198,6 +203,26 @@ class MainBGIMG():
     def draw(self):
         if self.image != None:
             self.image.clip_draw(game_world.screen_coord_x, game_world.screen_coord_y, game_world.screen_x, game_world.screen_y, game_world.screen_x / 2, game_world.screen_y / 2)
+
+
+class MainBottomUI():
+    image = None
+    width = 1280
+    height = 330
+
+    def __init__(self):
+        if self.image == None:
+            self.image =load_image('resources\\UI\\bottom_UI.png')
+
+    def handle_events(self):
+        pass
+
+    def update(self):
+        pass
+
+    def draw(self):
+        if self.image != None:
+            self.image.clip_draw(0, 0, self.width, self.height, int(game_world.screen_x / 2), int(game_world.screen_x /self.width * self.height/2), game_world.screen_x, int(game_world.screen_x /self.width * self.height))
 
 
 

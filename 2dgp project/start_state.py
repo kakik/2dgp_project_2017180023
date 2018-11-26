@@ -12,6 +12,7 @@ def enter():
     global Start_BG_image
     Start_BG_image = StartBGIMG()
     game_world.add_object(Start_BG_image , 0)
+    hide_cursor()
 
 
 def exit():
