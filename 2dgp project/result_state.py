@@ -1,11 +1,14 @@
 import game_world
 from pico2d import *
 import game_framework
+import main_state
 
-
+Result_BG_IMG = None
 
 def enter():
-    pass
+    global Result_BG_IMG
+    Result_BG_IMG = ResultBGIMG()
+
 
 def exit():
     pass
@@ -39,6 +42,8 @@ class ResultBGIMG():
     def __init__(self):
         if self.image == None:
             self.image = load_image('resources\\Title\\Background\\Title_BG.png')
+            self.font =  load_font('font\\ENCR10B.TTF', 20)
+            self.clear_stage = main_state.stage_level - 1
 
     def handle_events(self):
         pass
