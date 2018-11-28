@@ -67,6 +67,7 @@ screen_coord_x, screen_coord_y = 0, 0
 screen_coordf_x, screen_coordf_y = 0, 0
 screen_scroll_x, screen_scroll_y = 0,0
 screen_scroll_speed = 400
+
 def update_screen_xy():
     global screen_coord_x, screen_coord_y, screen_scroll_x, screen_scroll_y ,screen_scroll_speed, screen_coordf_x, screen_coordf_y
     global map_x, map_y
@@ -85,8 +86,17 @@ def update_screen_xy():
     screen_coord_x = (int)(screen_coordf_x)
     screen_coord_y = (int)(screen_coordf_y)
 
+def update_screen_xy_to_point(x, y):
+    global screen_coord_x, screen_coord_y, screen_coordf_x, screen_coordf_y
+
+    screen_coord_x = int(x)
+    screen_coordf_x = x
+    screen_coord_y = int(y)
+    screen_coordf_y = y
+
 def reset_screen_xy():
     global screen_coordf_x, screen_coordf_y
+
 
     screen_coordf_x, screen_coordf_y =0,0
 

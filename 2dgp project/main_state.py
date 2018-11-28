@@ -2,6 +2,7 @@ import game_world
 from pico2d import *
 import Unit_class
 import game_framework
+import Unit_class
 
 background_image = None
 bottom_UI = None
@@ -25,7 +26,7 @@ def delete_enemy_observers():
     global player
 
     for game_object in game_world.all_objects():
-        if game_object.__class__.__name__=='Observer':
+        if isinstance(game_object, Unit_class.Observer):
             if game_object != player:
                 # 적 옵저버를 모두 제거
                 game_world.remove_object(game_object)
@@ -70,6 +71,8 @@ def resume():
 def handle_events():
     global player
     global collision_box_on
+    global bottom_UI
+
     events = get_events()
     for event in events:
 
@@ -129,12 +132,22 @@ def handle_events():
 
 
         if event.type == SDL_MOUSEMOTION:
-            # 마우스 좌표 업데이트
-            game_world.update_mouse_point(event.x, event.y)
+                # 마우스 좌표 업데이트
+                game_world.update_mouse_point(event.x, event.y)
 
         if event.type == SDL_MOUSEBUTTONDOWN:
-            player.get_events()
-            game_world.cursor.get_events()
+            # bottom ui 충돌체크
+            bottom_UI_collision_check_result = bottom_UI.collision_check(event.x, event.y)
+
+            #미니맵
+            if bottom_UI_collision_check_result == 1:
+                pass
+            #UI
+            elif bottom_UI_collision_check_result == 2:
+                pass
+            else:
+                game_world.cursor.get_events()
+                player.get_events()
 
 
 
@@ -205,6 +218,8 @@ class MainBGIMG():
             self.image.clip_draw(game_world.screen_coord_x, game_world.screen_coord_y, game_world.screen_x, game_world.screen_y, game_world.screen_x / 2, game_world.screen_y / 2)
 
 
+
+
 class MainBottomUI():
     image = None
     width = 1280
@@ -235,12 +250,13 @@ class MainBottomUI():
         if self.image != None:
             self.image.clip_draw(0, 0, self.width, self.height, int(game_world.screen_x / 2), int(game_world.screen_x /self.width * self.height/2),
                                  game_world.screen_x, int(game_world.screen_x /self.width * self.height))
+
+        #미니맵 배경
         if self.minimap_image != None:
             self.minimap_image.clip_draw(0,0,self.minimap_image_width, self.minimap_image_height,
                                          int((self.minimap_x+self.minimap_width)/2),int((self.minimap_y+self.minimap_height)/2), int(self.minimap_width), int(self.minimap_height))
 
-        bbbbb =True
-
+        #미니맵 내 유닛
         for game_object in game_world.all_objects():
             if game_object == player:
                 draw_green_rectangle(
@@ -249,7 +265,7 @@ class MainBottomUI():
                     int(self.minimap_x / 2 + game_object.unit.x / self.minimap_image_width * self.minimap_width) + 1,
                     int(self.minimap_y / 2 + game_object.unit.y / self.minimap_image_height * self.minimap_height) + 1)
 
-            elif game_object.__class__.__name__ == 'Observer':
+            elif isinstance(game_object, Unit_class.Observer):
                 draw_rectangle(int(self.minimap_x/2 + game_object.x/self.minimap_image_width*self.minimap_width)-1,
                                int(self.minimap_y/2+ game_object.y/self.minimap_image_height*self.minimap_height)-1,
                                int(self.minimap_x/2 + game_object.x/self.minimap_image_width*self.minimap_width)+1,
@@ -262,6 +278,26 @@ class MainBottomUI():
 
 
         #draw_rectangle(self.minimap_x, self.minimap_y, self.minimap_width + self.minimap_x, self.minimap_height + self.minimap_y)
+
+    def collision_check(self, event_x, event_y):
+        global is_scrolling_screen
+        event_y = (game_world.screen_y - event_y - 1)
+
+        #바텀 UI 충돌체크
+        if (self.minimap_x < event_x < self.minimap_x + self.minimap_width and self.minimap_y < event_y < self.minimap_y + self.minimap_height):
+            return 1 #미니맵
+        elif (0 < event_x < (330 * game_world.screen_x / self.width) and 0 < event_y < (game_world.screen_x / self.width * self.height) or
+              (330 * game_world.screen_x / self.width) < event_x <  game_world.screen_x - (310 * game_world.screen_x / self.width)  and 0 < event_y < (game_world.screen_x / self.width * 225) or
+                game_world.screen_x - (310 * game_world.screen_x / self.width) < event_x < game_world.screen_x and 0 < event_y < game_world.screen_x / self.width * 350 ):
+            return 2 #UI
+        else:
+            return 3
+
+
+
+
+
+
 
 
 
