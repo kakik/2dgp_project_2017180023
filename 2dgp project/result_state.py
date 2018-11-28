@@ -3,6 +3,8 @@ from pico2d import *
 import game_framework
 import main_state
 
+name = "ResultState"
+
 Result_BG_IMG = None
 
 def enter():
