@@ -57,8 +57,8 @@ def enter():
 
 
 def exit():
-
-    pass
+    game_world.reset_screen_xy()
+    game_world.clear_except_cursor()
 
 def pause():
     pass

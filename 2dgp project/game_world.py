@@ -23,9 +23,25 @@ def clear():
     objects.clear()
 
 
+def clear_except_cursor():
+    global cursor
+
+    for o in objects[1][::-1]:
+       if o == cursor:
+           continue
+       else:
+           objects[1].remove(o)
+
+    for o in objects[0][::-1]:
+        if o == cursor:
+            continue
+        else:
+            objects[0].remove(o)
+
+
+
 def all_objects():
     global cursor
-    global mx, my
     is_curror_exist = False
     is_main_UI_exist = False
 
@@ -45,6 +61,9 @@ def all_objects():
 
     if is_curror_exist == True:
         yield cursor
+
+
+
 
 
 

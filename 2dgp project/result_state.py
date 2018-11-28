@@ -8,24 +8,36 @@ Result_BG_IMG = None
 def enter():
     global Result_BG_IMG
     Result_BG_IMG = ResultBGIMG()
+    game_world.add_object(Result_BG_IMG, 0)
 
 
 def exit():
     pass
 
 def update():
-    pass
+    for game_object in game_world.all_objects():
+        game_object.update()
 
 def handle_events():
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
             game_framework.quit()
+        elif event.type == SDL_KEYDOWN:
             if event.key == SDLK_ESCAPE:
                 game_framework.quit()
 
+        if event.type == SDL_MOUSEMOTION:
+                # 마우스 좌표 업데이트
+                game_world.update_mouse_point(event.x, event.y)
+
 def draw():
-    pass
+    clear_canvas()
+
+    for game_object in game_world.all_objects():
+        game_object.draw()
+
+    update_canvas()
 
 def pause(): pass
 
@@ -42,7 +54,7 @@ class ResultBGIMG():
     def __init__(self):
         if self.image == None:
             self.image = load_image('resources\\Title\\Background\\Title_BG.png')
-            self.font =  load_font('font\\ENCR10B.TTF', 20)
+            self.font =  load_font('font\\starcraft.TTF', 20)
             self.clear_stage = main_state.stage_level - 1
 
     def handle_events(self):
