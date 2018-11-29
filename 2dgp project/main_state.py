@@ -206,6 +206,7 @@ class MainBGIMG():
     def __init__(self):
         if self.image == None:
             self.image =load_image('resources\\TileMap\\Map.png')
+            self.font = load_font('font\\starcraft.ttf', 20)
 
     def handle_events(self):
         pass

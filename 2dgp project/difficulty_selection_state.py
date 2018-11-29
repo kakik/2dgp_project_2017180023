@@ -14,6 +14,9 @@ mx, my = 0, 0
 observer = None
 wraith = None
 scourge = None
+
+difficulty_selection_BG_IMG = None
+
 def enter():
     global observer,wraith, scourge
 
@@ -25,14 +28,19 @@ def enter():
     game_world.add_object(observer, 1)
     game_world.add_object(wraith, 1)
 
+    global difficulty_selection_BG_IMG
+    difficulty_selection_BG_IMG = DifficultySelectionBGIMG()
+    game_world.add_object(difficulty_selection_BG_IMG, 0)
+
 
 def exit():
+    global difficulty_selection_BG_IMG
     # game_world.clear()
     game_world.remove_object(scourge)
     game_world.remove_object(observer)
     game_world.remove_object(wraith)
 
-    game_world.remove_object(title_state.Title_BG_img)
+    game_world.remove_object(difficulty_selection_BG_IMG)
 
 def pause():
     pass
@@ -97,6 +105,26 @@ def draw():
     update_canvas()
 
 
+class DifficultySelectionBGIMG():
+    image = None
+    width = 800
+    height = 600
+
+    def __init__(self):
+        if self.image == None:
+            self.image = load_image('resources\\Title\\Background\\Title_BG.png')
+            self.font = load_font('font\\starcraft.ttf', 20)
+
+
+    def handle_events(self):
+        pass
+
+    def update(self):
+        pass
+
+    def draw(self):
+        if self.image != None:
+            self.image.clip_draw(0, 0, game_world.screen_x, game_world.screen_y, game_world.screen_x / 2, game_world.screen_y / 2)
 
 
 

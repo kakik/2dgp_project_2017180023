@@ -52,17 +52,7 @@ def enter():
 
 
 def exit():
-    global Title_start_text_img, Title_exit_text_img
-    global Title_start, Title_start_mouse_on
-    global Title_exit, Title_exit_mouse_on
-
-    #배경, 커서 제외 삭제
-    game_world.remove_object(Title_start_text_img)
-    game_world.remove_object(Title_exit_text_img)
-    game_world.remove_object(Title_start)
-    game_world.remove_object(Title_start_mouse_on)
-    game_world.remove_object(Title_exit)
-    game_world.remove_object(Title_exit_mouse_on)
+    game_world.clear_except_cursor()
 
 
 
