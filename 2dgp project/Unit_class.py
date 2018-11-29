@@ -55,6 +55,7 @@ class Player():
     def return_to_start_point(self):
         self.unit.return_to_start_point()
 
+
 class Unit():
     def __init__(self, x, y):
         self.x = x
@@ -162,7 +163,8 @@ class Unit():
                             ((tile_size * 4 <= game_object.x <= tile_size * 12) and (tile_size * 17 <= game_object.y <= tile_size * 25)) or \
                             ((tile_size * 48 <= game_object.x <= tile_size * 56) and (tile_size * 48 <= game_object.y <= tile_size * 56)):
                             pass
-                        elif (abs(game_object.x - self.x)<=(game_object.width/2 + self.width/2)) and (abs(game_object.y - self.y)<=(game_object.height/2 + self.height/2)):
+                        elif (abs(game_object.x - self.x)<=(game_object.width/2 + self.width/2 - main_state.bounding_box_offset)) and \
+                                (abs(game_object.y - self.y)<=(game_object.height/2 + self.height/2 - main_state.bounding_box_offset)):
                             #시작지점으로 리턴
                             #game_framework.change_state(result_state)
                             #pass

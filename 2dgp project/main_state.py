@@ -10,6 +10,7 @@ bottom_UI = None
 collision_box_on = False
 stage_level = None
 player = None
+bounding_box_offset = 6
 
 def create_enemy_observers(level):
     global player
