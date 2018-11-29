@@ -164,8 +164,8 @@ class Unit():
                             pass
                         elif (abs(game_object.x - self.x)<=(game_object.width/2 + self.width/2)) and (abs(game_object.y - self.y)<=(game_object.height/2 + self.height/2)):
                             #시작지점으로 리턴
-                            game_framework.change_state(result_state)
-                            pass
+                            #game_framework.change_state(result_state)
+                            #pass
                             self.return_to_start_point()
                             game_world.reset_screen_xy()
         #길 밖으로 나가면 시작지점으로 리턴

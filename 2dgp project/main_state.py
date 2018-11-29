@@ -234,11 +234,11 @@ class MainBottomUI():
             self.image =load_image('resources\\UI\\bottom_UI.png')
         if self.minimap_image == None:
             self.minimap_image = load_image('resources\\TileMap\\Map.png')
-        self.minimap_x =game_world.screen_x*27/self.width
+            self.minimap_x =game_world.screen_x*27/self.width
         self.minimap_y = game_world.screen_y*6/self.height
         self.minimap_width = game_world.screen_x*256/self.width
         self.minimap_height = (game_world.screen_x /self.width * self.height)*256/self.height
-        print(self.minimap_x)
+        self.font=load_font('font\\starcraft.ttf',20)
 
     def handle_events(self):
         pass
@@ -248,6 +248,8 @@ class MainBottomUI():
 
     def draw(self):
         global player
+        global stage_level
+
         if self.image != None:
             self.image.clip_draw(0, 0, self.width, self.height, int(game_world.screen_x / 2), int(game_world.screen_x /self.width * self.height/2),
                                  game_world.screen_x, int(game_world.screen_x /self.width * self.height))
@@ -275,7 +277,11 @@ class MainBottomUI():
         draw_white_rectangle(int(self.minimap_x / 2 + game_world.screen_coord_x / self.minimap_image_width * self.minimap_width) ,
                        int(self.minimap_y / 2 + (game_world.screen_coord_y + self.height/3  )/ self.minimap_image_height * self.minimap_height)  ,
                        int(self.minimap_x / 2 + (game_world.screen_coord_x + game_world.screen_x) / self.minimap_image_width * self.minimap_width) ,
-                       int(self.minimap_y / 2 + (game_world.screen_coord_y + game_world.screen_y) / self.minimap_image_height * self.minimap_height) )
+                       int(self.minimap_y / 2 + (game_world.screen_coord_y + game_world.screen_y) / self.minimap_image_height * self.minimap_height))
+
+        self.font.draw(10, game_world.screen_y - 20, 'stage: %d' % (stage_level), (0, 255, 0))
+
+
 
 
         #draw_rectangle(self.minimap_x, self.minimap_y, self.minimap_width + self.minimap_x, self.minimap_height + self.minimap_y)
