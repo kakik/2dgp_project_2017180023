@@ -11,21 +11,23 @@ Result_BG_IMG = None
 Result_exit_text_img = None
 Result_exit_img = None
 Result_exit_mouse_on_img = None
+Result_score_popup = None
 
 def enter():
     global Result_BG_IMG
     global Result_exit_text_img,Result_exit_img,Result_exit_mouse_on_img
+    global Result_score_popup
 
     Result_BG_IMG = ResultBGIMG()
     Result_exit_img = ResultExitIMG()
     Result_exit_mouse_on_img = ResultExitMouseOnIMG()
     Result_exit_text_img = ResultExitText()
-
+    Result_score_popup= ResultScorePopup()
     game_world.add_object(Result_BG_IMG, 0)
     game_world.add_object(Result_exit_img, 0)
     game_world.add_object(Result_exit_mouse_on_img, 0)
     game_world.add_object(Result_exit_text_img, 0)
-
+    game_world.add_object(Result_score_popup, 1)
 
 def exit():
     game_world.clear()
@@ -80,8 +82,6 @@ class ResultBGIMG():
     def __init__(self):
         if self.image == None:
             self.image = load_image('resources\\Title\\Background\\Title_BG.png')
-            self.font =  load_font('font\\starcraft.TTF', 20)
-            self.clear_stage = main_state.stage_level - 1
 
     def handle_events(self):
         pass
@@ -93,7 +93,49 @@ class ResultBGIMG():
         if self.image != None:
             self.image.clip_draw(0, 0, game_world.screen_x, game_world.screen_y, game_world.screen_x / 2, game_world.screen_y / 2)
 
-        self.font.draw(10, game_world.screen_y - 20, 'stage: %d' % (main_state.stage_level), (0, 255, 0))
+
+
+class ResultScorePopup():
+    image = None
+    width = 360
+    height = 200
+    draw_width = None
+    draw_height = None
+    move_down_speed_per_sec = None
+
+    def __init__(self):
+        if self.draw_width is None:
+            self.draw_width = self.width / game_world.screen_x * 800
+        if self.draw_height is None:
+            self.draw_height = self.height / game_world.screen_y * 600
+        if self.move_down_speed_per_sec is None:
+            self.move_down_speed_per_sec = game_world.screen_y*1.5
+
+        if self.image == None:
+            self.image = load_image('resources\\UI\\popopup.png')
+            self.x = game_world.screen_x/2
+            self.y = game_world.screen_y + self.draw_height/2
+            self.font = load_font('font\\starcraft.TTF', 20)
+            self.clear_stage = main_state.stage_level - 1
+
+
+
+    def handle_events(self):
+        pass
+
+    def update(self):
+        if self.y > game_world.screen_y /2:
+            self.y -=  self.move_down_speed_per_sec*game_framework.frame_time
+            if self.y < game_world.screen_y /2:
+                self.y = game_world.screen_y / 2
+
+    def draw(self):
+        if self.image != None:
+            self.image.clip_draw(0, 0, self.width, self.height, self.x,
+                                 int(self.y),self.draw_width, self.draw_height)
+
+        self.font.draw( self.x-50, self.y, 'stage: %d' % (main_state.stage_level), (0, 255, 0))
+
 
 
 class  ResultExitIMG():
@@ -108,7 +150,6 @@ class  ResultExitIMG():
         self.y = 122
         self.frame = IMG_class.Frame(self.max_frame,self.ACTION_PER_TIME)
         self.mouse_on = False
-        self.font = load_font('font\\starcraft.ttf', 20)
 
         if self.image == None:
             self.image = [load_image('resources\\Title\\Exit\\exit%d%d.png' % (i // 10, i % 10))  for i in range(0, self.max_frame)]
