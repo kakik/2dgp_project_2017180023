@@ -68,3 +68,4 @@ class ResultBGIMG():
     def draw(self):
         if self.image != None:
             self.image.clip_draw(0, 0, game_world.screen_x, game_world.screen_y, game_world.screen_x / 2, game_world.screen_y / 2)
+

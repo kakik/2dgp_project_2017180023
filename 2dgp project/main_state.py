@@ -7,10 +7,11 @@ import Unit_class
 background_image = None
 bottom_UI = None
 
-collision_box_on = False
+is_collision_box_on = False
 stage_level = None
 player = None
 bounding_box_offset = 6
+is_invincibility_mode_on = False
 
 def create_enemy_observers(level):
     global player
@@ -71,7 +72,7 @@ def resume():
 
 def handle_events():
     global player
-    global collision_box_on
+    global is_collision_box_on, is_invincibility_mode_on
     global bottom_UI
 
     events = get_events()
@@ -96,7 +97,7 @@ def handle_events():
             elif event.key == SDLK_s:
                 if game_world.screen_scroll_y == 0:
                     game_world.screen_scroll_y = -1
-                elif game_world.screen_scroll_y == 1:
+                elif game_world.screen_scroll_y ==1:
                     game_world.screen_scroll_y = 0
             elif event.key == SDLK_d:
                 if game_world.screen_scroll_x == 0:
@@ -104,10 +105,15 @@ def handle_events():
                 elif game_world.screen_scroll_x == -1:
                     game_world.screen_scroll_x = 0
             elif event.key == SDLK_r:
-                if collision_box_on == True:
-                    collision_box_on = False
-                elif collision_box_on == False:
-                    collision_box_on = True
+                if is_collision_box_on == True:
+                    is_collision_box_on = False
+                elif is_collision_box_on == False:
+                    is_collision_box_on = True
+            elif event.key == SDLK_1:
+                if is_invincibility_mode_on == True:
+                    is_invincibility_mode_on = False
+                elif is_invincibility_mode_on == False:
+                    is_invincibility_mode_on = True
 
         elif event.type == SDL_KEYUP:
             if event.key == SDLK_w:
@@ -161,13 +167,13 @@ def update():
 
 
 def draw():
-    global collision_box_on
+    global is_collision_box_on
     clear_canvas()
 
     for game_object in game_world.all_objects():
         game_object.draw()
 
-    if collision_box_on == True:
+    if is_collision_box_on == True:
         draw_collision_box()
     update_canvas()
 

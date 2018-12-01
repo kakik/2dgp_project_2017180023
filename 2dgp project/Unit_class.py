@@ -165,11 +165,15 @@ class Unit():
                             pass
                         elif (abs(game_object.x - self.x)<=(game_object.width/2 + self.width/2 - main_state.bounding_box_offset)) and \
                                 (abs(game_object.y - self.y)<=(game_object.height/2 + self.height/2 - main_state.bounding_box_offset)):
-                            #시작지점으로 리턴
-                            #game_framework.change_state(result_state)
-                            #pass
-                            self.return_to_start_point()
-                            game_world.reset_screen_xy()
+                            if main_state.is_invincibility_mode_on == True:
+                                pass
+                            else:
+                                # 결과창으로 이동
+                                game_framework.change_state(result_state)
+                                # 시작지점으로 리턴
+                                #self.return_to_start_point()
+                                #game_world.reset_screen_xy()
+                                # pass
         #길 밖으로 나가면 시작지점으로 리턴
         else:
             self.return_to_start_point()
