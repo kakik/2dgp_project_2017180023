@@ -7,20 +7,16 @@ from pico2d import *
 
 name = "TitleState"
 
-# 이미지 파일
-Title_BG_img = None
-Title_start_text_img = None
-Title_exit_text_img = None
 # 이미지 객체
-Title_start = None
-Title_start_mouse_on = None
+Title_BG_img = None
+Title_exit_text_img = None
 Title_exit = None
 Title_exit_mouse_on = None
 
 
 def enter():
     global Title_BG_img
-    global Title_start_text_img, Title_exit_text_img
+    global  Title_exit_text_img
     global Title_start, Title_start_mouse_on
     global Title_exit, Title_exit_mouse_on
 
