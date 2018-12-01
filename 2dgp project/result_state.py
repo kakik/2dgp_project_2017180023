@@ -93,6 +93,8 @@ class ResultBGIMG():
         if self.image != None:
             self.image.clip_draw(0, 0, game_world.screen_x, game_world.screen_y, game_world.screen_x / 2, game_world.screen_y / 2)
 
+        self.font.draw(10, game_world.screen_y - 20, 'stage: %d' % (main_state.stage_level), (0, 255, 0))
+
 
 class  ResultExitIMG():
     image = None
@@ -104,9 +106,9 @@ class  ResultExitIMG():
     def __init__(self):
         self.x = game_world.screen_x - 158
         self.y = 122
-
         self.frame = IMG_class.Frame(self.max_frame,self.ACTION_PER_TIME)
         self.mouse_on = False
+        self.font = load_font('font\\starcraft.ttf', 20)
 
         if self.image == None:
             self.image = [load_image('resources\\Title\\Exit\\exit%d%d.png' % (i // 10, i % 10))  for i in range(0, self.max_frame)]
