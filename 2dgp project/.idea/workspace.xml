@@ -5,9 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/result_state.py" line="107" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef55620e-127a-47a2-a9dd-e0eb96cb6266" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/result_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/result_state.py" afterDir="false" />
-    </list>
+    <list default="true" id="ef55620e-127a-47a2-a9dd-e0eb96cb6266" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,8 +115,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/result_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+            <state relative-caret-position="855">
+              <caret line="129" column="40" lean-forward="true" selection-start-line="129" selection-start-column="40" selection-end-line="129" selection-end-column="40" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
                 <marker date="1543674602156" expanded="true" signature="439:444" ph="..." />
@@ -252,9 +250,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="256" />
-    <option name="y" value="13" />
-    <option name="width" value="1299" />
+    <option name="x" value="304" />
+    <option name="y" value="24" />
+    <option name="width" value="1611" />
     <option name="height" value="1084" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -486,10 +484,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="256" y="13" width="1299" height="1084" extended-state="1" />
+    <frame x="304" y="24" width="1611" height="1084" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10943695" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12460267" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -822,8 +820,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/result_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+        <state relative-caret-position="855">
+          <caret line="129" column="40" lean-forward="true" selection-start-line="129" selection-start-column="40" selection-end-line="129" selection-end-column="40" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
             <marker date="1543674602156" expanded="true" signature="439:444" ph="..." />
