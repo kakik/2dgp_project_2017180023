@@ -28,12 +28,20 @@ class Player():
     def __init__(self):
         self.unit = None
         self.under_unit_cursor_img =  load_image('resources\\Cursor\\cursor.png')
+        self.play_interval_of_move_wav = 2.0
+        self.elapsed_time_since_last_move_wav_call = self.play_interval_of_move_wav # 생성 직후에도 재생 가능
+
 
     def get_events(self):
         self.unit.set_move_point(game_world.mx,game_world.my)
         self.unit.get_events()
 
+        if self.elapsed_time_since_last_move_wav_call >= self. play_interval_of_move_wav:
+            self.unit.play_move_wav()
+            self.elapsed_time_since_last_move_wav_call = self.elapsed_time_since_last_move_wav_call%self. play_interval_of_move_wav
+
     def update(self):
+        self.elapsed_time_since_last_move_wav_call += game_framework.frame_time
         self.unit.move()
         self.unit.collision_check()
         # 이동 종료
@@ -168,8 +176,10 @@ class Unit():
                             if main_state.is_invincibility_mode_on == True:
                                 pass
                             else:
+                                self.play_destroy_wav()
                                 # 결과창으로 이동
                                 game_framework.change_state(result_state)
+                                game_world.reset_screen_xy()
                                 # 시작지점으로 리턴
                                 #self.return_to_start_point()
                                 #game_world.reset_screen_xy()
@@ -191,6 +201,12 @@ class Unit():
         self.curr_t = 0.0
         self.to_t = 0.0
 
+    def play_move_wav(self):
+        self.move_wav[random.randint(0,len(self.move_wav)-1)].play()
+
+    def play_destroy_wav(self):
+        self.destroy_wav.play()
+
 
 
 
@@ -201,13 +217,23 @@ class Observer(Unit):
     max_frame = 28
     ACTION_PER_TIME = 0.5
     velocity = 100.0
+    move_wav = []
+    destroy_wav = None
 
     def __init__(self,x,y):
         super(Observer, self).__init__(x, y)
 
-
-        if Observer.image == None:
+        if Observer.image is None:
             Observer.image = [load_image('resources\\Observer\\%d%d.png' % (i // 10, i % 10)) for i in range(0, 15)]
+
+        if self.destroy_wav is None:
+            self.destroy_wav = load_wav('resources\\Sound\\Protoss\\Units\\Observer\\pwidth01.wav')
+            self.destroy_wav.set_volume(24)
+
+        if len(self.move_wav) is 0:
+            for i in range(0,2):
+                self.move_wav.append(load_wav('resources\\Sound\\Protoss\\Units\\Observer\\pwiyes0%d.wav'%(i)))
+                self.move_wav[i].set_volume(24)
 
     def get_events(self):
         pass
@@ -242,6 +268,15 @@ class Observer(Unit):
         super(Observer, self).collision_check()
 
 
+    def play_move_wav(self):
+        super(Observer, self).play_move_wav()
+
+    def play_destroy_wav(self):
+        super(Observer, self).play_destroy_wav()
+
+
+
+
 class Wraith(Unit):
     image = None
     width = 52
@@ -249,12 +284,23 @@ class Wraith(Unit):
     max_frame = 32
     ACTION_PER_TIME = 0.5
     velocity = 200.0
+    move_wav = []
+    destroy_wav = None
 
     def __init__(self, x, y):
         super(Wraith, self).__init__(x, y)
 
-        if Wraith.image == None:
+        if Wraith.image is None:
             Wraith.image = [load_image('resources\\Wraith\\%d%d.png' % (i // 10, i % 10)) for i in range(0, 17)]
+
+        if self.destroy_wav is None:
+            self.destroy_wav = load_wav('resources\\Sound\\Terran\\Units\\Wraith\\tphdth00.wav')
+            self.destroy_wav.set_volume(24)
+
+        if len(self.move_wav) is 0:
+            for i in range(0, 4):
+                self.move_wav.append(load_wav('resources\\Sound\\Terran\\Units\\Wraith\\tphwht0%d.wav' % (i)))
+                self.move_wav[i].set_volume(24)
 
     def get_events(self):
         pass
@@ -288,6 +334,11 @@ class Wraith(Unit):
     def collision_check(self):
         super(Wraith, self).collision_check()
 
+    def play_move_wav(self):
+        super(Wraith, self).play_move_wav()
+
+    def play_destroy_wav(self):
+        super(Wraith, self).play_destroy_wav()
 
 
 class Scourge(Unit):
@@ -297,15 +348,25 @@ class Scourge(Unit):
     max_frame = 16
     ACTION_PER_TIME = 0.5
     velocity = 200.0
+    move_wav = []
+    destroy_wav = None
 
     def __init__(self, x, y):
         super(Scourge, self).__init__(x, y)
-
         self.IDLE_frame = IMG_class.Frame(4, 2)
         self.IDLE_frame.current_frame = 0
 
-        if Scourge.image == None:
+        if Scourge.image is None:
             Scourge.image = load_image('resources\\Scourge\\Scourge.png' )
+
+        if self.destroy_wav is None:
+            self.destroy_wav = load_wav('resources\\Sound\\Zerg\\Units\\Scourge\\zavdth00.wav')
+            self.destroy_wav.set_volume(24)
+
+        if len(self.move_wav) is 0:
+            for i in range(0, 2):
+                self.move_wav.append(load_wav('resources\\Sound\\Zerg\\Units\\Scourge\\zavwht0%d.wav' % (i)))
+                self.move_wav[i].set_volume(24)
 
     def get_events(self):
         pass
@@ -341,3 +402,9 @@ class Scourge(Unit):
 
     def collision_check(self):
         super(Scourge, self).collision_check()
+
+    def play_move_wav(self):
+        super(Scourge, self).play_move_wav()
+
+    def play_destroy_wav(self):
+        super(Scourge, self).play_destroy_wav()

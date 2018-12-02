@@ -21,6 +21,7 @@ def enter():
 
     game_world.add_object(Result_score_popup, 1)
 
+
 def exit():
     game_world.clear()
 
@@ -31,6 +32,7 @@ def update():
 
 def handle_events():
     global Result_score_popup
+    global Result_BG_IMG
 
     events = get_events()
     for event in events:
@@ -41,6 +43,7 @@ def handle_events():
                 game_framework.quit()
         elif event.type == SDL_MOUSEBUTTONDOWN:
             if Result_score_popup.is_mouse_on is True:
+                Result_BG_IMG.Mouse_down_wav.play()
                 game_framework.change_state(title_state)
         elif event.type == SDL_MOUSEMOTION:
                 # 마우스 좌표 업데이트
@@ -74,6 +77,9 @@ class ResultBGIMG():
     def __init__(self):
         if self.image == None:
             self.image = load_image('resources\\Title\\Background\\Title_BG.png')
+
+        self.Mouse_down_wav = load_wav('resources\\Sound\\Glue\\mousedown2.wav')
+        self.Mouse_down_wav.set_volume(32)
 
     def handle_events(self):
         pass
@@ -136,7 +142,7 @@ class ResultScorePopup():
                                  int(self.y),self.draw_width, self.draw_height)
 
         self.font.draw( self.x-100, self.y, 'Clear Stage: %d' % (self.clear_stage), (0, 255, 0))
-
+        self.font.draw(self.x-10, self.y-self.draw_height/8*3, 'ok', (0, 255, 0))
 
 
 ############################################################################################################################################################

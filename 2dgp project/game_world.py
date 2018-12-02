@@ -106,17 +106,26 @@ def update_screen_xy():
 
 def update_screen_xy_to_point(x, y):
     global screen_coord_x, screen_coord_y, screen_coordf_x, screen_coordf_y
+    global screen_scroll_x, screen_scroll_y
 
     screen_coord_x = int(x)
     screen_coordf_x = x
     screen_coord_y = int(y)
     screen_coordf_y = y
+    screen_scroll_x=0
+    screen_scroll_y =0
 
 def reset_screen_xy():
     global screen_coordf_x, screen_coordf_y
+    global screen_coord_x, screen_coord_y
+    global mx, my
 
+    mx -= screen_coordf_x
+    my -= screen_coordf_y
 
-    screen_coordf_x, screen_coordf_y =0,0
+    screen_coordf_x, screen_coordf_y = 0, 0
+    screen_coord_x, screen_coord_y =0, 0
+
 
 
 

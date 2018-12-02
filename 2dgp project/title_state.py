@@ -53,6 +53,8 @@ def exit():
 
 
 def handle_events():
+    global Title_BG_img
+
     events = get_events()
     for event in events:
 
@@ -70,10 +72,11 @@ def handle_events():
         elif event.type == SDL_MOUSEBUTTONDOWN:
             # 게임 시작
             if Title_start.mouse_on:
-
+                Title_BG_img.Mouse_down_wav.play()
                 game_framework.change_state(difficulty_selection_state)
             # 게임 종료
             elif Title_exit.mouse_on:
+                #Title_BG_img.Mouse_down_wav.play()
                 game_framework.quit()
 
 
@@ -114,6 +117,11 @@ class MenuBGIMG():
     def __init__(self):
         if self.image == None:
             self.image = load_image('resources\\Title\\Background\\Title_BG.png')
+            self.BGM = load_music('resources\\Sound\\SoundTrack\\Terran - 1.mp3')
+            self.BGM.set_volume(32)
+            self.Mouse_down_wav = load_wav('resources\\Sound\\Glue\\mousedown2.wav')
+            self.Mouse_down_wav.set_volume(32)
+            #self.BGM.play()
 
     def handle_events(self):
         pass

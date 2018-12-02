@@ -13,6 +13,7 @@ player = None
 bounding_box_offset = 6
 is_invincibility_mode_on = False
 
+
 def create_enemy_observers(level):
     global player
 
@@ -235,17 +236,25 @@ class MainBottomUI():
     minimap_image = None
     minimap_image_width = 1860
     minimap_image_height = 1860
+    white_rect = None
+    green_rect = None
 
     def __init__(self):
-        if self.image == None:
+        if self.image is None:
             self.image =load_image('resources\\UI\\bottom_UI.png')
-        if self.minimap_image == None:
+        if self.white_rect is None:
+            self.white_rect =load_image('resources\\Rect\\white_rect.png')
+        if self.green_rect is None:
+            self.green_rect =load_image('resources\\Rect\\green_rect.png')
+
+        if self.minimap_image is None:
             self.minimap_image = load_image('resources\\TileMap\\Map.png')
             self.minimap_x =game_world.screen_x*27/self.width
         self.minimap_y = game_world.screen_y*6/self.height
         self.minimap_width = game_world.screen_x*256/self.width
         self.minimap_height = (game_world.screen_x /self.width * self.height)*256/self.height
         self.font=load_font('font\\starcraft.ttf',20)
+
 
     def handle_events(self):
         pass
@@ -269,11 +278,13 @@ class MainBottomUI():
         #미니맵 내 유닛
         for game_object in game_world.all_objects():
             if game_object == player:
-                draw_green_rectangle(
-                    int(self.minimap_x / 2 + game_object.unit.x / self.minimap_image_width * self.minimap_width) - 1,
-                    int(self.minimap_y / 2 + game_object.unit.y / self.minimap_image_height * self.minimap_height) - 1,
-                    int(self.minimap_x / 2 + game_object.unit.x / self.minimap_image_width * self.minimap_width) + 1,
-                    int(self.minimap_y / 2 + game_object.unit.y / self.minimap_image_height * self.minimap_height) + 1)
+                self.green_rect.draw(int(self.minimap_x / 2 + game_object.unit.x / self.minimap_image_width * self.minimap_width),
+                    int(self.minimap_y / 2 + game_object.unit.y / self.minimap_image_height * self.minimap_height))
+                #draw_green_rectangle(
+                 #   int(self.minimap_x / 2 + game_object.unit.x / self.minimap_image_width * self.minimap_width) - 1,
+                  #  int(self.minimap_y / 2 + game_object.unit.y / self.minimap_image_height * self.minimap_height) - 1,
+                   # int(self.minimap_x / 2 + game_object.unit.x / self.minimap_image_width * self.minimap_width) + 1,
+                    #int(self.minimap_y / 2 + game_object.unit.y / self.minimap_image_height * self.minimap_height) + 1)
 
             elif isinstance(game_object, Unit_class.Observer):
                 draw_rectangle(int(self.minimap_x/2 + game_object.x/self.minimap_image_width*self.minimap_width)-1,
@@ -281,10 +292,13 @@ class MainBottomUI():
                                int(self.minimap_x/2 + game_object.x/self.minimap_image_width*self.minimap_width)+1,
                                int(self.minimap_y/2+ game_object.y/self.minimap_image_height*self.minimap_height)+1)
 
-        draw_white_rectangle(int(self.minimap_x / 2 + game_world.screen_coord_x / self.minimap_image_width * self.minimap_width) ,
-                       int(self.minimap_y / 2 + (game_world.screen_coord_y + self.height/3  )/ self.minimap_image_height * self.minimap_height)  ,
-                       int(self.minimap_x / 2 + (game_world.screen_coord_x + game_world.screen_x) / self.minimap_image_width * self.minimap_width) ,
-                       int(self.minimap_y / 2 + (game_world.screen_coord_y + game_world.screen_y) / self.minimap_image_height * self.minimap_height))
+        self.white_rect.draw(
+            int(self.minimap_x / 2 + (game_world.screen_coord_x + game_world.screen_x/2) / self.minimap_image_width * self.minimap_width),
+            int(self.minimap_y / 2 + (game_world.screen_coord_y + (game_world.screen_y+ self.height/3 )/2) / self.minimap_image_height * self.minimap_height))
+        #draw_white_rectangle(int(self.minimap_x / 2 + game_world.screen_coord_x / self.minimap_image_width * self.minimap_width) ,
+         #              int(self.minimap_y / 2 + (game_world.screen_coord_y + self.height/3  )/ self.minimap_image_height * self.minimap_height)  ,
+          #             int(self.minimap_x / 2 + (game_world.screen_coord_x + game_world.screen_x) / self.minimap_image_width * self.minimap_width) ,
+           #            int(self.minimap_y / 2 + (game_world.screen_coord_y + game_world.screen_y) / self.minimap_image_height * self.minimap_height))
 
         self.font.draw(10, game_world.screen_y - 20, 'stage: %d' % (stage_level), (0, 255, 0))
 

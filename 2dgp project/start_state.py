@@ -6,16 +6,20 @@ import game_world
 name = "StartState"
 
 Start_BG_image = None
-Time_to_change_state = 3.0
+Time_to_change_state = 4.0
 
 def enter():
     global Start_BG_image
     Start_BG_image = StartBGIMG()
     game_world.add_object(Start_BG_image , 0)
+
     hide_cursor()
+    Start_BG_image.BGM.play()
 
 
 def exit():
+    global Start_BG_image
+    #Start_BG_image.BGM.stop()
     game_world.remove_object(Start_BG_image)
 
 def update():
@@ -59,6 +63,8 @@ class StartBGIMG():
     def __init__(self):
         if self.image == None:
             self.image = load_image('resources\\Start\\start.png')
+        self.BGM = load_music('resources\\Sound\\SoundTrack\\Main Menu.mp3')
+        self.BGM.set_volume(32)
 
     def handle_events(self):
         pass
