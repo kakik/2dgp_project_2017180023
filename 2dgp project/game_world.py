@@ -4,7 +4,9 @@ import main_state
 # layer 1: Foreground Objects
 objects = [[],[]]
 
-
+####################################
+# 1pixel == 10cm
+###################################
 def add_object(o, layer):
     objects[layer].append(o)
 
@@ -129,7 +131,7 @@ def reset_screen_xy():
 
 
 
-#맵 사이즈
+#맵 사이즈 # 186m * 186m
 map_x, map_y = 1860, 1860
 
 #스크린 사이즈

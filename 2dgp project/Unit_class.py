@@ -102,7 +102,7 @@ class Unit():
 
     def set_random_move_point(self):
         #한 번에 이동하는 거리 조절
-        x_move_distance = random.randint(0, 1000) - 500
+        x_move_distance = random.randint(0, 1000) - 500 # -50m to 50m
         y_move_distance = random.randint(0, 1000) - 500
 
         if self.x + x_move_distance < 0 + self.width / 2:
@@ -212,11 +212,11 @@ class Unit():
 
 class Observer(Unit):
     image = None
-    width = 36
-    height = 34
+    width = 36 #3.6m
+    height = 34 #3.4m
     max_frame = 28
     ACTION_PER_TIME = 0.5
-    velocity = 100.0
+    velocity = 100.0   #10m per sec
     move_wav = []
     destroy_wav = None
 
@@ -279,11 +279,11 @@ class Observer(Unit):
 
 class Wraith(Unit):
     image = None
-    width = 52
-    height = 44
+    width = 52  #5.2m
+    height = 44 #4.4m
     max_frame = 32
     ACTION_PER_TIME = 0.5
-    velocity = 200.0
+    velocity = 200.0   #20m per sec
     move_wav = []
     destroy_wav = None
 
@@ -343,11 +343,11 @@ class Wraith(Unit):
 
 class Scourge(Unit):
     image = None
-    width = 31
-    height = 27
+    width = 31   #31m
+    height = 27  #27m
     max_frame = 16
     ACTION_PER_TIME = 0.5
-    velocity = 200.0
+    velocity = 200.0   #20m per sec
     move_wav = []
     destroy_wav = None
 
